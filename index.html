@@ -217,7 +217,7 @@
         <h2>User Login</h2>
         <input type="text" id="username" placeholder="Enter your username" />
         <button id="login-button" class="button">Login</button>
-        <p id="version">Version 1.1.002</p>
+        <p id="version">Version 1.1.003</p>
     </div>
     <div class="selection-screen" id="selection-screen" style="display: none;">
         <div class="left-panel">
@@ -284,7 +284,7 @@
     </div>
     <script>
         // Version number
-        const VERSION = "1.1.002";
+        const VERSION = "1.1.003";
         
         // Game state
         var questions = [];
@@ -625,7 +625,6 @@
             questionText.style.display = 'block';
             answersDiv.style.display = 'block';
             feedbackText.style.display = 'block';
-            categoryDisplay.textContent = currentCategory + ': ' + (currentCategory === 'Science' ? currentSubcategory : '-');
             loadQuestion();
         };
 
@@ -659,6 +658,9 @@
             var selected = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
             currentQuestion = selected.question;
             usedQuestions.push(selected.index);
+
+            // Set category display to reflect the question's specific subcategory
+            categoryDisplay.textContent = currentCategory + ': ' + (currentCategory === 'Science' ? currentQuestion.subcategory : '-');
 
             var answersWithIndices = currentQuestion.answers.map((answer, index) => ({ answer, index }));
             shuffle(answersWithIndices);
