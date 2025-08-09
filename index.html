@@ -7,7 +7,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #1a3350; /* Dark blue background */
+            background-color: #1a3350;
         }
         .ui-overlay {
             position: fixed;
@@ -179,6 +179,7 @@
             <p id="user-level">Level: 1</p>
             <p id="user-xp">XP: 0 / 100</p>
             <p id="category-xp">Category XP: 0</p>
+            <p id="subcategory-xp" style="display: none;">Subcategory XP: 0</p>
             <div class="xp-bar">
                 <div class="xp-bar-fill" id="xp-bar-fill" style="width: 0%;"></div>
             </div>
@@ -187,6 +188,7 @@
                 <thead>
                     <tr>
                         <th>Category</th>
+                        <th>Subcategory</th>
                         <th>Level</th>
                         <th>High Score</th>
                     </tr>
@@ -202,6 +204,12 @@
                 <option value="English">English</option>
                 <option value="Harry Potter">Harry Potter</option>
             </select>
+            <select id="subcategory" style="display: none;">
+                <option value="All">All</option>
+                <option value="Life Science">Life Science</option>
+                <option value="Physical Science">Physical Science</option>
+                <option value="Earth and Space Science">Earth and Space Science</option>
+            </select>
             <select id="level">
                 <option value="1">Level 1 (1st Grade)</option>
                 <option value="2">Level 2 (2nd Grade)</option>
@@ -211,7 +219,7 @@
             </select>
             <input type="number" id="correct-duration" min="0.5" max="10" step="0.5" value="1" placeholder="Correct Response Duration (seconds)" />
             <input type="number" id="incorrect-duration" min="0.5" max="10" step="0.5" value="1" placeholder="Incorrect Response Duration (seconds)" />
-            <button id="start-game" class="button">Start Game</button>
+            <button id="start-game" class="button" disabled>Loading Questions...</button>
             <button id="logout-button" class="button">Logout</button>
             <button id="reset-stats-button" class="button">Reset Stats</button>
         </div>
@@ -229,139 +237,14 @@
         <button id="play-again" class="button">Play Again</button>
     </div>
     <script>
-        // Trivia questions with explanations (unchanged)
-        var questions = [
-            // Science - Level 1 (1st Grade)
-            {category: "Science", level: 1, question: "What color is the sky on a clear day?", answers: ["Green", "Blue", "Red", "Yellow"], correct: 1, explanation: "The correct answer is Blue. The sky appears blue on a clear day due to the scattering of sunlight by the atmosphere."},
-            {category: "Science", level: 1, question: "What do we call a baby dog?", answers: ["Kitten", "Puppy", "Calf", "Foal"], correct: 1, explanation: "The correct answer is Puppy. A baby dog is called a puppy."},
-            {category: "Science", level: 1, question: "What is water when it is frozen?", answers: ["Steam", "Ice", "Rain", "Snow"], correct: 1, explanation: "The correct answer is Ice. Water becomes ice when it freezes at 0°C."},
-            {category: "Science", level: 1, question: "What shape is a full moon?", answers: ["Square", "Circle", "Triangle", "Star"], correct: 1, explanation: "The correct answer is Circle. A full moon appears round, like a circle, in the sky."},
-            {category: "Science", level: 1, question: "What do plants need to live?", answers: ["Books", "Water", "Toys", "Clothes"], correct: 1, explanation: "The correct answer is Water. Plants need water, sunlight, and air to grow and live."},
-            {category: "Science", level: 1, question: "What is the Sun?", answers: ["A planet", "A star", "A cloud", "A moon"], correct: 1, explanation: "The correct answer is A star. The Sun is a star that gives Earth light and heat."},
-            {category: "Science", level: 1, question: "What animal says 'meow'?", answers: ["Dog", "Cat", "Bird", "Fish"], correct: 1, explanation: "The correct answer is Cat. Cats make a 'meow' sound to communicate."},
-            {category: "Science", level: 1, question: "What is rain made of?", answers: ["Water", "Sugar", "Sand", "Salt"], correct: 0, explanation: "The correct answer is Water. Rain is water that falls from clouds in the sky."},
-            {category: "Science", level: 1, question: "What do we use to see things far away?", answers: ["Spoon", "Telescope", "Fork", "Cup"], correct: 1, explanation: "The correct answer is Telescope. A telescope helps us see distant objects like stars."},
-            {category: "Science", level: 1, question: "What is a tree?", answers: ["An animal", "A plant", "A rock", "A cloud"], correct: 1, explanation: "The correct answer is A plant. Trees are plants that have trunks, branches, and leaves."},
-            {category: "Science", level: 1, question: "What color are leaves usually?", answers: ["Blue", "Red", "Green", "Purple"], correct: 2, explanation: "The correct answer is Green. Leaves are usually green because of a substance called chlorophyll."},
-            {category: "Science", level: 1, question: "What do birds use to fly?", answers: ["Legs", "Wings", "Beaks", "Tails"], correct: 1, explanation: "The correct answer is Wings. Birds use their wings to fly through the air."},
-            {category: "Science", level: 1, question: "What is the ground made of?", answers: ["Water", "Air", "Soil", "Fire"], correct: 2, explanation: "The correct answer is Soil. The ground is made of soil, which is dirt and small rocks."},
-            {category: "Science", level: 1, question: "What do we call a baby cow?", answers: ["Calf", "Puppy", "Kitten", "Chick"], correct: 0, explanation: "The correct answer is Calf. A baby cow is called a calf."},
-            {category: "Science", level: 1, question: "What makes rainbows?", answers: ["Wind", "Sunlight", "Snow", "Clouds"], correct: 1, explanation: "The correct answer is Sunlight. Rainbows are made when sunlight bends through water droplets in the air."},
-            {category: "Science", level: 1, question: "What is a spider’s home called?", answers: ["Nest", "Web", "Den", "Hive"], correct: 1, explanation: "The correct answer is Web. Spiders spin webs to live in and catch food."},
-            {category: "Science", level: 1, question: "What do we breathe to live?", answers: ["Water", "Air", "Soil", "Fire"], correct: 1, explanation: "The correct answer is Air. We breathe air to get oxygen, which our bodies need to live."},
-            {category: "Science", level: 1, question: "What is a cloud made of?", answers: ["Cotton", "Water", "Rocks", "Sand"], correct: 1, explanation: "The correct answer is Water. Clouds are made of tiny water droplets or ice crystals in the sky."},
-            {category: "Science", level: 1, question: "What animal lives in water and swims?", answers: ["Bird", "Fish", "Dog", "Cat"], correct: 1, explanation: "The correct answer is Fish. Fish live in water and swim using their fins."},
-            {category: "Science", level: 1, question: "What is the hottest season?", answers: ["Winter", "Spring", "Summer", "Fall"], correct: 2, explanation: "The correct answer is Summer. Summer is the hottest season because the Sun’s rays are more direct."},
-            // Science - Level 2 (2nd Grade)
-            {category: "Science", level: 2, question: "What do plants need to grow?", answers: ["Only water", "Only sunlight", "Water and sunlight", "Only soil"], correct: 2, explanation: "The correct answer is Water and sunlight. Plants need both water and sunlight to make food and grow."},
-            {category: "Science", level: 2, question: "What is the name of our planet?", answers: ["Mars", "Earth", "Jupiter", "Venus"], correct: 1, explanation: "The correct answer is Earth. Earth is the planet we live on."},
-            {category: "Science", level: 2, question: "What do bees make?", answers: ["Milk", "Honey", "Wax", "Sugar"], correct: 1, explanation: "The correct answer is Honey. Bees make honey from nectar they collect from flowers."},
-            {category: "Science", level: 2, question: "What is a thermometer used for?", answers: ["Measuring time", "Measuring temperature", "Measuring weight", "Measuring length"], correct: 1, explanation: "The correct answer is Measuring temperature. A thermometer measures how hot or cold something is."},
-            {category: "Science", level: 2, question: "What do we call animals with backbones?", answers: ["Invertebrates", "Vertebrates", "Reptiles", "Amphibians"], correct: 1, explanation: "The correct answer is Vertebrates. Vertebrates are animals with a backbone, like fish, birds, and mammals."},
-            {category: "Science", level: 2, question: "What is the weather like when it’s raining?", answers: ["Sunny", "Windy", "Wet", "Dry"], correct: 2, explanation: "The correct answer is Wet. Rain makes the weather wet because water falls from the sky."},
-            {category: "Science", level: 2, question: "What part of a plant grows underground?", answers: ["Leaves", "Stem", "Root", "Flower"], correct: 2, explanation: "The correct answer is Root. Roots grow underground to anchor the plant and absorb water."},
-            {category: "Science", level: 2, question: "What do caterpillars turn into?", answers: ["Frogs", "Butterflies", "Birds", "Fish"], correct: 1, explanation: "The correct answer is Butterflies. Caterpillars turn into butterflies through a process called metamorphosis."},
-            {category: "Science", level: 2, question: "What is the Moon?", answers: ["A star", "A planet", "A satellite", "A cloud"], correct: 2, explanation: "The correct answer is A satellite. The Moon is a satellite that orbits Earth."},
-            {category: "Science", level: 2, question: "What do we call water that falls from the sky?", answers: ["Snow", "Rain", "Ice", "Steam"], correct: 1, explanation: "The correct answer is Rain. Rain is water that falls from clouds in liquid form."},
-            {category: "Science", level: 2, question: "What animal is a mammal that flies?", answers: ["Bird", "Bat", "Insect", "Lizard"], correct: 1, explanation: "The correct answer is Bat. Bats are mammals that can fly using their wings."},
-            {category: "Science", level: 2, question: "What is the hardest substance in our body?", answers: ["Skin", "Bone", "Teeth", "Hair"], correct: 2, explanation: "The correct answer is Teeth. Teeth are the hardest part of our body because of a substance called enamel."},
-            {category: "Science", level: 2, question: "What do we call a group of stars that form a pattern?", answers: ["Galaxy", "Constellation", "Planet", "Nebula"], correct: 1, explanation: "The correct answer is Constellation. A constellation is a group of stars that form a recognizable pattern."},
-            {category: "Science", level: 2, question: "What do seeds need to sprout?", answers: ["Darkness", "Water", "Cold", "Fire"], correct: 1, explanation: "The correct answer is Water. Seeds need water, warmth, and sometimes light to sprout."},
-            {category: "Science", level: 2, question: "What is the biggest ocean on Earth?", answers: ["Atlantic", "Pacific", "Indian", "Arctic"], correct: 1, explanation: "The correct answer is Pacific. The Pacific Ocean is the largest ocean on Earth."},
-            {category: "Science", level: 2, question: "What do we use to measure length?", answers: ["Scale", "Ruler", "Clock", "Thermometer"], correct: 1, explanation: "The correct answer is Ruler. A ruler is used to measure how long something is."},
-            {category: "Science", level: 2, question: "What is the center of a flower called?", answers: ["Petal", "Stem", "Pistil", "Leaf"], correct: 2, explanation: "The correct answer is Pistil. The pistil is the center part of a flower that makes seeds."},
-            {category: "Science", level: 2, question: "What do we call animals that eat only plants?", answers: ["Carnivores", "Herbivores", "Omnivores", "Predators"], correct: 1, explanation: "The correct answer is Herbivores. Herbivores are animals that only eat plants."},
-            {category: "Science", level: 2, question: "What is a shadow caused by?", answers: ["Wind", "Light", "Rain", "Heat"], correct: 1, explanation: "The correct answer is Light. A shadow forms when an object blocks light from reaching a surface."},
-            {category: "Science", level: 2, question: "What do we call the path the Earth takes around the Sun?", answers: ["Orbit", "Axis", "Tilt", "Cycle"], correct: 0, explanation: "The correct answer is Orbit. The Earth travels around the Sun in a path called an orbit."},
-            // Science - Level 3 (3rd Grade)
-            {category: "Science", level: 3, question: "What is the name of the closest star to Earth?", answers: ["Moon", "Sun", "Mars", "Jupiter"], correct: 1, explanation: "The correct answer is Sun. The Sun is the closest star to Earth, providing light and heat."},
-            {category: "Science", level: 3, question: "What force pulls objects toward the ground?", answers: ["Magnetism", "Gravity", "Friction", "Electricity"], correct: 1, explanation: "The correct answer is Gravity. Gravity is the force that pulls objects down to Earth."},
-            {category: "Science", level: 3, question: "What is the main source of energy for Earth?", answers: ["Wind", "Sun", "Water", "Fire"], correct: 1, explanation: "The correct answer is Sun. The Sun provides energy for Earth’s climate and life."},
-            {category: "Science", level: 3, question: "What do we call animals that eat both plants and animals?", answers: ["Herbivores", "Carnivores", "Omnivores", "Insects"], correct: 2, explanation: "The correct answer is Omnivores. Omnivores eat both plants and animals."},
-            {category: "Science", level: 3, question: "What is the solid part of Earth?", answers: ["Atmosphere", "Hydrosphere", "Lithosphere", "Biosphere"], correct: 2, explanation: "The correct answer is Lithosphere. The lithosphere is Earth’s solid, rocky surface."},
-            {category: "Science", level: 3, question: "What do we call water in its gas form?", answers: ["Ice", "Steam", "Rain", "Snow"], correct: 1, explanation: "The correct answer is Steam. Water in its gas form is called steam or water vapor."},
-            {category: "Science", level: 3, question: "What is the name of a scientist who studies rocks?", answers: ["Biologist", "Geologist", "Astronomer", "Chemist"], correct: 1, explanation: "The correct answer is Geologist. A geologist studies rocks and Earth’s surface."},
-            {category: "Science", level: 3, question: "What part of the plant makes seeds?", answers: ["Root", "Stem", "Leaf", "Flower"], correct: 3, explanation: "The correct answer is Flower. Flowers produce seeds for new plants."},
-            {category: "Science", level: 3, question: "What is the process of a caterpillar becoming a butterfly?", answers: ["Photosynthesis", "Metamorphosis", "Evaporation", "Respiration"], correct: 1, explanation: "The correct answer is Metamorphosis. Metamorphosis is the process where a caterpillar becomes a butterfly."},
-            {category: "Science", level: 3, question: "What do we call the spinning of Earth?", answers: ["Orbit", "Rotation", "Revolution", "Tilt"], correct: 1, explanation: "The correct answer is Rotation. Earth’s rotation on its axis causes day and night."},
-            {category: "Science", level: 3, question: "What gas do plants take in to make food?", answers: ["Oxygen", "Carbon dioxide", "Nitrogen", "Helium"], correct: 1, explanation: "The correct answer is Carbon dioxide. Plants use carbon dioxide and sunlight to make food."},
-            {category: "Science", level: 3, question: "What do we call animals with six legs?", answers: ["Mammals", "Reptiles", "Insects", "Amphibians"], correct: 2, explanation: "The correct answer is Insects. Insects are animals with six legs, like ants and beetles."},
-            {category: "Science", level: 3, question: "What is a fossil?", answers: ["A living animal", "A type of rock", "Remains of ancient life", "A plant seed"], correct: 2, explanation: "The correct answer is Remains of ancient life. Fossils are preserved remains of ancient plants or animals."},
-            {category: "Science", level: 3, question: "What causes day and night?", answers: ["Earth’s orbit", "Earth’s rotation", "Moon’s orbit", "Sun’s movement"], correct: 1, explanation: "The correct answer is Earth’s rotation. Earth’s rotation on its axis causes day and night."},
-            {category: "Science", level: 3, question: "What is the name of the force that slows things down?", answers: ["Gravity", "Friction", "Magnetism", "Energy"], correct: 1, explanation: "The correct answer is Friction. Friction is the force that slows objects when they rub against each other."},
-            {category: "Science", level: 3, question: "What is the largest planet in our solar system?", answers: ["Earth", "Mars", "Jupiter", "Venus"], correct: 2, explanation: "The correct answer is Jupiter. Jupiter is the largest planet in our solar system."},
-            {category: "Science", level: 3, question: "What do we call the water cycle’s process of water turning into vapor?", answers: ["Condensation", "Evaporation", "Precipitation", "Collection"], correct: 1, explanation: "The correct answer is Evaporation. Evaporation is when water turns into vapor and rises into the air."},
-            {category: "Science", level: 3, question: "What is the name of a scientist who studies stars?", answers: ["Geologist", "Biologist", "Astronomer", "Chemist"], correct: 2, explanation: "The correct answer is Astronomer. An astronomer studies stars, planets, and space."},
-            {category: "Science", level: 3, question: "What do plants give off during photosynthesis?", answers: ["Carbon dioxide", "Oxygen", "Nitrogen", "Water"], correct: 1, explanation: "The correct answer is Oxygen. Plants release oxygen during photosynthesis."},
-            {category: "Science", level: 3, question: "What is a habitat?", answers: ["A type of plant", "Where an animal lives", "A kind of rock", "A weather pattern"], correct: 1, explanation: "The correct answer is Where an animal lives. A habitat is the place where an animal naturally lives."},
-            // Science - Level 4 (4th Grade)
-            {category: "Science", level: 4, question: "What gas do humans breathe to live?", answers: ["Carbon dioxide", "Oxygen", "Nitrogen", "Helium"], correct: 1, explanation: "The correct answer is Oxygen. Humans breathe oxygen to stay alive."},
-            {category: "Science", level: 4, question: "What is the name of the closest planet to the Sun?", answers: ["Venus", "Mercury", "Earth", "Mars"], correct: 1, explanation: "The correct answer is Mercury. Mercury is the closest planet to the Sun."},
-            {category: "Science", level: 4, question: "What do we call rocks formed from cooled lava?", answers: ["Sedimentary", "Igneous", "Metamorphic", "Fossil"], correct: 1, explanation: "The correct answer is Igneous. Igneous rocks form when lava or magma cools and hardens."},
-            {category: "Science", level: 4, question: "What is the process of water droplets forming in clouds?", answers: ["Evaporation", "Condensation", "Precipitation", "Transpiration"], correct: 1, explanation: "The correct answer is Condensation. Condensation is when water vapor turns into liquid droplets in clouds."},
-            {category: "Science", level: 4, question: "What do we call animals that are active at night?", answers: ["Diurnal", "Nocturnal", "Herbivorous", "Carnivorous"], correct: 1, explanation: "The correct answer is Nocturnal. Nocturnal animals are active at night, like owls."},
-            {category: "Science", level: 4, question: "What is the main source of energy for Earth’s climate?", answers: ["Wind", "Sun", "Ocean", "Volcanoes"], correct: 1, explanation: "The correct answer is Sun. The Sun’s energy drives Earth’s climate and weather."},
-            {category: "Science", level: 4, question: "What is the name of the outer layer of Earth?", answers: ["Core", "Mantle", "Crust", "Atmosphere"], correct: 2, explanation: "The correct answer is Crust. The crust is Earth’s thin, solid outer layer."},
-            {category: "Science", level: 4, question: "What do we call the path of an object around a star or planet?", answers: ["Rotation", "Orbit", "Tilt", "Axis"], correct: 1, explanation: "The correct answer is Orbit. An orbit is the path an object takes around a star or planet."},
-            {category: "Science", level: 4, question: "What is a magnet?", answers: ["A type of rock", "An object that attracts metals", "A kind of plant", "A weather tool"], correct: 1, explanation: "The correct answer is An object that attracts metals. A magnet attracts certain metals like iron."},
-            {category: "Science", level: 4, question: "What do we call the process of rocks breaking down?", answers: ["Weathering", "Erosion", "Deposition", "Compaction"], correct: 0, explanation: "The correct answer is Weathering. Weathering is the process of rocks breaking down into smaller pieces."},
-            {category: "Science", level: 4, question: "What is the name of the closest galaxy to ours?", answers: ["Andromeda", "Milky Way", "Sombrero", "Whirlpool"], correct: 0, explanation: "The correct answer is Andromeda. The Andromeda Galaxy is the closest to our Milky Way."},
-            {category: "Science", level: 4, question: "What do we call animals that lay eggs?", answers: ["Mammals", "Reptiles", "Oviparous", "Viviparous"], correct: 2, explanation: "The correct answer is Oviparous. Oviparous animals lay eggs, like birds and reptiles."},
-            {category: "Science", level: 4, question: "What is the boiling point of water in Celsius?", answers: ["0°C", "100°C", "50°C", "200°C"], correct: 1, explanation: "The correct answer is 100°C. Water boils and turns into steam at 100°C."},
-            {category: "Science", level: 4, question: "What do we call the movement of water from plants to the air?", answers: ["Evaporation", "Condensation", "Transpiration", "Precipitation"], correct: 2, explanation: "The correct answer is Transpiration. Transpiration is when plants release water vapor into the air."},
-            {category: "Science", level: 4, question: "What is the name of a scientist who studies weather?", answers: ["Geologist", "Meteorologist", "Biologist", "Astronomer"], correct: 1, explanation: "The correct answer is Meteorologist. A meteorologist studies weather and climate."},
-            {category: "Science", level: 4, question: "What is the basic unit of life?", answers: ["Atom", "Cell", "Molecule", "Organ"], correct: 1, explanation: "The correct answer is Cell. Cells are the basic building blocks of all living things."},
-            {category: "Science", level: 4, question: "What do we call a group of similar living things?", answers: ["Species", "Habitat", "Ecosystem", "Community"], correct: 0, explanation: "The correct answer is Species. A species is a group of similar living things that can reproduce."},
-            {category: "Science", level: 4, question: "What is the name of the gas layer around Earth?", answers: ["Hydrosphere", "Atmosphere", "Lithosphere", "Biosphere"], correct: 1, explanation: "The correct answer is Atmosphere. The atmosphere is the layer of gases around Earth."},
-            {category: "Science", level: 4, question: "What do we call the process of water returning to the ground?", answers: ["Evaporation", "Condensation", "Precipitation", "Transpiration"], correct: 2, explanation: "The correct answer is Precipitation. Precipitation is when water falls to the ground as rain, snow, or hail."},
-            {category: "Science", level: 4, question: "What is the name of the tool used to measure wind speed?", answers: ["Thermometer", "Anemometer", "Barometer", "Hygrometer"], correct: 1, explanation: "The correct answer is Anemometer. An anemometer measures how fast the wind is blowing."},
-            // Science - Level 5 (5th Grade)
-            {category: "Science", level: 5, question: "What is the process by which plants make food?", answers: ["Respiration", "Photosynthesis", "Digestion", "Evaporation"], correct: 1, explanation: "The correct answer is Photosynthesis. Plants use photosynthesis to make food from sunlight, water, and carbon dioxide."},
-            {category: "Science", level: 5, question: "What is the name of the force between electric charges?", answers: ["Gravity", "Magnetism", "Electricity", "Friction"], correct: 2, explanation: "The correct answer is Electricity. Electric charges create a force called electricity."},
-            {category: "Science", level: 5, question: "What do we call a community of living and non-living things?", answers: ["Habitat", "Ecosystem", "Population", "Species"], correct: 1, explanation: "The correct answer is Ecosystem. An ecosystem includes living things and their environment working together."},
-            {category: "Science", level: 5, question: "What is the primary source of energy for Earth's climate system?", answers: ["Wind", "Sun", "Ocean currents", "Volcanoes"], correct: 1, explanation: "The correct answer is Sun. The Sun’s energy drives Earth’s climate and weather systems."},
-            {category: "Science", level: 5, question: "What do we call rocks formed under heat and pressure?", answers: ["Igneous", "Sedimentary", "Metamorphic", "Fossil"], correct: 2, explanation: "The correct answer is Metamorphic. Metamorphic rocks form when rocks are changed by heat and pressure."},
-            {category: "Science", level: 5, question: "What is the name of the center of an atom?", answers: ["Nucleus", "Electron", "Proton", "Neutron"], correct: 0, explanation: "The correct answer is Nucleus. The nucleus is the center of an atom, containing protons and neutrons."},
-            {category: "Science", level: 5, question: "What do we call the process of a liquid turning into a gas?", answers: ["Condensation", "Evaporation", "Precipitation", "Sublimation"], correct: 1, explanation: "The correct answer is Evaporation. Evaporation is when a liquid, like water, turns into a gas."},
-            {category: "Science", level: 5, question: "What is the name of the closest planet to Earth?", answers: ["Mars", "Venus", "Mercury", "Jupiter"], correct: 1, explanation: "The correct answer is Venus. Venus is the closest planet to Earth."},
-            {category: "Science", level: 5, question: "What do we call a substance made of one type of atom?", answers: ["Compound", "Element", "Mixture", "Solution"], correct: 1, explanation: "The correct answer is Element. An element is a substance made of only one type of atom."},
-            {category: "Science", level: 5, question: "What is the name of the scientist who studies living things?", answers: ["Geologist", "Astronomer", "Biologist", "Chemist"], correct: 2, explanation: "The correct answer is Biologist. A biologist studies living things like plants and animals."},
-            {category: "Science", level: 5, question: "What do we call the movement of energy from one place to another?", answers: ["Heat", "Work", "Force", "Motion"], correct: 0, explanation: "The correct answer is Heat. Heat is the movement of energy from a warmer object to a cooler one."},
-            {category: "Science", level: 5, question: "What is the name of the process where rocks are moved by water or wind?", answers: ["Weathering", "Erosion", "Deposition", "Compaction"], correct: 1, explanation: "The correct answer is Erosion. Erosion is when rocks and soil are moved by water or wind."},
-            {category: "Science", level: 5, question: "What is the name of the gas that makes up most of Earth’s atmosphere?", answers: ["Oxygen", "Nitrogen", "Carbon dioxide", "Helium"], correct: 1, explanation: "The correct answer is Nitrogen. Nitrogen makes up about 78% of Earth’s atmosphere."},
-            {category: "Science", level: 5, question: "What do we call animals that are hunted by other animals?", answers: ["Predators", "Prey", "Herbivores", "Omnivores"], correct: 1, explanation: "The correct answer is Prey. Prey are animals that are hunted and eaten by other animals."},
-            {category: "Science", level: 5, question: "What is the name of the tool used to measure air pressure?", answers: ["Thermometer", "Anemometer", "Barometer", "Hygrometer"], correct: 2, explanation: "The correct answer is Barometer. A barometer measures the air pressure in the atmosphere."},
-            {category: "Science", level: 5, question: "What do we call the path of energy from producers to consumers?", answers: ["Food chain", "Ecosystem", "Habitat", "Community"], correct: 0, explanation: "The correct answer is Food chain. A food chain shows how energy passes from producers to consumers."},
-            {category: "Science", level: 5, question: "What is the freezing point of water in Celsius?", answers: ["0°C", "100°C", "50°C", "200°C"], correct: 0, explanation: "The correct answer is 0°C. Water freezes into ice at 0°C."},
-            {category: "Science", level: 5, question: "What do we call the process of a gas turning into a liquid?", answers: ["Evaporation", "Condensation", "Sublimation", "Precipitation"], correct: 1, explanation: "The correct answer is Condensation. Condensation is when a gas, like water vapor, turns into a liquid."},
-            {category: "Science", level: 5, question: "What is the name of the scientist who studies chemicals?", answers: ["Biologist", "Geologist", "Chemist", "Astronomer"], correct: 2, explanation: "The correct answer is Chemist. A chemist studies chemicals and how they interact."},
-            {category: "Science", level: 5, question: "What do we call the tilt of Earth that causes seasons?", answers: ["Orbit", "Rotation", "Axis", "Revolution"], correct: 2, explanation: "The correct answer is Axis. Earth’s tilted axis causes the seasons as it orbits the Sun."},
-            // Social Studies
-            {category: "Social Studies", level: 1, question: "What is the name of your country?", answers: ["Canada", "United States", "Mexico", "Brazil"], correct: 1, explanation: "The correct answer is United States. This is the country where you live."},
-            {category: "Social Studies", level: 2, question: "What is a map used for?", answers: ["Cooking", "Finding places", "Reading books", "Playing games"], correct: 1, explanation: "The correct answer is Finding places. A map shows locations and helps you navigate."},
-            {category: "Social Studies", level: 3, question: "Which continent is the United States on?", answers: ["Africa", "Asia", "North America", "Australia"], correct: 2, explanation: "The correct answer is North America. The United States is located on the continent of North America."},
-            {category: "Social Studies", level: 4, question: "What is the capital of the United States?", answers: ["Florida", "New York", "Washington, D.C.", "Texas"], correct: 2, explanation: "The correct answer is Washington, D.C. Washington, D.C. is the capital city of the United States."},
-            {category: "Social Studies", level: 5, question: "Which river is the longest in North America?", answers: ["Amazon River", "Mississippi River", "Nile River", "Yangtze River"], correct: 1, explanation: "The correct answer is Mississippi River. The Mississippi River is the longest river in North America."},
-            // English
-            {category: "English", level: 1, question: "What is a word that names a person, place, or thing?", answers: ["Verb", "Adjective", "Noun", "Adverb"], correct: 2, explanation: "The correct answer is Noun. A noun is a word that names a person, place, or thing, like 'dog' or 'school'."},
-            {category: "English", level: 2, question: "What do you call a word that describes an action?", answers: ["Noun", "Verb", "Adjective", "Pronoun"], correct: 1, explanation: "The correct answer is Verb. A verb describes an action, like 'run' or 'jump'."},
-            {category: "English", level: 3, question: "What punctuation mark ends a sentence?", answers: ["Comma", "Period", "Question mark", "Exclamation point"], correct: 1, explanation: "The correct answer is Period. A period is used to end a complete sentence."},
-            {category: "English", level: 4, question: "What is the main character in a story called?", answers: ["Antagonist", "Protagonist", "Narrator", "Foil"], correct: 1, explanation: "The correct answer is Protagonist. The protagonist is the main character in a story."},
-            {category: "English", level: 5, question: "What is a group of words that expresses a complete thought?", answers: ["Phrase", "Clause", "Sentence", "Paragraph"], correct: 2, explanation: "The correct answer is Sentence. A sentence expresses a complete thought with a subject and verb."},
-            // Harry Potter
-            {category: "Harry Potter", level: 1, question: "What is the name of Harry Potter's school?", answers: ["Hogwarts", "Beauxbatons", "Durmstrang", "Ilvermorny"], correct: 0, explanation: "The correct answer is Hogwarts. Hogwarts is the magical school where Harry Potter studies."},
-            {category: "Harry Potter", level: 2, question: "What animal is Harry's pet?", answers: ["Cat", "Owl", "Dog", "Rat"], correct: 1, explanation: "The correct answer is Owl. Harry’s pet is an owl named Hedwig."},
-            {category: "Harry Potter", level: 3, question: "Who is Harry's best friend?", answers: ["Draco Malfoy", "Ron Weasley", "Severus Snape", "Neville Longbottom"], correct: 1, explanation: "The correct answer is Ron Weasley. Ron Weasley is Harry Potter’s best friend at Hogwarts."},
-            {category: "Harry Potter", level: 4, question: "What is the spell to light a wand?", answers: ["Expelliarmus", "Lumos", "Accio", "Expecto Patronum"], correct: 1, explanation: "The correct answer is Lumos. Lumos is the spell that lights up a wand’s tip."},
-            {category: "Harry Potter", level: 5, question: "What object sorts students into Hogwarts houses?", answers: ["Wand", "Cloak", "Sorting Hat", "Broom"], correct: 2, explanation: "The correct answer is Sorting Hat. The Sorting Hat places students into Hogwarts houses."}
-        ];
-
         // Game state
+        var questions = [];
         var score = 0;
         var questionCount = 0;
         var currentQuestion = null;
         var currentUser = '';
         var currentCategory = 'Science';
+        var currentSubcategory = 'All';
         var currentLevel = '1';
         var usedQuestions = [];
         var settings = JSON.parse(localStorage.getItem('triviaSettings') || '{}');
@@ -372,6 +255,7 @@
         var loginButton = document.getElementById('login-button');
         var selectionScreen = document.getElementById('selection-screen');
         var categorySelect = document.getElementById('category');
+        var subcategorySelect = document.getElementById('subcategory');
         var levelSelect = document.getElementById('level');
         var correctDurationInput = document.getElementById('correct-duration');
         var incorrectDurationInput = document.getElementById('incorrect-duration');
@@ -381,6 +265,7 @@
         var userLevelText = document.getElementById('user-level');
         var userXPText = document.getElementById('user-xp');
         var categoryXPText = document.getElementById('category-xp');
+        var subcategoryXPText = document.getElementById('subcategory-xp');
         var xpBarFill = document.getElementById('xp-bar-fill');
         var highScoresTableBody = document.getElementById('high-scores-body');
         var scoreText = document.getElementById('score');
@@ -393,12 +278,32 @@
         var scoreMessageText = document.getElementById('score-message');
         var playAgainButton = document.getElementById('play-again');
 
-        // Initialize high scores, user XP, and category XP
+        // Initialize data
         var highScores = JSON.parse(localStorage.getItem('triviaHighScores') || '{}');
         var userXP = JSON.parse(localStorage.getItem('triviaUserXP') || '{}');
         var categoryXP = JSON.parse(localStorage.getItem('triviaCategoryXP') || '{}');
 
-        // Fisher-Yates shuffle algorithm
+        // Load questions from external JSON file
+        fetch('./questions.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to load questions.json');
+                }
+                return response.json();
+            })
+            .then(data => {
+                questions = data;
+                startGameButton.disabled = false;
+                startGameButton.textContent = 'Start Game';
+                console.log('Questions loaded:', questions.length);
+            })
+            .catch(error => {
+                console.error('Error loading questions:', error);
+                alert('Failed to load questions. Please check if questions.json exists.');
+                startGameButton.textContent = 'Failed to Load Questions';
+            });
+
+        // Shuffle array
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -409,56 +314,69 @@
 
         // Calculate user level and XP progress
         function getUserLevel(xp) {
-            return Math.floor(xp / 100) + 1; // Level 1: 0-99 XP, Level 2: 100-199 XP, etc.
+            return Math.floor(xp / 100) + 1;
         }
         function getXPProgress(xp) {
             var level = getUserLevel(xp);
             var currentLevelXP = (level - 1) * 100;
             var nextLevelXP = level * 100;
             var progress = ((xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100;
-            return { level: level, progress: progress, currentXP: xp, nextLevelXP: nextLevelXP };
+            return { level, progress, currentXP: xp, nextLevelXP };
+        }
+
+        // Update subcategory dropdown visibility
+        function updateSubcategoryDropdown() {
+            subcategorySelect.style.display = currentCategory === 'Science' ? 'block' : 'none';
+            if (currentCategory !== 'Science') {
+                currentSubcategory = null;
+                subcategoryXPText.style.display = 'none';
+            } else {
+                currentSubcategory = subcategorySelect.value;
+                subcategoryXPText.style.display = currentSubcategory !== 'All' ? 'block' : 'none';
+            }
         }
 
         // Update level dropdown based on category XP
         function updateLevelDropdown() {
             var levels = [1, 2, 3, 4, 5];
             var categoryXPAmt = (categoryXP[currentUser] && categoryXP[currentUser][currentCategory]) || {};
-            // Calculate total category XP
             var totalCategoryXP = 0;
-            for (var lvl in categoryXPAmt) {
-                totalCategoryXP += categoryXPAmt[lvl] || 0;
+            if (currentCategory === 'Science') {
+                var subcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
+                subcategories.forEach(subcat => {
+                    if (categoryXPAmt[subcat]) {
+                        for (var lvl in categoryXPAmt[subcat]) {
+                            totalCategoryXP += categoryXPAmt[subcat][lvl] || 0;
+                        }
+                    }
+                });
+                // Include XP from 'All' (stored directly under Science for specific levels)
+                for (var lvl in categoryXPAmt) {
+                    if (!isNaN(lvl)) {
+                        totalCategoryXP += categoryXPAmt[lvl] || 0;
+                    }
+                }
+            } else {
+                for (var lvl in categoryXPAmt) {
+                    totalCategoryXP += categoryXPAmt[lvl] || 0;
+                }
             }
-            console.log('Updating level dropdown, Category:', currentCategory, 'Total XP:', totalCategoryXP, 'Level XP:', categoryXPAmt); // Debug log
-
-            // Define XP requirements for each level based on total category XP
-            var xpRequirements = {
-                1: 0,    // Level 1 always unlocked
-                2: 100,  // Level 2 requires 100 total XP
-                3: 300,  // Level 3 requires 300 total XP (100 + 200)
-                4: 600,  // Level 4 requires 600 total XP (100 + 200 + 300)
-                5: 1000  // Level 5 requires 1000 total XP (100 + 200 + 300 + 400)
-            };
-
-            // Determine the highest unlocked level
+            var xpRequirements = { 1: 0, 2: 100, 3: 300, 4: 600, 5: 1000 };
             var unlockedLevel = 1;
             if (totalCategoryXP >= 100) unlockedLevel = 2;
             if (totalCategoryXP >= 300) unlockedLevel = 3;
             if (totalCategoryXP >= 600) unlockedLevel = 4;
             if (totalCategoryXP >= 1000) unlockedLevel = 5;
 
-            console.log('Unlocked Level:', unlockedLevel); // Debug log
-
             levelSelect.innerHTML = '';
             levels.forEach(level => {
                 var option = document.createElement('option');
                 option.value = level;
-                option.textContent = `Level ${level} (${level}st Grade)`;
-                if (level > unlockedLevel) {
-                    option.disabled = true;
-                }
+                option.textContent = `Level ${level} (${level}th Grade)`;
+                if (level > unlockedLevel) option.disabled = true;
                 levelSelect.appendChild(option);
             });
-            levelSelect.value = Math.min(currentLevel, unlockedLevel); // Set to highest unlocked level or current
+            levelSelect.value = Math.min(currentLevel, unlockedLevel);
         }
 
         // Update user stats display
@@ -467,50 +385,98 @@
             var { level, progress, currentXP, nextLevelXP } = getXPProgress(xp);
             userLevelText.textContent = 'Level: ' + level;
             userXPText.textContent = 'XP: ' + currentXP + ' / ' + nextLevelXP;
-            // Calculate total XP for the current category across all levels
             var categoryXPAmt = (categoryXP[currentUser] && categoryXP[currentUser][currentCategory]) || {};
             var totalCategoryXP = 0;
-            for (var lvl in categoryXPAmt) {
-                totalCategoryXP += categoryXPAmt[lvl] || 0;
+            if (currentCategory === 'Science') {
+                var subcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
+                subcategories.forEach(subcat => {
+                    if (categoryXPAmt[subcat]) {
+                        for (var lvl in categoryXPAmt[subcat]) {
+                            totalCategoryXP += categoryXPAmt[subcat][lvl] || 0;
+                        }
+                    }
+                });
+                // Include XP from 'All' (stored directly under Science for specific levels)
+                for (var lvl in categoryXPAmt) {
+                    if (!isNaN(lvl)) {
+                        totalCategoryXP += categoryXPAmt[lvl] || 0;
+                    }
+                }
+            } else {
+                for (var lvl in categoryXPAmt) {
+                    totalCategoryXP += categoryXPAmt[lvl] || 0;
+                }
             }
             categoryXPText.textContent = `Category XP (${currentCategory}): ` + totalCategoryXP;
+
+            var totalSubcategoryXP = 0;
+            if (currentCategory === 'Science' && currentSubcategory !== 'All') {
+                var subcategoryXPAmt = (categoryXPAmt[currentSubcategory]) || {};
+                for (var lvl in subcategoryXPAmt) {
+                    totalSubcategoryXP += subcategoryXPAmt[lvl] || 0;
+                }
+                subcategoryXPText.textContent = `Subcategory XP (${currentSubcategory}): ` + totalSubcategoryXP;
+                subcategoryXPText.style.display = 'block';
+            } else {
+                subcategoryXPText.style.display = 'none';
+            }
+
             xpBarFill.style.width = progress + '%';
 
-            // Update high scores table
             highScoresTableBody.innerHTML = '';
             if (!highScores[currentUser]) {
-                highScoresTableBody.innerHTML = '<tr><td colspan="3">No scores yet!</td></tr>';
+                highScoresTableBody.innerHTML = '<tr><td colspan="4">No scores yet!</td></tr>';
                 return;
             }
             var categories = ['Science', 'Social Studies', 'English', 'Harry Potter'];
+            var scienceSubcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
             var levels = [1, 2, 3, 4, 5];
             categories.forEach(category => {
-                levels.forEach(level => {
-                    var score = (highScores[currentUser][category] && highScores[currentUser][category][level]) || 0;
-                    if (score > 0) {
-                        var row = document.createElement('tr');
-                        row.innerHTML = `<td>${category}</td><td>${level}</td><td>${score}</td>`;
-                        highScoresTableBody.appendChild(row);
-                    }
-                });
+                if (category === 'Science') {
+                    scienceSubcategories.forEach(subcat => {
+                        levels.forEach(level => {
+                            var score = (highScores[currentUser][category] && highScores[currentUser][category][subcat] && highScores[currentUser][category][subcat][level]) || 0;
+                            if (score > 0) {
+                                var row = document.createElement('tr');
+                                row.innerHTML = `<td>${category}</td><td>${subcat}</td><td>${level}</td><td>${score}</td>`;
+                                highScoresTableBody.appendChild(row);
+                            }
+                        });
+                    });
+                    // Include high scores for 'All' (stored directly under Science for specific levels)
+                    levels.forEach(level => {
+                        var score = (highScores[currentUser][category] && highScores[currentUser][category][level]) || 0;
+                        if (score > 0) {
+                            var row = document.createElement('tr');
+                            row.innerHTML = `<td>${category}</td><td>All</td><td>${level}</td><td>${score}</td>`;
+                            highScoresTableBody.appendChild(row);
+                        }
+                    });
+                } else {
+                    levels.forEach(level => {
+                        var score = (highScores[currentUser][category] && highScores[currentUser][category][level]) || 0;
+                        if (score > 0) {
+                            var row = document.createElement('tr');
+                            row.innerHTML = `<td>${category}</td><td>-</td><td>${level}</td><td>${score}</td>`;
+                            highScoresTableBody.appendChild(row);
+                        }
+                    });
+                }
             });
             if (highScoresTableBody.innerHTML === '') {
-                highScoresTableBody.innerHTML = '<tr><td colspan="3">No scores yet!</td></tr>';
+                highScoresTableBody.innerHTML = '<tr><td colspan="4">No scores yet!</td></tr>';
             }
         }
 
         // Handle login
         loginButton.onclick = function () {
-            console.log('Login clicked'); // Debug log
             var username = usernameInput.value.trim();
             if (username === '') {
                 alert('Please enter a username!');
                 return;
             }
             currentUser = username;
-            if (!categoryXP[currentUser]) {
-                categoryXP[currentUser] = {};
-            }
+            if (!categoryXP[currentUser]) categoryXP[currentUser] = {};
             if (!settings[currentUser]) {
                 settings[currentUser] = { correctDuration: 1, incorrectDuration: 1 };
                 localStorage.setItem('triviaSettings', JSON.stringify(settings));
@@ -519,15 +485,13 @@
             incorrectDurationInput.value = settings[currentUser].incorrectDuration;
             loginScreen.style.display = 'none';
             selectionScreen.style.display = 'flex';
+            updateSubcategoryDropdown();
             updateLevelDropdown();
             updateUserStats();
-            // Debug log to verify XP on login
-            console.log('User XP on login:', userXP[currentUser] || 0, 'Category XP:', categoryXP[currentUser] || {});
         };
 
         // Handle logout
         logoutButton.onclick = function () {
-            console.log('Logout clicked'); // Debug log
             currentUser = '';
             usernameInput.value = '';
             selectionScreen.style.display = 'none';
@@ -536,8 +500,7 @@
 
         // Handle reset stats
         resetStatsButton.onclick = function () {
-            console.log('Reset Stats clicked'); // Debug log
-            if (confirm('Are you sure you want to reset your XP, high scores, and settings? This cannot be undone!')) {
+            if (confirm('Are you sure you want to reset your XP, high scores, and settings?')) {
                 delete userXP[currentUser];
                 delete highScores[currentUser];
                 delete categoryXP[currentUser];
@@ -553,18 +516,23 @@
             }
         };
 
-        // Handle category and level selection
+        // Handle category and subcategory selection
         categorySelect.addEventListener('change', function () {
             currentCategory = categorySelect.value;
+            updateSubcategoryDropdown();
             updateLevelDropdown();
+            updateUserStats();
+        });
+        subcategorySelect.addEventListener('change', function () {
+            currentSubcategory = subcategorySelect.value;
             updateUserStats();
         });
         levelSelect.addEventListener('change', function () {
             currentLevel = levelSelect.value;
-            updateUserStats(); // Update category XP display for the selected category
+            updateUserStats();
         });
 
-        // Save settings on input change
+        // Save settings
         function saveSettings() {
             var correctDuration = parseFloat(correctDurationInput.value);
             var incorrectDuration = parseFloat(incorrectDurationInput.value);
@@ -581,7 +549,6 @@
             settings[currentUser].correctDuration = correctDuration;
             settings[currentUser].incorrectDuration = incorrectDuration;
             localStorage.setItem('triviaSettings', JSON.stringify(settings));
-            console.log('Settings saved:', settings[currentUser]); // Debug log
             return true;
         }
 
@@ -590,17 +557,17 @@
 
         // Start the game
         startGameButton.onclick = function () {
-            console.log('Start Game clicked'); // Debug log
-            if (!saveSettings()) {
+            if (!saveSettings()) return;
+            if (questions.length === 0) {
+                alert('Questions are still loading or failed to load. Please try again.');
                 return;
             }
-            usedQuestions = []; // Reset used questions for new session
+            usedQuestions = [];
             score = 0;
             questionCount = 0;
             loginScreen.style.display = 'none';
             selectionScreen.style.display = 'none';
             document.getElementById('ui').style.display = 'flex';
-            // Reset question UI elements
             scoreText.style.display = 'block';
             questionText.style.display = 'block';
             answersDiv.style.display = 'block';
@@ -611,44 +578,41 @@
 
         // Load a new question
         function loadQuestion() {
-            console.log('Loading question, count:', questionCount); // Debug log
             feedbackText.textContent = '';
             feedbackText.style.color = 'white';
             answersDiv.innerHTML = '';
 
-            // Filter questions by category and level, excluding used questions
             var availableQuestions = questions
                 .map((q, index) => ({ question: q, index: index }))
-                .filter(q => q.question.category === currentCategory && q.question.level === parseInt(currentLevel) && !usedQuestions.includes(q.index));
+                .filter(q => 
+                    q.question.category === currentCategory &&
+                    (currentCategory !== 'Science' || currentSubcategory === 'All' || q.question.subcategory === currentSubcategory) &&
+                    q.question.level === parseInt(currentLevel) &&
+                    !usedQuestions.includes(q.index)
+                );
 
             if (availableQuestions.length === 0) {
-                console.log('No more questions available'); // Debug log
                 if (questionCount === 0) {
-                    alert('No questions available for this category and level!');
+                    alert('No questions available for this category, subcategory, and level!');
                     loginScreen.style.display = 'flex';
                     document.getElementById('ui').style.display = 'none';
                     return;
                 } else {
-                    alert('No more unique questions available for this category and level!');
                     showGameOver();
                     return;
                 }
             }
 
-            // Select a random question and track its index
             var selected = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
             currentQuestion = selected.question;
             usedQuestions.push(selected.index);
 
-            // Shuffle answers
             var answersWithIndices = currentQuestion.answers.map((answer, index) => ({ answer, index }));
             shuffle(answersWithIndices);
             var shuffledAnswers = answersWithIndices.map(item => item.answer);
             var newCorrectIndex = answersWithIndices.findIndex(item => item.index === currentQuestion.correct);
 
             questionText.textContent = currentQuestion.question;
-            console.log('Question:', currentQuestion.question, 'Answers:', shuffledAnswers, 'Correct index:', newCorrectIndex); // Debug log
-
             shuffledAnswers.forEach((answer, index) => {
                 var button = document.createElement('button');
                 button.textContent = answer;
@@ -661,23 +625,26 @@
         // Check the answer
         function checkAnswer(index, correctIndex) {
             questionCount++;
-            console.log('Answer selected:', index, 'Correct index:', correctIndex); // Debug log
             var levelNum = parseInt(currentLevel);
             var xpEarned = (index === correctIndex) ? 5 * levelNum : 1 * levelNum;
             userXP[currentUser] = (userXP[currentUser] || 0) + xpEarned;
-            if (!categoryXP[currentUser]) {
-                categoryXP[currentUser] = {};
+            if (!categoryXP[currentUser]) categoryXP[currentUser] = {};
+            if (!categoryXP[currentUser][currentCategory]) categoryXP[currentUser][currentCategory] = {};
+
+            // Always update total category XP for the current level
+            categoryXP[currentUser][currentCategory][currentLevel] = (categoryXP[currentUser][currentCategory][currentLevel] || 0) + xpEarned;
+
+            // Update subcategory XP for Science if a specific subcategory is selected
+            if (currentCategory === 'Science' && currentSubcategory !== 'All') {
+                if (!categoryXP[currentUser][currentCategory][currentSubcategory]) {
+                    categoryXP[currentUser][currentCategory][currentSubcategory] = {};
+                }
+                categoryXP[currentUser][currentCategory][currentSubcategory][currentLevel] = 
+                    (categoryXP[currentUser][currentCategory][currentSubcategory][currentLevel] || 0) + xpEarned;
             }
-            if (!categoryXP[currentUser][currentCategory]) {
-                categoryXP[currentUser][currentCategory] = {};
-            }
-            if (!categoryXP[currentUser][currentCategory][currentLevel]) {
-                categoryXP[currentUser][currentCategory][currentLevel] = 0;
-            }
-            categoryXP[currentUser][currentCategory][currentLevel] += xpEarned;
+
             localStorage.setItem('triviaUserXP', JSON.stringify(userXP));
             localStorage.setItem('triviaCategoryXP', JSON.stringify(categoryXP));
-            console.log('XP earned:', xpEarned, 'Total User XP:', userXP[currentUser], 'Category XP (Level ' + currentLevel + '):', categoryXP[currentUser][currentCategory][currentLevel]); // Debug log
 
             var duration = (index === correctIndex) ? settings[currentUser].correctDuration * 1000 : settings[currentUser].incorrectDuration * 1000;
             if (index === correctIndex) {
@@ -690,7 +657,7 @@
                 feedbackText.style.color = 'red';
             }
 
-            if (questionCount >= 10 || (currentCategory !== 'Science' && questionCount >= 5)) {
+            if (questionCount >= (currentCategory === 'Science' ? 10 : 5)) {
                 showGameOver();
             } else {
                 setTimeout(loadQuestion, duration);
@@ -699,48 +666,36 @@
 
         // Show game-over screen
         function showGameOver() {
-            console.log('Showing game over, score:', score); // Debug log
-            // Update high score
-            if (!highScores[currentUser]) {
-                highScores[currentUser] = {};
+            if (!highScores[currentUser]) highScores[currentUser] = {};
+            if (!highScores[currentUser][currentCategory]) highScores[currentUser][currentCategory] = {};
+            var highScore;
+            if (currentCategory === 'Science' && currentSubcategory !== 'All') {
+                if (!highScores[currentUser][currentCategory][currentSubcategory]) highScores[currentUser][currentCategory][currentSubcategory] = {};
+                highScore = highScores[currentUser][currentCategory][currentSubcategory][currentLevel] || 0;
+                if (score > highScore) {
+                    highScores[currentUser][currentCategory][currentSubcategory][currentLevel] = score;
+                    localStorage.setItem('triviaHighScores', JSON.stringify(highScores));
+                }
+            } else {
+                highScore = highScores[currentUser][currentCategory][currentLevel] || 0;
+                if (score > highScore) {
+                    highScores[currentUser][currentCategory][currentLevel] = score;
+                    localStorage.setItem('triviaHighScores', JSON.stringify(highScores));
+                }
             }
-            if (!highScores[currentUser][currentCategory]) {
-                highScores[currentUser][currentCategory] = {};
-            }
-            if (!highScores[currentUser][currentCategory][currentLevel] || score > highScores[currentUser][currentCategory][currentLevel]) {
-                highScores[currentUser][currentCategory][currentLevel] = score;
-                localStorage.setItem('triviaHighScores', JSON.stringify(highScores));
-            }
-
-            questionText.style.display = 'none';
-            answersDiv.style.display = 'none';
-            feedbackText.style.display = 'none';
-            scoreText.style.display = 'none';
+            document.getElementById('ui').style.display = 'none';
             gameOverDiv.style.display = 'flex';
             finalScoreText.textContent = 'Final Score: ' + score;
-            highScoreDisplay.textContent = 'High Score: ' + (highScores[currentUser][currentCategory][currentLevel] || 0);
-            scoreMessageText.textContent = score >= 80 ? 'Great Job, Trivia Star!' :
-                                          score >= 50 ? 'Nice Work, Keep Studying!' :
-                                          'Good Try, Learn More and Play Again!';
+            highScoreDisplay.textContent = 'High Score: ' + highScore;
+            scoreMessageText.textContent = score > highScore ? 'New High Score!' : 'Try to beat your high score!';
+            updateUserStats();
         }
 
-        // Restart the game
+        // Play again
         playAgainButton.onclick = function () {
-            console.log('Play Again clicked'); // Debug log
-            score = 0;
-            questionCount = 0;
-            usedQuestions = []; // Reset used questions for new session
-            scoreText.textContent = 'Score: ' + score;
-            document.getElementById('ui').style.display = 'none';
             gameOverDiv.style.display = 'none';
             selectionScreen.style.display = 'flex';
-            // Ensure selection screen elements are reset
-            categorySelect.value = 'Science';
-            currentCategory = 'Science';
             updateLevelDropdown();
-            categorySelect.disabled = false;
-            levelSelect.disabled = false;
-            startGameButton.disabled = false;
             updateUserStats();
         };
     </script>
