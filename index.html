@@ -87,6 +87,12 @@
             width: 200px;
         }
         .login-screen button { font-size: 20px; padding: 15px 30px; }
+        .login-screen #version {
+            font-size: 16px;
+            position: absolute;
+            bottom: 10px;
+            color: #ccc;
+        }
         .selection-screen {
             position: fixed;
             top: 0;
@@ -172,6 +178,7 @@
         <h2>User Login</h2>
         <input type="text" id="username" placeholder="Enter your username" />
         <button id="login-button" class="button">Login</button>
+        <p id="version">Version 1.1.0</p>
     </div>
     <div class="selection-screen" id="selection-screen" style="display: none;">
         <div class="left-panel">
@@ -237,6 +244,9 @@
         <button id="play-again" class="button">Play Again</button>
     </div>
     <script>
+        // Version number
+        const VERSION = "1.1.0";
+        
         // Game state
         var questions = [];
         var score = 0;
@@ -253,6 +263,7 @@
         var loginScreen = document.getElementById('login-screen');
         var usernameInput = document.getElementById('username');
         var loginButton = document.getElementById('login-button');
+        var versionText = document.getElementById('version');
         var selectionScreen = document.getElementById('selection-screen');
         var categorySelect = document.getElementById('category');
         var subcategorySelect = document.getElementById('subcategory');
@@ -277,6 +288,9 @@
         var highScoreDisplay = document.getElementById('high-score-display');
         var scoreMessageText = document.getElementById('score-message');
         var playAgainButton = document.getElementById('play-again');
+
+        // Set version number
+        versionText.textContent = `Version ${VERSION}`;
 
         // Initialize data
         var highScores = JSON.parse(localStorage.getItem('triviaHighScores') || '{}');
