@@ -1,4 +1,5 @@
 {
+	questions = [
 	{category: "Science", subcategory: "Earth and Space Science", level: 1, question: "What color is the sky on a clear day?", answers: ["Green", "Blue", "Red", "Yellow"], correct: 1, explanation: "The correct answer is Blue. The sky appears blue due to sunlight scattering."},
 	{category: "Science", subcategory: "Life Science", level: 1, question: "What do we call a baby dog?", answers: ["Kitten", "Puppy", "Calf", "Foal"], correct: 1, explanation: "The correct answer is Puppy. A baby dog is called a puppy."},
 	{category: "Science", subcategory: "Physical Science", level: 1, question: "What is water when it is frozen?", answers: ["Steam", "Ice", "Rain", "Snow"], correct: 1, explanation: "The correct answer is Ice. Water becomes ice when frozen at 0°C."},
@@ -22,4 +23,5 @@
 	{category: "English", subcategory: null, level: 2, question: "What do you call a word that describes an action?", answers: ["Noun", "Verb", "Adjective", "Pronoun"], correct: 1, explanation: "The correct answer is Verb. A verb describes an action."},
 	{category: "Harry Potter", subcategory: null, level: 1, question: "What is the name of Harry Potter's school?", answers: ["Hogwarts", "Beauxbatons", "Durmstrang", "Ilvermorny"], correct: 0, explanation: "The correct answer is Hogwarts. Hogwarts is Harry Potter’s school."},
 	{category: "Harry Potter", subcategory: null, level: 2, question: "What animal is Harry's pet?", answers: ["Cat", "Owl", "Dog", "Rat"], correct: 1, explanation: "The correct answer is Owl. Harry’s pet is an owl named Hedwig."}
+	];
 }
