@@ -168,16 +168,23 @@
         .selection-screen input[type="number"] {
             font-size: 20px;
             padding: 10px;
-            margin: 10px;
+            margin: 5px 10px;
             border-radius: 5px;
             border: none;
             width: 200px;
             background: #333;
             color: white;
         }
+        .selection-screen label {
+            font-size: 18px;
+            margin: 5px 10px;
+            text-align: left;
+            width: 200px;
+        }
         .selection-screen button {
             font-size: 20px;
             padding: 15px 30px;
+            margin: 5px 10px;
         }
         .selection-screen h3 {
             font-size: 24px;
@@ -200,6 +207,23 @@
             border-radius: 5px;
             transition: width 0.5s;
         }
+        .category-xp-bar {
+            width: 80%;
+            height: 20px;
+            background: #333;
+            border-radius: 5px;
+            margin: 10px auto;
+        }
+        .category-xp-bar-fill {
+            height: 100%;
+            background: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.5s;
+        }
+        .category-xp-label {
+            font-size: 18px;
+            margin: 5px 0;
+        }
         .subcategory-xp-bar {
             width: 80%;
             height: 20px;
@@ -221,6 +245,7 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 16px;
+            margin: 10px 0;
         }
         .stats-table th, .stats-table td {
             border: 1px solid white;
@@ -234,17 +259,35 @@
         <h2>User Login</h2>
         <input type="text" id="username" placeholder="Enter your username" />
         <button id="login-button" class="button">Login</button>
-        <p id="version">Version 1.1.005</p>
+        <p id="version">Version 1.1.006</p>
     </div>
     <div class="selection-screen" id="selection-screen" style="display: none;">
         <div class="left-panel">
             <h3>User Stats</h3>
             <p id="user-level">Level: 1</p>
             <p id="user-xp">XP: 0 / 100</p>
-            <p id="category-xp">Category XP: 0</p>
+            <p id="category-xp" style="display: none;">Category XP: 0</p>
             <p id="subcategory-xp" style="display: none;">Subcategory XP: 0</p>
             <div class="xp-bar">
                 <div class="xp-bar-fill" id="xp-bar-fill" style="width: 0%;"></div>
+            </div>
+            <div id="category-xp-bars">
+                <p class="category-xp-label" id="science-xp-label">Science XP: 0</p>
+                <div class="category-xp-bar">
+                    <div class="category-xp-bar-fill" id="science-xp-bar-fill" style="width: 0%;"></div>
+                </div>
+                <p class="category-xp-label" id="social-studies-xp-label">Social Studies XP: 0</p>
+                <div class="category-xp-bar">
+                    <div class="category-xp-bar-fill" id="social-studies-xp-bar-fill" style="width: 0%;"></div>
+                </div>
+                <p class="category-xp-label" id="english-xp-label">English XP: 0</p>
+                <div class="category-xp-bar">
+                    <div class="category-xp-bar-fill" id="english-xp-bar-fill" style="width: 0%;"></div>
+                </div>
+                <p class="category-xp-label" id="harry-potter-xp-label">Harry Potter XP: 0</p>
+                <div class="category-xp-bar">
+                    <div class="category-xp-bar-fill" id="harry-potter-xp-bar-fill" style="width: 0%;"></div>
+                </div>
             </div>
             <div id="subcategory-xp-bars" style="display: none;">
                 <p class="subcategory-xp-label" id="life-science-xp-label">Life Science XP: 0</p>
@@ -272,6 +315,12 @@
                 </thead>
                 <tbody id="high-scores-body"></tbody>
             </table>
+            <label for="correct-duration">Correct Answer Delay (seconds):</label>
+            <input type="number" id="correct-duration" min="0.5" max="10" step="0.5" value="1" />
+            <label for="incorrect-duration">Incorrect Answer Delay (seconds):</label>
+            <input type="number" id="incorrect-duration" min="0.5" max="10" step="0.5" value="1" />
+            <button id="logout-button" class="button">Logout</button>
+            <button id="reset-stats-button" class="button">Reset Stats</button>
         </div>
         <div class="right-panel">
             <h2>Select Category and Level</h2>
@@ -294,11 +343,7 @@
                 <option value="4">Level 4 (4th Grade)</option>
                 <option value="5">Level 5 (5th Grade)</option>
             </select>
-            <input type="number" id="correct-duration" min="0.5" max="10" step="0.5" value="1" placeholder="Correct Response Duration (seconds)" />
-            <input type="number" id="incorrect-duration" min="0.5" max="10" step="0.5" value="1" placeholder="Incorrect Response Duration (seconds)" />
             <button id="start-game" class="button" disabled>Loading Questions...</button>
-            <button id="logout-button" class="button">Logout</button>
-            <button id="reset-stats-button" class="button">Reset Stats</button>
         </div>
     </div>
     <div class="ui-overlay" id="ui" style="display: none;">
@@ -315,7 +360,7 @@
     </div>
     <script>
         // Version number
-        const VERSION = "1.1.005";
+        const VERSION = "1.1.006";
         
         // Game state
         var questions = [];
@@ -348,6 +393,15 @@
         var categoryXPText = document.getElementById('category-xp');
         var subcategoryXPText = document.getElementById('subcategory-xp');
         var xpBarFill = document.getElementById('xp-bar-fill');
+        var categoryXPBars = document.getElementById('category-xp-bars');
+        var scienceXPLabel = document.getElementById('science-xp-label');
+        var socialStudiesXPLabel = document.getElementById('social-studies-xp-label');
+        var englishXPLabel = document.getElementById('english-xp-label');
+        var harryPotterXPLabel = document.getElementById('harry-potter-xp-label');
+        var scienceXPBarFill = document.getElementById('science-xp-bar-fill');
+        var socialStudiesXPBarFill = document.getElementById('social-studies-xp-bar-fill');
+        var englishXPBarFill = document.getElementById('english-xp-bar-fill');
+        var harryPotterXPBarFill = document.getElementById('harry-potter-xp-bar-fill');
         var subcategoryXPBars = document.getElementById('subcategory-xp-bars');
         var lifeScienceXPLabel = document.getElementById('life-science-xp-label');
         var physicalScienceXPLabel = document.getElementById('physical-science-xp-label');
@@ -422,9 +476,11 @@
             if (currentCategory !== 'Science') {
                 currentSubcategory = null;
                 subcategoryXPText.style.display = 'none';
+                categoryXPText.style.display = 'block';
             } else {
                 currentSubcategory = subcategorySelect.value;
                 subcategoryXPText.style.display = currentSubcategory !== 'All' ? 'block' : 'none';
+                categoryXPText.style.display = currentSubcategory === 'All' ? 'block' : 'none';
             }
         }
 
@@ -477,6 +533,51 @@
             var { level, progress, currentXP, nextLevelXP } = getXPProgress(xp);
             userLevelText.textContent = 'Level: ' + level;
             userXPText.textContent = 'XP: ' + currentXP + ' / ' + nextLevelXP;
+            xpBarFill.style.width = progress + '%';
+
+            // Update category XP bars
+            var maxXP = 1000; // Max XP for progress bar, matching Level 5 unlock threshold
+            var categories = ['Science', 'Social Studies', 'English', 'Harry Potter'];
+            categories.forEach(cat => {
+                var catXP = 0;
+                var categoryXPAmt = (categoryXP[currentUser] && categoryXP[currentUser][cat]) || {};
+                if (cat === 'Science') {
+                    var subcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
+                    subcategories.forEach(subcat => {
+                        if (categoryXPAmt[subcat]) {
+                            for (var lvl in categoryXPAmt[subcat]) {
+                                catXP += categoryXPAmt[subcat][lvl] || 0;
+                            }
+                        }
+                    });
+                    // Include XP from 'All' (stored directly under Science for specific levels)
+                    for (var lvl in categoryXPAmt) {
+                        if (!isNaN(lvl)) {
+                            catXP += categoryXPAmt[lvl] || 0;
+                        }
+                    }
+                } else {
+                    for (var lvl in categoryXPAmt) {
+                        catXP += categoryXPAmt[lvl] || 0;
+                    }
+                }
+                var catProgress = Math.min((catXP / maxXP) * 100, 100);
+                if (cat === 'Science') {
+                    scienceXPLabel.textContent = `Science XP: ${catXP}`;
+                    scienceXPBarFill.style.width = catProgress + '%';
+                } else if (cat === 'Social Studies') {
+                    socialStudiesXPLabel.textContent = `Social Studies XP: ${catXP}`;
+                    socialStudiesXPBarFill.style.width = catProgress + '%';
+                } else if (cat === 'English') {
+                    englishXPLabel.textContent = `English XP: ${catXP}`;
+                    englishXPBarFill.style.width = catProgress + '%';
+                } else if (cat === 'Harry Potter') {
+                    harryPotterXPLabel.textContent = `Harry Potter XP: ${catXP}`;
+                    harryPotterXPBarFill.style.width = catProgress + '%';
+                }
+            });
+
+            // Update category XP text (only shown when Science is selected with All or non-Science category)
             var categoryXPAmt = (categoryXP[currentUser] && categoryXP[currentUser][currentCategory]) || {};
             var totalCategoryXP = 0;
             if (currentCategory === 'Science') {
@@ -488,7 +589,6 @@
                         }
                     }
                 });
-                // Include XP from 'All' (stored directly under Science for specific levels)
                 for (var lvl in categoryXPAmt) {
                     if (!isNaN(lvl)) {
                         totalCategoryXP += categoryXPAmt[lvl] || 0;
@@ -501,6 +601,7 @@
             }
             categoryXPText.textContent = `Category XP (${currentCategory}): ` + totalCategoryXP;
 
+            // Update subcategory XP text and bars for Science
             var totalSubcategoryXP = 0;
             if (currentCategory === 'Science' && currentSubcategory !== 'All') {
                 var subcategoryXPAmt = (categoryXPAmt[currentSubcategory]) || {};
@@ -513,12 +614,9 @@
                 subcategoryXPText.style.display = 'none';
             }
 
-            xpBarFill.style.width = progress + '%';
-
             // Update subcategory XP bars for Science
             if (currentCategory === 'Science') {
                 var subcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
-                var maxXP = 1000; // Max XP for progress bar, matching Level 5 unlock threshold
                 subcategories.forEach(subcat => {
                     var subcatXP = 0;
                     if (categoryXPAmt[subcat]) {
@@ -540,17 +638,16 @@
                 });
             }
 
+            // Update high scores table
             highScoresTableBody.innerHTML = '';
             if (!highScores[currentUser]) {
                 highScoresTableBody.innerHTML = '<tr><td colspan="4">No scores yet!</td></tr>';
                 return;
             }
-            var categories = ['Science', 'Social Studies', 'English', 'Harry Potter'];
-            var scienceSubcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
-            var levels = [1, 2, 3, 4, 5];
             categories.forEach(category => {
                 if (category === 'Science') {
-                    scienceSubcategories.forEach(subcat => {
+                    var subcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
+                    subcategories.forEach(subcat => {
                         levels.forEach(level => {
                             var score = (highScores[currentUser][category] && highScores[currentUser][category][subcat] && highScores[currentUser][category][subcat][level]) || 0;
                             if (score > 0) {
@@ -654,12 +751,12 @@
             var correctDuration = parseFloat(correctDurationInput.value);
             var incorrectDuration = parseFloat(incorrectDurationInput.value);
             if (isNaN(correctDuration) || correctDuration < 0.5 || correctDuration > 10) {
-                alert('Correct Response Duration must be between 0.5 and 10 seconds.');
+                alert('Correct Answer Delay must be between 0.5 and 10 seconds.');
                 correctDurationInput.value = settings[currentUser].correctDuration;
                 return false;
             }
             if (isNaN(incorrectDuration) || incorrectDuration < 0.5 || incorrectDuration > 10) {
-                alert('Incorrect Response Duration must be between 0.5 and 10 seconds.');
+                alert('Incorrect Answer Delay must be between 0.5 and 10 seconds.');
                 incorrectDurationInput.value = settings[currentUser].incorrectDuration;
                 return false;
             }
