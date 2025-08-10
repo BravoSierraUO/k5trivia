@@ -188,824 +188,2337 @@
         "correct": 1,
         "explanation": "The correct answer is Verb. A verb describes an action."
     },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What animal is Harry's pet?",
-        "answers": ["Cat", "Owl", "Dog", "Rat"],
-        "correct": 1,
-        "explanation": "The correct answer is Owl. Harry’s pet is an owl named Hedwig."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of Harry Potter's best male friend?",
-        "answers": ["Neville Longbottom", "Ron Weasley", "Draco Malfoy", "Fred Weasley"],
-        "correct": 1,
-        "explanation": "The correct answer is Ron Weasley. Ron becomes Harry’s closest friend at Hogwarts."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the magical school Harry attends?",
-        "answers": ["Durmstrang", "Hogwarts", "Beauxbatons", "Ilvermorny"],
-        "correct": 1,
-        "explanation": "The correct answer is Hogwarts. Harry attends Hogwarts School of Witchcraft and Wizardry."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "What type of cake does Hagrid bring Harry for his birthday in the first book?",
-        "answers": ["Chocolate", "Vanilla", "Strawberry", "Treacle tart"],
-        "correct": 0,
-        "explanation": "The correct answer is Chocolate. In the book, Hagrid brings Harry a chocolate cake with green icing."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Which house at Hogwarts values bravery?",
-        "answers": ["Ravenclaw", "Gryffindor", "Slytherin", "Hufflepuff"],
-        "correct": 1,
-        "explanation": "The correct answer is Gryffindor. Gryffindor House is known for courage and bravery."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who is the headmaster of Hogwarts when Harry starts school?",
-        "answers": ["Severus Snape", "Albus Dumbledore", "Minerva McGonagall", "Horace Slughorn"],
-        "correct": 1,
-        "explanation": "The correct answer is Albus Dumbledore. He serves as headmaster for most of Harry’s years."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "What color are Harry's eyes in the films?",
-        "answers": ["Blue", "Green", "Brown", "Hazel"],
-        "correct": 0,
-        "explanation": "The correct answer is Blue. In the books Harry has green eyes, but in the movies they are blue due to the actor’s natural eye color."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What sport does Harry play at Hogwarts?",
-        "answers": ["Gobstones", "Quidditch", "Wizard Chess", "Exploding Snap"],
-        "correct": 1,
-        "explanation": "The correct answer is Quidditch. Harry plays as a Seeker for the Gryffindor team."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the Weasley family's house?",
-        "answers": ["The Shack", "The Burrow", "Shell Cottage", "Grimmauld Place"],
-        "correct": 1,
-        "explanation": "The correct answer is The Burrow. It’s the warm and welcoming home of the Weasley family."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What shape is Harry's scar?",
-        "answers": ["Star", "Lightning bolt", "Circle", "Triangle"],
-        "correct": 1,
-        "explanation": "The correct answer is Lightning bolt. Harry’s scar was caused by Voldemort’s curse."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who delivers Harry's letter to Hogwarts?",
-        "answers": ["Albus Dumbledore", "Hagrid", "Minerva McGonagall", "Ron Weasley"],
-        "correct": 1,
-        "explanation": "The correct answer is Hagrid. Hagrid finds Harry and personally delivers his Hogwarts letter."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of Harry’s cousin?",
-        "answers": ["Dudley", "Vernon", "Petunia", "Malcolm"],
-        "correct": 0,
-        "explanation": "The correct answer is Dudley. Dudley Dursley is Harry’s spoiled cousin."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is Hermione’s last name?",
-        "answers": ["Lovegood", "Granger", "Bones", "Abbott"],
-        "correct": 1,
-        "explanation": "The correct answer is Granger. Hermione Granger is one of Harry’s closest friends."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "In the first book, which flavor of Bertie Bott's Every Flavor Bean does Dumbledore mention he once had?",
-        "answers": ["Toffee", "Earwax", "Grass", "Peppermint"],
-        "correct": 1,
-        "explanation": "The correct answer is Earwax. Dumbledore humorously mentions having an earwax-flavored bean."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What magical platform do students use to board the Hogwarts Express?",
-        "answers": ["Platform 9", "Platform 9 3/4", "Platform 10", "Platform 8 1/2"],
-        "correct": 1,
-        "explanation": "The correct answer is Platform 9 3/4. Students run through a wall to reach it."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "In the first movie, what color is the sweater Mrs. Weasley sends to Harry for Christmas?",
-        "answers": ["Red", "Green", "Blue", "Brown"],
-        "correct": 1,
-        "explanation": "The correct answer is Green. In the films, Harry’s Christmas jumper is green."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who teaches Potions in Harry's first year?",
-        "answers": ["Horace Slughorn", "Severus Snape", "Gilderoy Lockhart", "Remus Lupin"],
-        "correct": 1,
-        "explanation": "The correct answer is Severus Snape. Snape is the Potions Master during Harry's early years."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of Harry’s broomstick in his first year?",
-        "answers": ["Firebolt", "Nimbus 2000", "Comet 260", "Cleensweep"],
-        "correct": 1,
-        "explanation": "The correct answer is Nimbus 2000. Professor McGonagall gifts it to him for Quidditch."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What magical object shows your heart's deepest desire?",
-        "answers": ["The Mirror of Erised", "The Pensieve", "The Marauder's Map", "The Invisibility Cloak"],
-        "correct": 0,
-        "explanation": "The correct answer is The Mirror of Erised. It reveals what the viewer desires most."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who is the caretaker of Hogwarts during Harry’s time?",
-        "answers": ["Argus Filch", "Rubeus Hagrid", "Mad-Eye Moody", "Filius Flitwick"],
-        "correct": 0,
-        "explanation": "The correct answer is Argus Filch. He is the school's grumpy caretaker."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of Hagrid's dog?",
-        "answers": ["Fang", "Fluffy", "Padfoot", "Scabbers"],
-        "correct": 0,
-        "explanation": "The correct answer is Fang. Fang is Hagrid’s large but gentle boarhound."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "In the first book, which Gringotts vault holds the Philosopher's Stone?",
-        "answers": ["713", "666", "394", "900"],
-        "correct": 0,
-        "explanation": "The correct answer is 713. It is heavily protected in Gringotts."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is Harry’s middle name?",
-        "answers": ["James", "John", "Arthur", "Charles"],
-        "correct": 0,
-        "explanation": "The correct answer is James. He was named after his father."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who is the ghost of Gryffindor House?",
-        "answers": ["Nearly Headless Nick", "The Fat Friar", "The Grey Lady", "The Bloody Baron"],
-        "correct": 0,
-        "explanation": "The correct answer is Nearly Headless Nick. His full name is Sir Nicholas de Mimsy-Porpington."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "In the first movie, what chess piece does Ron play as in the giant chess game?",
-        "answers": ["Knight", "Bishop", "Rook", "King"],
-        "correct": 0,
-        "explanation": "The correct answer is Knight. Ron rides the knight chess piece during the challenge."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the Hogwarts librarian?",
-        "answers": ["Madam Pince", "Madam Pomfrey", "Bathilda Bagshot", "Charity Burbage"],
-        "correct": 0,
-        "explanation": "The correct answer is Madam Pince. She runs the Hogwarts library."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What magical creature is Fluffy?",
-        "answers": ["Three-headed dog", "Dragon", "Hippogriff", "Basilisk"],
-        "correct": 0,
-        "explanation": "The correct answer is Three-headed dog. Fluffy guards the trapdoor to the Stone."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the first name of Professor McGonagall?",
-        "answers": ["Minerva", "Amelia", "Augusta", "Helena"],
-        "correct": 0,
-        "explanation": "The correct answer is Minerva. Professor Minerva McGonagall is Head of Gryffindor House."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What spell is used to levitate objects?",
-        "answers": ["Lumos", "Alohomora", "Wingardium Leviosa", "Expelliarmus"],
-        "correct": 2,
-        "explanation": "The correct answer is Wingardium Leviosa. It makes objects float."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What magical sport uses Bludgers and Quaffles?",
-        "answers": ["Quidditch", "Wizard Polo", "Broom Racing", "Wizards’ Duel"],
-        "correct": 0,
-        "explanation": "The correct answer is Quidditch. Players try to score points with the Quaffle while avoiding Bludgers."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "In the first film, what creature does Harry talk to at the zoo?",
-        "answers": ["Snake", "Owl", "Lizard", "Parrot"],
-        "correct": 0,
-        "explanation": "The correct answer is Snake. Harry speaks Parseltongue to a boa constrictor."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What magical object makes the user invisible?",
-        "answers": ["Time-Turner", "Invisibility Cloak", "Portkey", "Floo Powder"],
-        "correct": 1,
-        "explanation": "The correct answer is Invisibility Cloak. Harry inherits it from his father."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who is the Slytherin House ghost?",
-        "answers": ["The Bloody Baron", "The Grey Lady", "Nearly Headless Nick", "The Fat Friar"],
-        "correct": 0,
-        "explanation": "The correct answer is The Bloody Baron. He is covered in silver bloodstains."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "What chess piece does Harry take the place of in the giant chess game in the book?",
-        "answers": ["Bishop", "Knight", "Rook", "Queen"],
-        "correct": 2,
-        "explanation": "The correct answer is Rook. Harry plays as a Rook in the book version."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who runs the Three Broomsticks Inn?",
-        "answers": ["Madam Rosmerta", "Aberforth Dumbledore", "Tom", "Bathilda Bagshot"],
-        "correct": 0,
-        "explanation": "The correct answer is Madam Rosmerta. She serves drinks in Hogsmeade."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the train that takes students to Hogwarts?",
-        "answers": ["Hogwarts Express", "Knight Bus", "Hogsmeade Express", "Magic Rail"],
-        "correct": 0,
-        "explanation": "The correct answer is Hogwarts Express. It departs from Platform 9 3/4."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the Weasley’s youngest child?",
-        "answers": ["Ginny", "Ron", "Percy", "Bill"],
-        "correct": 0,
-        "explanation": "The correct answer is Ginny Weasley. She later becomes Harry's wife."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who is the head of Slytherin House during Harry’s first year?",
-        "answers": ["Severus Snape", "Horace Slughorn", "Dolores Umbridge", "Lucius Malfoy"],
-        "correct": 0,
-        "explanation": "The correct answer is Severus Snape. He is Head of Slytherin House for many years."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "In the first film, what type of hat does Dumbledore wear at the start-of-term feast?",
-        "answers": ["Pointed wizard hat", "Santa hat", "No hat", "Flat cap"],
-        "correct": 0,
-        "explanation": "The correct answer is Pointed wizard hat. Dumbledore wears a tall pointed hat during the feast."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the Weasleys’ owl?",
-        "answers": ["Errol", "Pigwidgeon", "Hedwig", "Hermes"],
-        "correct": 0,
-        "explanation": "The correct answer is Errol. He is the Weasley family's elderly owl."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "What candy does Harry buy on the Hogwarts Express in the first book?",
-        "answers": ["Chocolate Frogs", "Fizzing Whizzbees", "Pumpkin Pasties", "All of the above"],
-        "correct": 3,
-        "explanation": "The correct answer is All of the above. Harry buys a variety of wizarding sweets."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What magical game has exploding cards?",
-        "answers": ["Exploding Snap", "Wizard Poker", "Gobstones", "Dragon's Dice"],
-        "correct": 0,
-        "explanation": "The correct answer is Exploding Snap. Players must avoid the cards exploding."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who teaches Defence Against the Dark Arts in Harry's second year?",
-        "answers": ["Gilderoy Lockhart", "Remus Lupin", "Severus Snape", "Mad-Eye Moody"],
-        "correct": 0,
-        "explanation": "The correct answer is Gilderoy Lockhart. He is a boastful but incompetent teacher."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "What color is the Hogwarts Express in the films?",
-        "answers": ["Black", "Green", "Red", "Blue"],
-        "correct": 2,
-        "explanation": "The correct answer is Red. The train is shown as a bright red steam engine in the films."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of Draco Malfoy’s father?",
-        "answers": ["Lucius", "Severus", "Gellert", "Regulus"],
-        "correct": 0,
-        "explanation": "The correct answer is Lucius. Lucius Malfoy is a wealthy pure-blood wizard."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the train station in London where students catch the Hogwarts Express?",
-        "answers": ["King's Cross", "Paddington", "Charing Cross", "Victoria"],
-        "correct": 0,
-        "explanation": "The correct answer is King's Cross. Platform 9 3/4 is hidden there."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "In the first book, which professor tries to stop Harry from getting the Stone by using a logic puzzle?",
-        "answers": ["Snape", "McGonagall", "Flitwick", "Hermione"],
-        "correct": 0,
-        "explanation": "The correct answer is Snape. He sets up a potion riddle to protect the Stone."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the Weasley twins?",
-        "answers": ["Fred and George", "Bill and Charlie", "Percy and Ron", "James and Albus"],
-        "correct": 0,
-        "explanation": "The correct answer is Fred and George. They are known for their pranks."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "What color is the dress Hermione wears to the Yule Ball in the films?",
-        "answers": ["Pink", "Blue", "Lavender", "White"],
-        "correct": 0,
-        "explanation": "The correct answer is Pink. The films show Hermione in a flowing pink gown."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What position does Harry play on the Quidditch team?",
-        "answers": ["Chaser", "Keeper", "Beater", "Seeker"],
-        "correct": 3,
-        "explanation": "The correct answer is Seeker. He catches the Golden Snitch to win games."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of Ron’s pet rat?",
-        "answers": ["Scabbers", "Crookshanks", "Trevor", "Fang"],
-        "correct": 0,
-        "explanation": "The correct answer is Scabbers. He turns out to be Peter Pettigrew in disguise."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "In the first book, what color is the icing on Harry’s birthday cake from Hagrid?",
-        "answers": ["Green", "Red", "Blue", "Purple"],
-        "correct": 0,
-        "explanation": "The correct answer is Green. The chocolate cake has green icing."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of Neville Longbottom’s toad?",
-        "answers": ["Trevor", "Scabbers", "Fang", "Crookshanks"],
-        "correct": 0,
-        "explanation": "The correct answer is Trevor. Neville is often seen looking for him."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "In the films, who says 'I am what I am, an' I'm not ashamed'?",
-        "answers": ["Hagrid", "Harry", "Ron", "Dobby"],
-        "correct": 0,
-        "explanation": "The correct answer is Hagrid. He says this proudly in the first film."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who teaches Charms at Hogwarts?",
-        "answers": ["Filius Flitwick", "Severus Snape", "Minerva McGonagall", "Pomona Sprout"],
-        "correct": 0,
-        "explanation": "The correct answer is Filius Flitwick. He is also Head of Ravenclaw House."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Which magical item stores memories for viewing?",
-        "answers": ["The Pensieve", "The Mirror of Erised", "The Marauder's Map", "The Time-Turner"],
-        "correct": 0,
-        "explanation": "The correct answer is The Pensieve. Dumbledore uses it to review past events."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the school nurse?",
-        "answers": ["Madam Pomfrey", "Madam Pince", "Madam Rosmerta", "Madam Hooch"],
-        "correct": 0,
-        "explanation": "The correct answer is Madam Pomfrey. She runs the hospital wing."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "In the films, what animal does Professor McGonagall transform into?",
-        "answers": ["Owl", "Cat", "Rat", "Hawk"],
-        "correct": 1,
-        "explanation": "The correct answer is Cat. She is an Animagus who turns into a tabby cat."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the Hogwarts flying instructor?",
-        "answers": ["Madam Hooch", "Madam Pomfrey", "Madam Pince", "Madam Rosmerta"],
-        "correct": 0,
-        "explanation": "The correct answer is Madam Hooch. She teaches students to fly broomsticks."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Which plant screams when pulled out of the ground?",
-        "answers": ["Mandrake", "Devil's Snare", "Gillyweed", "Bubotuber"],
-        "correct": 0,
-        "explanation": "The correct answer is Mandrake. Its cry can be dangerous."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who replaces the Fat Lady portrait after it is attacked?",
-        "answers": ["Sir Cadogan", "The Grey Lady", "Nearly Headless Nick", "The Fat Friar"],
-        "correct": 0,
-        "explanation": "The correct answer is Sir Cadogan. He temporarily guards the Gryffindor common room."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "In the films, what spell does Harry use to kill the basilisk?",
-        "answers": ["Expelliarmus", "Avada Kedavra", "He doesn't use a spell", "Sectumsempra"],
-        "correct": 2,
-        "explanation": "The correct answer is He doesn't use a spell. Harry uses Godric Gryffindor’s sword."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What subject does Professor Sprout teach?",
-        "answers": ["Herbology", "Potions", "Charms", "Astronomy"],
-        "correct": 0,
-        "explanation": "The correct answer is Herbology. She is also Head of Hufflepuff House."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the wizard prison?",
-        "answers": ["Azkaban", "Nurmengard", "Alcatraz", "Durmstrang"],
-        "correct": 0,
-        "explanation": "The correct answer is Azkaban. It is guarded by Dementors."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What kind of creature is Dobby?",
-        "answers": ["Goblin", "House-elf", "Hippogriff", "Troll"],
-        "correct": 1,
-        "explanation": "The correct answer is House-elf. Dobby serves families until freed."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "In the first movie, what does Hagrid give Harry for his birthday?",
-        "answers": ["A cake", "A wand", "An owl", "A broomstick"],
-        "correct": 0,
-        "explanation": "The correct answer is a cake. Hagrid also later takes him shopping for school supplies."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What magical object sorts students into Hogwarts houses?",
-        "answers": ["Sorting Hat", "House Wand", "Magic Mirror", "Quill of Acceptance"],
-        "correct": 0,
-        "explanation": "The correct answer is Sorting Hat. It speaks to each student before placing them in a house."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What are the four Hogwarts houses?",
-        "answers": ["Gryffindor, Slytherin, Ravenclaw, Hufflepuff", "Red, Blue, Green, Yellow", "North, South, East, West", "Earth, Air, Fire, Water"],
-        "correct": 0,
-        "explanation": "The correct answer is Gryffindor, Slytherin, Ravenclaw, and Hufflepuff."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who teaches Potions in Harry's first year?",
-        "answers": ["Severus Snape", "Remus Lupin", "Horace Slughorn", "Minerva McGonagall"],
-        "correct": 0,
-        "explanation": "The correct answer is Severus Snape. He is the Potions Master for many years."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "What is the name of the Weasleys’ home?",
-        "answers": ["The Burrow", "Shell Cottage", "Hogsmeade", "Ottery Hall"],
-        "correct": 0,
-        "explanation": "The correct answer is The Burrow. It is located near Ottery St Catchpole."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What sport do wizards play on broomsticks?",
-        "answers": ["Quidditch", "Wizball", "Broom Racing", "Snitch Hunt"],
-        "correct": 0,
-        "explanation": "The correct answer is Quidditch. It is played with four balls and seven players per team."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What position does Harry play on the Quidditch team?",
-        "answers": ["Seeker", "Chaser", "Keeper", "Beater"],
-        "correct": 0,
-        "explanation": "The correct answer is Seeker. His job is to catch the Golden Snitch."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "What does the Golden Snitch have engraved on it for Harry?",
-        "answers": ["I open at the close", "Property of Hogwarts", "Catch me if you can", "Seeker’s prize"],
-        "correct": 0,
-        "explanation": "The correct answer is 'I open at the close.' It contains the Resurrection Stone."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who is Harry’s best friend alongside Hermione?",
-        "answers": ["Ron Weasley", "Neville Longbottom", "Draco Malfoy", "Dean Thomas"],
-        "correct": 0,
-        "explanation": "The correct answer is Ron Weasley. He and Harry meet on the train to Hogwarts."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "What is the name of Hermione's cat?",
-        "answers": ["Crookshanks", "Mrs. Norris", "Hedwig", "Scabbers"],
-        "correct": 0,
-        "explanation": "The correct answer is Crookshanks. He is part-Kneazle and very clever."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "Who rescues Harry from the Dursleys in a flying car?",
-        "answers": ["Ron, Fred, and George", "Hagrid", "Dobby", "Sirius Black"],
-        "correct": 0,
-        "explanation": "The correct answer is Ron, Fred, and George Weasley in a Ford Anglia."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What color is the Hogwarts Express?",
-        "answers": ["Red", "Green", "Black", "Blue"],
-        "correct": 0,
-        "explanation": "The correct answer is Red. It departs from Platform Nine and Three-Quarters."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "Who teaches Herbology?",
-        "answers": ["Professor Sprout", "Professor McGonagall", "Professor Flitwick", "Professor Sinistra"],
-        "correct": 0,
-        "explanation": "The correct answer is Professor Sprout. She is Head of Hufflepuff House."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What creature guards the Sorcerer’s Stone along with other protections?",
-        "answers": ["Fluffy the three-headed dog", "Basilisk", "Dragon", "Acromantula"],
-        "correct": 0,
-        "explanation": "The correct answer is Fluffy, a three-headed dog owned by Hagrid."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "What does Harry accidentally set free at the zoo?",
-        "answers": ["A boa constrictor", "A lion", "A parrot", "A tarantula"],
-        "correct": 0,
-        "explanation": "The correct answer is a boa constrictor. He speaks to it in Parseltongue."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who is the ghost of Gryffindor Tower?",
-        "answers": ["Nearly Headless Nick", "The Fat Friar", "The Grey Lady", "The Bloody Baron"],
-        "correct": 0,
-        "explanation": "The correct answer is Nearly Headless Nick. His real name is Sir Nicholas de Mimsy-Porpington."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is Voldemort’s real name?",
-        "answers": ["Tom Marvolo Riddle", "Salazar Slytherin", "Gellert Grindelwald", "Lucius Malfoy"],
-        "correct": 0,
-        "explanation": "The correct answer is Tom Marvolo Riddle. He rearranges the letters to form 'I am Lord Voldemort.'"
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What type of animal is Buckbeak?",
-        "answers": ["Hippogriff", "Thestral", "Unicorn", "Centaur"],
-        "correct": 0,
-        "explanation": "The correct answer is Hippogriff. Buckbeak is introduced in Harry's third year."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who kills Dumbledore?",
-        "answers": ["Severus Snape", "Draco Malfoy", "Bellatrix Lestrange", "Voldemort"],
-        "correct": 0,
-        "explanation": "The correct answer is Severus Snape. This is part of a prearranged plan with Dumbledore."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Book",
-        "level": 1,
-        "question": "Who gives Harry his first broomstick?",
-        "answers": ["Professor McGonagall", "Hagrid", "Sirius Black", "Dumbledore"],
-        "correct": 0,
-        "explanation": "The correct answer is Professor McGonagall. She gives him a Nimbus 2000."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "What do the Dursleys say when asked about Harry’s parents?",
-        "answers": ["They died in a car crash", "They moved away", "They were lost at sea", "They were spies"],
-        "correct": 0,
-        "explanation": "The correct answer is 'They died in a car crash,' which is a lie."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is the name of the wizard sweet shop in Hogsmeade?",
-        "answers": ["Honeydukes", "Sugarplum's", "Weasleys’ Wizard Wheezes", "The Leaky Cauldron"],
-        "correct": 0,
-        "explanation": "The correct answer is Honeydukes. It sells Chocolate Frogs and Bertie Bott’s Every Flavour Beans."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What is Harry’s wand core?",
-        "answers": ["Phoenix feather", "Dragon heartstring", "Unicorn hair", "Thestral tail hair"],
-        "correct": 0,
-        "explanation": "The correct answer is Phoenix feather. The feather came from Fawkes, Dumbledore’s phoenix."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "Who is the head of Hufflepuff House?",
-        "answers": ["Professor Sprout", "Professor Flitwick", "Professor McGonagall", "Professor Snape"],
-        "correct": 0,
-        "explanation": "The correct answer is Professor Sprout. She teaches Herbology."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Movie",
-        "level": 1,
-        "question": "Who dances with Hermione at the Yule Ball in the movie?",
-        "answers": ["Viktor Krum", "Harry Potter", "Ron Weasley", "Neville Longbottom"],
-        "correct": 0,
-        "explanation": "The correct answer is Viktor Krum. He is the Durmstrang champion."
-    },
-    {
-        "category": "Harry Potter",
-        "subcategory": "Both",
-        "level": 1,
-        "question": "What magical map shows everyone at Hogwarts?",
-        "answers": ["Marauder's Map", "Hogwarts Atlas", "Map of Secrets", "Invisibility Map"],
-        "correct": 0,
-        "explanation": "The correct answer is the Marauder's Map. It was created by Moony, Wormtail, Padfoot, and Prongs."
-    }
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What animal is Harry's pet?",
+    "answers": ["Cat", "Owl", "Dog", "Rat"],
+    "correct": 1,
+    "explanation": "The correct answer is Owl. Harry’s pet is an owl named Hedwig."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What position does Harry play on his Quidditch team?",
+    "answers": ["Chaser", "Seeker", "Beater", "Keeper"],
+    "correct": 1,
+    "explanation": "The correct answer is Seeker. Harry's job is to catch the Golden Snitch."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is Harry’s best friend?",
+    "answers": ["Ron Weasley", "Neville Longbottom", "Draco Malfoy", "Seamus Finnigan"],
+    "correct": 0,
+    "explanation": "The correct answer is Ron Weasley. Ron is one of Harry’s closest friends."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What is the name of the Weasley family’s home?",
+    "answers": ["The Burrow", "Shell Cottage", "Spinner's End", "Malfoy Manor"],
+    "correct": 0,
+    "explanation": "The correct answer is The Burrow. It is a cozy and welcoming place."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "Who plays Harry Potter in the movies?",
+    "answers": ["Daniel Radcliffe", "Rupert Grint", "Tom Felton", "Elijah Wood"],
+    "correct": 0,
+    "explanation": "The correct answer is Daniel Radcliffe. He plays Harry Potter in all eight films."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What platform at King's Cross do students use to board the Hogwarts Express?",
+    "answers": ["Platform 9", "Platform 10", "Platform 9 3/4", "Platform 8 1/2"],
+    "correct": 2,
+    "explanation": "The correct answer is Platform 9 3/4. It is hidden by a magical barrier."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of Harry’s owl?",
+    "answers": ["Hedwig", "Errol", "Crookshanks", "Scabbers"],
+    "correct": 0,
+    "explanation": "The correct answer is Hedwig. She is Harry’s loyal snowy owl."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "Who teaches Herbology at Hogwarts?",
+    "answers": ["Professor Sprout", "Professor McGonagall", "Professor Flitwick", "Professor Snape"],
+    "correct": 0,
+    "explanation": "The correct answer is Professor Sprout. She teaches Herbology."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the headmaster of Hogwarts when Harry first attends?",
+    "answers": ["Albus Dumbledore", "Severus Snape", "Minerva McGonagall", "Dolores Umbridge"],
+    "correct": 0,
+    "explanation": "The correct answer is Albus Dumbledore. He leads Hogwarts during Harry's early years."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What color is the Hogwarts Express train?",
+    "answers": ["Red", "Green", "Black", "Blue"],
+    "correct": 0,
+    "explanation": "The correct answer is Red. The Hogwarts Express is a bright red steam train."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What kind of magical creature is Hagrid?",
+    "answers": ["Goblin", "House-elf", "Giant", "Troll"],
+    "correct": 2,
+    "explanation": "The correct answer is Giant. Hagrid is half giant."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who teaches Defense Against the Dark Arts in Harry’s first year?",
+    "answers": ["Severus Snape", "Gilderoy Lockhart", "Quirinus Quirrell", "Remus Lupin"],
+    "correct": 2,
+    "explanation": "The correct answer is Quirinus Quirrell. He is the Defense Against the Dark Arts teacher in year one."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What magical object sorts students into Hogwarts houses?",
+    "answers": ["Sorting Hat", "Magic Mirror", "Quill of Acceptance", "House Badge"],
+    "correct": 0,
+    "explanation": "The correct answer is Sorting Hat. It sorts new students into houses."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What is the name of the school ghost for Gryffindor house?",
+    "answers": ["Nearly Headless Nick", "The Bloody Baron", "The Fat Friar", "The Grey Lady"],
+    "correct": 0,
+    "explanation": "The correct answer is Nearly Headless Nick. He is the Gryffindor house ghost."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What spell does Harry use to disarm Draco Malfoy during their duel in the first movie?",
+    "answers": ["Expelliarmus", "Stupefy", "Petrificus Totalus", "Sectumsempra"],
+    "correct": 0,
+    "explanation": "The correct answer is Expelliarmus. It's the disarming spell."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the captain of the Gryffindor Quidditch team when Harry joins?",
+    "answers": ["Oliver Wood", "Angelina Johnson", "Katie Bell", "Fred Weasley"],
+    "correct": 0,
+    "explanation": "The correct answer is Oliver Wood. He is the team captain and Keeper."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What is the name of Ron Weasley’s pet rat?",
+    "answers": ["Scabbers", "Crookshanks", "Hedwig", "Trevor"],
+    "correct": 0,
+    "explanation": "The correct answer is Scabbers. Ron's rat is later revealed to be Peter Pettigrew."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the main ingredient in the potion 'Polyjuice Potion'?",
+    "answers": ["Boomslang skin", "Mandrake root", "Unicorn horn", "Wolfsbane"],
+    "correct": 0,
+    "explanation": "The correct answer is Boomslang skin. It is an essential ingredient."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What magical creature is Buckbeak?",
+    "answers": ["Hippogriff", "Thestral", "Dragon", "Phoenix"],
+    "correct": 0,
+    "explanation": "The correct answer is Hippogriff. Buckbeak is proud and noble."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "In the movies, who is the Hogwarts gamekeeper?",
+    "answers": ["Rubeus Hagrid", "Filius Flitwick", "Pomona Sprout", "Argus Filch"],
+    "correct": 0,
+    "explanation": "The correct answer is Rubeus Hagrid. He looks after magical creatures."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What magical creature pulls the Hogwarts carriages?",
+    "answers": ["Thestrals", "Centaur", "Unicorns", "Hippogriffs"],
+    "correct": 0,
+    "explanation": "The correct answer is Thestrals. Only those who have seen death can see them."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the author of 'Fantastic Beasts and Where to Find Them'?",
+    "answers": ["Newt Scamander", "Albus Dumbledore", "Gilderoy Lockhart", "Bathilda Bagshot"],
+    "correct": 0,
+    "explanation": "The correct answer is Newt Scamander. The book is used as a Hogwarts textbook."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "Which vault number at Gringotts was the Sorcerer’s Stone kept in?",
+    "answers": ["713", "619", "394", "701"],
+    "correct": 0,
+    "explanation": "The correct answer is Vault 713. The stone was kept there for safekeeping."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the librarian at Hogwarts?",
+    "answers": ["Madam Pince", "Madam Pomfrey", "Madam Rosmerta", "Madam Hooch"],
+    "correct": 0,
+    "explanation": "The correct answer is Madam Pince. She is strict and protective of the books."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What is the name of the Weasley twins’ joke shop?",
+    "answers": ["Weasleys’ Wizard Wheezes", "Honeydukes", "Borgin and Burkes", "Zonko's"],
+    "correct": 0,
+    "explanation": "The correct answer is Weasleys’ Wizard Wheezes. The twins start their own business."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the magical mirror that shows the deepest desire?",
+    "answers": ["Mirror of Erised", "Mirror of Fate", "Mirror of Souls", "Mirror of Time"],
+    "correct": 0,
+    "explanation": "The correct answer is Mirror of Erised. Harry sees his family in it."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What does the spell 'Lumos' do?",
+    "answers": ["Creates light", "Disarms opponent", "Unlocks doors", "Levitates objects"],
+    "correct": 0,
+    "explanation": "The correct answer is Creates light. It lights the tip of the wand."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What magical creatures live in the Hogwarts lake?",
+    "answers": ["Merpeople", "Hippogriffs", "Dragons", "Basilisks"],
+    "correct": 0,
+    "explanation": "The correct answer is Merpeople. They have a village under the water."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What potion allows the drinker to breathe underwater?",
+    "answers": ["Gillyweed", "Felix Felicis", "Polyjuice Potion", "Amortentia"],
+    "correct": 0,
+    "explanation": "The correct answer is Gillyweed. Harry uses it in the Triwizard Tournament."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What house is Draco Malfoy sorted into?",
+    "answers": ["Slytherin", "Gryffindor", "Hufflepuff", "Ravenclaw"],
+    "correct": 0,
+    "explanation": "The correct answer is Slytherin. Draco is a proud Slytherin student."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "Which character says, 'You're a wizard, Harry'?",
+    "answers": ["Hagrid", "Dumbledore", "Ron", "Hermione"],
+    "correct": 0,
+    "explanation": "The correct answer is Hagrid. He tells Harry about his magical heritage."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the caretaker of Hogwarts?",
+    "answers": ["Argus Filch", "Percy Weasley", "Alastor Moody", "Kingsley Shacklebolt"],
+    "correct": 0,
+    "explanation": "The correct answer is Argus Filch. He is the Hogwarts caretaker."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "Who founded Slytherin House?",
+    "answers": ["Salazar Slytherin", "Godric Gryffindor", "Rowena Ravenclaw", "Helga Hufflepuff"],
+    "correct": 0,
+    "explanation": "The correct answer is Salazar Slytherin. He was one of Hogwarts’ founders."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the Weasley twins?",
+    "answers": ["Fred and George", "Bill and Charlie", "Percy and Ron", "James and Albus"],
+    "correct": 0,
+    "explanation": "The correct answer is Fred and George. They are known for their pranks."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What is the name of the wand shop in Diagon Alley?",
+    "answers": ["Ollivanders", "Flourish and Blotts", "Weasleys’ Wizard Wheezes", "Madam Malkin's"],
+    "correct": 0,
+    "explanation": "The correct answer is Ollivanders. It's the famous wand shop."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the ghost of Ravenclaw Tower?",
+    "answers": ["The Grey Lady", "Nearly Headless Nick", "The Fat Friar", "The Bloody Baron"],
+    "correct": 0,
+    "explanation": "The correct answer is The Grey Lady. She is Helena Ravenclaw's ghost."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the magical village near Hogwarts?",
+    "answers": ["Hogsmeade", "Godric’s Hollow", "Ottery St Catchpole", "Little Whinging"],
+    "correct": 0,
+    "explanation": "The correct answer is Hogsmeade. It is the only all-wizarding village."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What is the core material of Harry's wand?",
+    "answers": ["Phoenix feather", "Dragon heartstring", "Unicorn hair", "Veela hair"],
+    "correct": 0,
+    "explanation": "The correct answer is Phoenix feather. The feather came from Fawkes, Dumbledore’s phoenix."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What magical item does Harry use to travel back in time?",
+    "answers": ["Time-Turner", "Portkey", "Broomstick", "Floo Powder"],
+    "correct": 0,
+    "explanation": "The correct answer is Time-Turner. Hermione uses it in her third year."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What creature is Aragog?",
+    "answers": ["Acromantula", "Basilisk", "Hippogriff", "Thestral"],
+    "correct": 0,
+    "explanation": "The correct answer is Acromantula. Aragog is a giant spider."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the Head of Gryffindor House?",
+    "answers": ["Minerva McGonagall", "Severus Snape", "Pomona Sprout", "Filius Flitwick"],
+    "correct": 0,
+    "explanation": "The correct answer is Minerva McGonagall. She is also Transfiguration teacher."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What is the name of the sweets shop in Hogsmeade?",
+    "answers": ["Honeydukes", "Zonko's Joke Shop", "Weasleys’ Wizard Wheezes", "Florean Fortescue’s"],
+    "correct": 0,
+    "explanation": "The correct answer is Honeydukes. Famous for magical sweets."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the spell used to unlock doors?",
+    "answers": ["Alohomora", "Lumos", "Expelliarmus", "Stupefy"],
+    "correct": 0,
+    "explanation": "The correct answer is Alohomora. It unlocks doors magically."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What color is the Hogwarts school robe lining for Gryffindor students?",
+    "answers": ["Red and Gold", "Green and Silver", "Blue and Bronze", "Yellow and Black"],
+    "correct": 0,
+    "explanation": "The correct answer is Red and Gold. These are Gryffindor house colors."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who teaches Potions in Harry’s first year?",
+    "answers": ["Severus Snape", "Horace Slughorn", "Gilderoy Lockhart", "Remus Lupin"],
+    "correct": 0,
+    "explanation": "The correct answer is Severus Snape. He is the Potions Master."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What does the spell 'Wingardium Leviosa' do?",
+    "answers": ["Levitate objects", "Create light", "Unlock doors", "Freeze opponents"],
+    "correct": 0,
+    "explanation": "The correct answer is Levitate objects. Hermione teaches this charm."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the Dark wizard who killed Harry’s parents?",
+    "answers": ["Lord Voldemort", "Lucius Malfoy", "Bellatrix Lestrange", "Severus Snape"],
+    "correct": 0,
+    "explanation": "The correct answer is Lord Voldemort. He is the main antagonist."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the Potions Master during Harry’s sixth year?",
+    "answers": ["Horace Slughorn", "Severus Snape", "Remus Lupin", "Gilderoy Lockhart"],
+    "correct": 0,
+    "explanation": "The correct answer is Horace Slughorn. He returns to teach potions."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of Harry’s godfather?",
+    "answers": ["Sirius Black", "Remus Lupin", "James Potter", "Albus Dumbledore"],
+    "correct": 0,
+    "explanation": "The correct answer is Sirius Black. He is Harry’s godfather."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What is the name of the school nurse at Hogwarts?",
+    "answers": ["Madam Pomfrey", "Madam Pince", "Madam Rosmerta", "Madam Hooch"],
+    "correct": 0,
+    "explanation": "The correct answer is Madam Pomfrey. She tends to injuries."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What does the spell 'Expecto Patronum' summon?",
+    "answers": ["A Patronus", "A Boggart", "A Dementor", "A Thestral"],
+    "correct": 0,
+    "explanation": "The correct answer is A Patronus. It protects against Dementors."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What house was Moaning Myrtle in?",
+    "answers": ["Ravenclaw", "Gryffindor", "Hufflepuff", "Slytherin"],
+    "correct": 0,
+    "explanation": "The correct answer is Ravenclaw. Myrtle was a student there before she died."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the caretaker’s cat?",
+    "answers": ["Mrs. Norris", "Crookshanks", "Fluffy", "Trevor"],
+    "correct": 0,
+    "explanation": "The correct answer is Mrs. Norris. She belongs to Argus Filch."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "Which magical item reveals the location of people?",
+    "answers": ["The Marauder’s Map", "The Invisibility Cloak", "The Resurrection Stone", "The Elder Wand"],
+    "correct": 0,
+    "explanation": "The correct answer is The Marauder’s Map. It shows everyone’s position."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the charm used to repel water?",
+    "answers": ["Impervius", "Accio", "Riddikulus", "Obliviate"],
+    "correct": 0,
+    "explanation": "The correct answer is Impervius. It repels water and dirt."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "Who is the Divination teacher at Hogwarts?",
+    "answers": ["Sybill Trelawney", "Professor McGonagall", "Professor Sprout", "Professor Flitwick"],
+    "correct": 0,
+    "explanation": "The correct answer is Sybill Trelawney. She teaches Divination."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What creature is known for guarding treasure and breathing fire?",
+    "answers": ["Dragon", "Basilisk", "Acromantula", "Grindylow"],
+    "correct": 0,
+    "explanation": "The correct answer is Dragon. Dragons guard treasure in wizarding lore."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What sport is played on broomsticks?",
+    "answers": ["Quidditch", "Wizard Chess", "Gobstones", "Exploding Snap"],
+    "correct": 0,
+    "explanation": "The correct answer is Quidditch. It is played flying on broomsticks."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the Slytherin ghost?",
+    "answers": ["The Bloody Baron", "Nearly Headless Nick", "The Fat Friar", "The Grey Lady"],
+    "correct": 0,
+    "explanation": "The correct answer is The Bloody Baron. He is the ghost of Slytherin house."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What is the name of Hermione’s cat?",
+    "answers": ["Crookshanks", "Mrs. Norris", "Scabbers", "Hedwig"],
+    "correct": 0,
+    "explanation": "The correct answer is Crookshanks. He is a half-Kneazle cat."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the pub in Hogsmeade?",
+    "answers": ["The Three Broomsticks", "The Leaky Cauldron", "The Hog’s Head", "The Prancing Pony"],
+    "correct": 0,
+    "explanation": "The correct answer is The Three Broomsticks. It is a popular wizarding pub."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What magical creature is Fluffy?",
+    "answers": ["Three-headed dog", "Hippogriff", "Basilisk", "Acromantula"],
+    "correct": 0,
+    "explanation": "The correct answer is Three-headed dog. Fluffy guards the Philosopher’s Stone."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the book Hermione uses to learn about Horcruxes?",
+    "answers": ["Secrets of the Darkest Art", "Magical Drafts and Potions", "The Standard Book of Spells", "Fantastic Beasts"],
+    "correct": 0,
+    "explanation": "The correct answer is Secrets of the Darkest Art. It discusses Horcruxes."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What shape does Harry’s scar have?",
+    "answers": ["Lightning bolt", "Star", "Circle", "Cross"],
+    "correct": 0,
+    "explanation": "The correct answer is Lightning bolt. It’s on his forehead."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the potion that grants luck?",
+    "answers": ["Felix Felicis", "Polyjuice Potion", "Amortentia", "Veritaserum"],
+    "correct": 0,
+    "explanation": "The correct answer is Felix Felicis. It’s called Liquid Luck."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the wizarding newspaper?",
+    "answers": ["The Daily Prophet", "The Quibbler", "The Wizard Times", "The Evening Owl"],
+    "correct": 0,
+    "explanation": "The correct answer is The Daily Prophet. It reports wizarding news."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "Who teaches Transfiguration at Hogwarts?",
+    "answers": ["Minerva McGonagall", "Severus Snape", "Filius Flitwick", "Pomona Sprout"],
+    "correct": 0,
+    "explanation": "The correct answer is Minerva McGonagall. She is the Transfiguration professor."
+  },
+    {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is Harry’s main rival at Hogwarts?",
+    "answers": ["Draco Malfoy", "Neville Longbottom", "Cedric Diggory", "Seamus Finnigan"],
+    "correct": 0,
+    "explanation": "The correct answer is Draco Malfoy. He is often hostile towards Harry."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What is the name of Harry's godfather?",
+    "answers": ["Sirius Black", "Remus Lupin", "James Potter", "Albus Dumbledore"],
+    "correct": 0,
+    "explanation": "The correct answer is Sirius Black. He is Harry’s godfather."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What magical item does Hermione use to travel back in time?",
+    "answers": ["Time-Turner", "Portkey", "Broomstick", "Floo Powder"],
+    "correct": 0,
+    "explanation": "The correct answer is Time-Turner. Hermione uses it in her third year."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What spell is used to unlock doors?",
+    "answers": ["Alohomora", "Lumos", "Expelliarmus", "Stupefy"],
+    "correct": 0,
+    "explanation": "The correct answer is Alohomora. It unlocks doors magically."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "Who is the head of Hufflepuff house?",
+    "answers": ["Pomona Sprout", "Minerva McGonagall", "Severus Snape", "Filius Flitwick"],
+    "correct": 0,
+    "explanation": "The correct answer is Pomona Sprout. She is the Herbology teacher."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What color is a Gryffindor house robe lining?",
+    "answers": ["Red and Gold", "Green and Silver", "Blue and Bronze", "Yellow and Black"],
+    "correct": 0,
+    "explanation": "The correct answer is Red and Gold. Those are Gryffindor colors."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What magical creature guards the entrance to the Gryffindor common room?",
+    "answers": ["The Fat Lady", "Nearly Headless Nick", "The Grey Lady", "The Bloody Baron"],
+    "correct": 0,
+    "explanation": "The correct answer is The Fat Lady. She guards the Gryffindor portrait door."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What is the name of the pub where Hogwarts students often go in Hogsmeade?",
+    "answers": ["The Three Broomsticks", "The Leaky Cauldron", "The Hog’s Head", "The Prancing Pony"],
+    "correct": 0,
+    "explanation": "The correct answer is The Three Broomsticks. It is popular with students."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What creature does Harry fight in the Chamber of Secrets?",
+    "answers": ["Basilisk", "Dragon", "Acromantula", "Dementor"],
+    "correct": 0,
+    "explanation": "The correct answer is Basilisk. It’s a giant serpent."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the Defense Against the Dark Arts teacher in Harry’s third year?",
+    "answers": ["Remus Lupin", "Severus Snape", "Gilderoy Lockhart", "Quirinus Quirrell"],
+    "correct": 0,
+    "explanation": "The correct answer is Remus Lupin. He teaches in Harry’s third year."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What is the name of the goblin who helps Harry in Gringotts?",
+    "answers": ["Griphook", "Ragnok", "Bogrod", "Gnarlak"],
+    "correct": 0,
+    "explanation": "The correct answer is Griphook. He assists Harry in breaking into Gringotts."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What form does Harry’s Patronus take?",
+    "answers": ["Stag", "Dog", "Phoenix", "Otter"],
+    "correct": 0,
+    "explanation": "The correct answer is Stag. It symbolizes his father’s Animagus form."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What type of creature is Dobby?",
+    "answers": ["House-elf", "Goblin", "Troll", "Giant"],
+    "correct": 0,
+    "explanation": "The correct answer is House-elf. Dobby serves the Malfoys before his freedom."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What plant is used to help breathe underwater?",
+    "answers": ["Gillyweed", "Mandrake", "Wolfsbane", "Devil’s Snare"],
+    "correct": 0,
+    "explanation": "The correct answer is Gillyweed. Harry uses it during the Triwizard Tournament."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the Hogwarts groundskeeper?",
+    "answers": ["Rubeus Hagrid", "Argus Filch", "Seamus Finnigan", "Alastor Moody"],
+    "correct": 0,
+    "explanation": "The correct answer is Rubeus Hagrid. He cares for the grounds and magical creatures."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "Which charm is used to produce light at the tip of the wand?",
+    "answers": ["Lumos", "Nox", "Expelliarmus", "Stupefy"],
+    "correct": 0,
+    "explanation": "The correct answer is Lumos. It lights up the wand’s tip."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the magical object that shows the deepest desire?",
+    "answers": ["Mirror of Erised", "The Philosopher’s Stone", "The Resurrection Stone", "The Invisibility Cloak"],
+    "correct": 0,
+    "explanation": "The correct answer is Mirror of Erised. Harry sees his family there."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the ghost of the Slytherin house?",
+    "answers": ["The Bloody Baron", "Nearly Headless Nick", "The Grey Lady", "The Fat Friar"],
+    "correct": 0,
+    "explanation": "The correct answer is The Bloody Baron. He is the Slytherin ghost."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "Who is the Ravenclaw house founder?",
+    "answers": ["Rowena Ravenclaw", "Salazar Slytherin", "Godric Gryffindor", "Helga Hufflepuff"],
+    "correct": 0,
+    "explanation": "The correct answer is Rowena Ravenclaw. She founded Ravenclaw house."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What type of magical creature is a Hippogriff?",
+    "answers": ["Half eagle, half horse", "Half lion, half eagle", "Half dragon, half horse", "Half serpent, half eagle"],
+    "correct": 0,
+    "explanation": "The correct answer is Half eagle, half horse. Buckbeak is a Hippogriff."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "Which character owns the invisibility cloak?",
+    "answers": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Albus Dumbledore"],
+    "correct": 0,
+    "explanation": "The correct answer is Harry Potter. The cloak is a family heirloom."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the core material of Hermione’s wand?",
+    "answers": ["Dragon heartstring", "Phoenix feather", "Unicorn hair", "Veela hair"],
+    "correct": 0,
+    "explanation": "The correct answer is Dragon heartstring. Hermione’s wand core."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What spell is used to make objects fly?",
+    "answers": ["Wingardium Leviosa", "Lumos", "Accio", "Expelliarmus"],
+    "correct": 0,
+    "explanation": "The correct answer is Wingardium Leviosa. It levitates objects."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the wizarding sweet shop in Hogsmeade?",
+    "answers": ["Honeydukes", "Zonko’s", "Weasleys’ Wizard Wheezes", "Borgin and Burkes"],
+    "correct": 0,
+    "explanation": "The correct answer is Honeydukes. It sells magical sweets."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the dark wizard who tries to kill Harry as a baby?",
+    "answers": ["Lord Voldemort", "Lucius Malfoy", "Bellatrix Lestrange", "Severus Snape"],
+    "correct": 0,
+    "explanation": "The correct answer is Lord Voldemort. He attacks Harry’s family."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "What magical object is used to store memories?",
+    "answers": ["Pensieve", "Time-Turner", "Portkey", "Deluminator"],
+    "correct": 0,
+    "explanation": "The correct answer is Pensieve. It helps review memories."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "Who is the teacher of Care of Magical Creatures?",
+    "answers": ["Rubeus Hagrid", "Severus Snape", "Remus Lupin", "Filius Flitwick"],
+    "correct": 0,
+    "explanation": "The correct answer is Rubeus Hagrid. He teaches Care of Magical Creatures."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 1,
+    "question": "What is the name of the wizarding bank?",
+    "answers": ["Gringotts", "Florean Fortescue’s", "Honeydukes", "Weasleys’ Wizard Wheezes"],
+    "correct": 0,
+    "explanation": "The correct answer is Gringotts. It’s run by goblins."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What magical object shows the position of everyone at Hogwarts?",
+    "answers": ["The Marauder’s Map", "The Invisibility Cloak", "The Resurrection Stone", "The Elder Wand"],
+    "correct": 0,
+    "explanation": "The correct answer is The Marauder’s Map. It shows everyone’s location."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 1,
+    "question": "Which character is known for his love of sweets and explosions?",
+    "answers": ["Fred Weasley", "George Weasley", "Ron Weasley", "Harry Potter"],
+    "correct": 1,
+    "explanation": "The correct answer is George Weasley. He is one of the Weasley twins."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the owl that delivers mail at Hogwarts?",
+    "answers": ["Errol", "Hedwig", "Pigwidgeon", "Hermes"],
+    "correct": 0,
+    "explanation": "The correct answer is Errol. He is the Weasleys’ owl."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the magical train that takes students to Hogwarts?",
+    "answers": ["Hogwarts Express", "Knight Bus", "Magic Carpet", "Floo Network"],
+    "correct": 0,
+    "explanation": "The correct answer is Hogwarts Express. It departs from Platform 9 3/4."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 1,
+    "question": "What is the name of the magical sport played at Hogwarts?",
+    "answers": ["Quidditch", "Wizard Chess", "Gobstones", "Exploding Snap"],
+    "correct": 0,
+    "explanation": "The correct answer is Quidditch. It’s played flying on broomsticks."
+  },
+    {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What shape is Professor McGonagall's Animagus form?",
+    "answers": ["Cat", "Owl", "Rat", "Toad"],
+    "correct": 0,
+    "explanation": "The correct answer is Cat. McGonagall transforms into a tabby cat."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Which magical creature's venom is used to destroy Horcruxes?",
+    "answers": ["Basilisk", "Dragon", "Acromantula", "Unicorn"],
+    "correct": 0,
+    "explanation": "Basilisk venom is extremely corrosive and can destroy Horcruxes."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "Who was the headmaster of Hogwarts before Dumbledore?",
+    "answers": ["Armando Dippet", "Phineas Nigellus", "Elphias Doge", "Severus Snape"],
+    "correct": 0,
+    "explanation": "Armando Dippet was Hogwarts headmaster before Dumbledore."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What form does Luna Lovegood’s Patronus take?",
+    "answers": ["Hare", "Doe", "Otter", "Horse"],
+    "correct": 0,
+    "explanation": "Luna’s Patronus is a hare."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What is the name of the wizarding sweet that causes uncontrollable laughter?",
+    "answers": ["Fizzing Whizzbees", "Chocoballs", "Puking Pastilles", "Skiving Snackboxes"],
+    "correct": 2,
+    "explanation": "Puking Pastilles cause nausea and vomiting, not laughter. The question is about laughter-inducing sweets which are actually 'Fanged Flyers' or similar, but Puking Pastilles are best known for causing sickness, so this is a tricky question from the movie. Please note the confusion: Fizzing Whizzbees cause a fizzy sensation, so the correct fun laughing candy is not explicitly named, but Puking Pastilles are the best match for a magical candy causing strong effects."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Which spell did Hermione use to fix Harry’s glasses?",
+    "answers": ["Reparo", "Lumos", "Obliviate", "Rictusempra"],
+    "correct": 0,
+    "explanation": "Reparo is the repairing charm Hermione uses on Harry’s glasses."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the street where the Dursleys live?",
+    "answers": ["Privet Drive", "Diagon Alley", "Spinner’s End", "Wisteria Walk"],
+    "correct": 0,
+    "explanation": "The Dursleys live at 4 Privet Drive."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What potion grants good luck for a limited time?",
+    "answers": ["Felix Felicis", "Polyjuice Potion", "Veritaserum", "Amortentia"],
+    "correct": 0,
+    "explanation": "Felix Felicis, known as Liquid Luck, grants temporary good luck."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Which vault number in Gringotts holds the Philosopher’s Stone?",
+    "answers": ["713", "619", "687", "711"],
+    "correct": 0,
+    "explanation": "Vault 713 is where the Philosopher’s Stone was kept."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the core of Harry Potter’s wand?",
+    "answers": ["Phoenix feather", "Dragon heartstring", "Unicorn hair", "Veela hair"],
+    "correct": 0,
+    "explanation": "Harry’s wand core is a phoenix feather from Fawkes."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Who gave Harry the Firebolt broomstick?",
+    "answers": ["Sirius Black", "Albus Dumbledore", "Minerva McGonagall", "Hagrid"],
+    "correct": 0,
+    "explanation": "Sirius Black gave Harry the Firebolt as a Christmas gift."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What magical creature is Aragog?",
+    "answers": ["Acromantula", "Basilisk", "Hippogriff", "Niffler"],
+    "correct": 0,
+    "explanation": "Aragog is a giant Acromantula spider."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What is the name of the goblin who helps Harry break into Gringotts?",
+    "answers": ["Griphook", "Bogrod", "Ragnok", "Gornuk"],
+    "correct": 0,
+    "explanation": "Griphook assists Harry in the break-in at Gringotts."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "What form does Severus Snape’s Patronus take?",
+    "answers": ["Doe", "Stag", "Wolf", "Phoenix"],
+    "correct": 0,
+    "explanation": "Snape’s Patronus is a doe, same as Lily Potter’s."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "Who is the founder of Slytherin house?",
+    "answers": ["Salazar Slytherin", "Godric Gryffindor", "Rowena Ravenclaw", "Helga Hufflepuff"],
+    "correct": 0,
+    "explanation": "Salazar Slytherin founded Slytherin house."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the device used to detect traces of magic?",
+    "answers": ["Sneakoscope", "Remembrall", "Foe-glass", "Dirigible Plum"],
+    "correct": 0,
+    "explanation": "Sneakoscope detects untrustworthy magic and dark activity."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "What is the name of the magical tree that attacks people in the Forbidden Forest?",
+    "answers": ["Whomping Willow", "Mandrake", "Devil’s Snare", "Gillyweed"],
+    "correct": 0,
+    "explanation": "The Whomping Willow attacks anything that comes near it."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the spell used to repel Dementors?",
+    "answers": ["Expecto Patronum", "Expelliarmus", "Stupefy", "Protego"],
+    "correct": 0,
+    "explanation": "Expecto Patronum conjures a Patronus to repel Dementors."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What is the name of the vault in Gringotts where the Sword of Gryffindor was kept?",
+    "answers": ["Vault 687", "Vault 713", "Vault 619", "Vault 999"],
+    "correct": 0,
+    "explanation": "Vault 687 is where the Sword of Gryffindor was kept."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Which professor was revealed to be a werewolf?",
+    "answers": ["Remus Lupin", "Severus Snape", "Gilderoy Lockhart", "Dolores Umbridge"],
+    "correct": 0,
+    "explanation": "Remus Lupin is a werewolf and teaches Defense Against the Dark Arts."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the wizard prison?",
+    "answers": ["Azkaban", "Nurmengard", "St. Mungo’s", "Hogsmeade"],
+    "correct": 0,
+    "explanation": "Azkaban is the prison for magical criminals."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Who is the author of 'Fantastic Beasts and Where to Find Them'?",
+    "answers": ["Newt Scamander", "Gilderoy Lockhart", "Bathilda Bagshot", "Albus Dumbledore"],
+    "correct": 0,
+    "explanation": "Newt Scamander is the author of this textbook."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What does the spell 'Obliviate' do?",
+    "answers": ["Erases memories", "Unlocks doors", "Disarms opponents", "Creates light"],
+    "correct": 0,
+    "explanation": "Obliviate erases or modifies memories."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What is the name of the magical village near Hogwarts?",
+    "answers": ["Hogsmeade", "Godric’s Hollow", "Little Whinging", "Ottery St. Catchpole"],
+    "correct": 0,
+    "explanation": "Hogsmeade is the only all-wizarding village near Hogwarts."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Which character is known as 'The Half-Blood Prince'?",
+    "answers": ["Severus Snape", "Harry Potter", "Tom Riddle", "Albus Dumbledore"],
+    "correct": 0,
+    "explanation": "Severus Snape gave himself the nickname 'Half-Blood Prince.'"
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What magical creature pulls the Hogwarts carriages?",
+    "answers": ["Thestrals", "Hippogriffs", "Dragons", "Nifflers"],
+    "correct": 0,
+    "explanation": "Thestrals, invisible to most, pull the Hogwarts carriages."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What does the spell 'Expelliarmus' do?",
+    "answers": ["Disarms an opponent", "Levitates objects", "Creates light", "Stuns enemies"],
+    "correct": 0,
+    "explanation": "Expelliarmus disarms the opponent, knocking their wand away."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "What item is needed to destroy a Horcrux?",
+    "answers": ["Basilisk venom", "Dragon fire", "Unicorn blood", "Phoenix tears"],
+    "correct": 0,
+    "explanation": "Basilisk venom is one of the few substances capable of destroying Horcruxes."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "Who was the original owner of the Elder Wand before Dumbledore?",
+    "answers": ["Gellert Grindelwald", "Harry Potter", "Tom Riddle", "Alastor Moody"],
+    "correct": 0,
+    "explanation": "Grindelwald owned the Elder Wand before Dumbledore defeated him."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What is the name of the spell Hermione uses to fix Harry’s glasses?",
+    "answers": ["Reparo", "Lumos", "Rictusempra", "Alohomora"],
+    "correct": 0,
+    "explanation": "Reparo is the repairing charm used by Hermione."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "Which potion allows someone to take the appearance of another person?",
+    "answers": ["Polyjuice Potion", "Felix Felicis", "Amortentia", "Veritaserum"],
+    "correct": 0,
+    "explanation": "Polyjuice Potion enables the drinker to look like someone else temporarily."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "What is the name of the street where Diagon Alley is accessed from?",
+    "answers": ["Charing Cross Road", "Knockturn Alley", "Charing Cross", "Borgin and Burkes"],
+    "correct": 0,
+    "explanation": "Diagon Alley is accessed through a hidden entrance from Charing Cross Road."
+  },
+    {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What creature can only be seen by those who have witnessed death?",
+    "answers": ["Thestral", "Hippogriff", "Boggart", "Niffler"],
+    "correct": 0,
+    "explanation": "Thestrals are invisible to most except those who have seen death."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "What is the name of the magical map that shows everyone's location at Hogwarts?",
+    "answers": ["Marauder’s Map", "Portkey", "Invisibility Cloak", "Pensieve"],
+    "correct": 0,
+    "explanation": "The Marauder’s Map reveals the location of everyone in Hogwarts."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What creature does Ron face during the Triwizard Tournament's second task?",
+    "answers": ["Giant squid", "Dragon", "Merpeople", "Acromantula"],
+    "correct": 0,
+    "explanation": "Ron was in the lake surrounded by Merpeople and faced the challenge there."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What magical object did Dumbledore use to store memories?",
+    "answers": ["Pensieve", "Horcrux", "Time-Turner", "Deluminator"],
+    "correct": 0,
+    "explanation": "The Pensieve is used to store and view memories."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Who founded the Order of the Phoenix?",
+    "answers": ["Albus Dumbledore", "Sirius Black", "James Potter", "Remus Lupin"],
+    "correct": 0,
+    "explanation": "Dumbledore founded the Order to fight Voldemort."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What magical device is used for time travel?",
+    "answers": ["Time-Turner", "Portkey", "Floo Powder", "Thestral"],
+    "correct": 0,
+    "explanation": "The Time-Turner allows witches and wizards to travel back in time."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What spell did Harry use to defeat the snake in the Chamber of Secrets?",
+    "answers": ["Fawkes’ tears", "Expelliarmus", "Stupefy", "Reducto"],
+    "correct": 0,
+    "explanation": "Fawkes’ tears healed Harry after the Basilisk’s venom."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Who is the half-giant gamekeeper at Hogwarts?",
+    "answers": ["Rubeus Hagrid", "Giant Squid", "Fang", "Grawp"],
+    "correct": 0,
+    "explanation": "Hagrid is the half-giant who works as gamekeeper."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "Which spell is used to summon objects toward the caster?",
+    "answers": ["Accio", "Alohomora", "Lumos", "Obliviate"],
+    "correct": 0,
+    "explanation": "Accio summons objects to the caster."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Which magical creature is Hagrid's pet in later books?",
+    "answers": ["Grawp", "Aragog", "Buckbeak", "Fang"],
+    "correct": 0,
+    "explanation": "Grawp is Hagrid’s giant half-brother."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What does the spell 'Sectumsempra' do?",
+    "answers": ["Causes deep cuts", "Disarms opponent", "Heals wounds", "Creates light"],
+    "correct": 0,
+    "explanation": "Sectumsempra causes severe lacerations."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What magical creature did Harry ride in the Triwizard Tournament’s first task?",
+    "answers": ["Dragon", "Hippogriff", "Thestral", "Griffin"],
+    "correct": 0,
+    "explanation": "Harry faced a Hungarian Horntail dragon."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "Who killed Dumbledore?",
+    "answers": ["Severus Snape", "Bellatrix Lestrange", "Draco Malfoy", "Lucius Malfoy"],
+    "correct": 0,
+    "explanation": "Snape killed Dumbledore as part of a planned act."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "What magical plants are used to make the Wolfsbane Potion?",
+    "answers": ["Wolfsbane", "Mandrake", "Gillyweed", "Devil’s Snare"],
+    "correct": 0,
+    "explanation": "Wolfsbane is used in the potion to help werewolves."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "Who teaches Divination at Hogwarts?",
+    "answers": ["Professor Trelawney", "Professor McGonagall", "Professor Snape", "Professor Flitwick"],
+    "correct": 0,
+    "explanation": "Trelawney teaches Divination."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What does the spell 'Riddikulus' do?",
+    "answers": ["Transforms a Boggart into something funny", "Creates a shield", "Makes an object levitate", "Erases memories"],
+    "correct": 0,
+    "explanation": "Riddikulus forces a Boggart to assume a funny form."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Who is the ghost of Gryffindor house?",
+    "answers": ["Nearly Headless Nick", "The Grey Lady", "The Bloody Baron", "The Fat Friar"],
+    "correct": 0,
+    "explanation": "Nearly Headless Nick is Gryffindor’s ghost."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What position does Harry play on the Gryffindor Quidditch team?",
+    "answers": ["Seeker", "Beater", "Chaser", "Keeper"],
+    "correct": 0,
+    "explanation": "Harry is the Seeker."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What is the name of the vault that was the high-security vault in Gringotts?",
+    "answers": ["Vault 713", "Vault 619", "Vault 999", "Vault 687"],
+    "correct": 0,
+    "explanation": "Vault 713 housed the Philosopher’s Stone."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Who created the Sorcerer’s Stone?",
+    "answers": ["Nicolas Flamel", "Albus Dumbledore", "Merlin", "Salazar Slytherin"],
+    "correct": 0,
+    "explanation": "Nicolas Flamel created the Sorcerer’s Stone."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the protective spell used to shield areas or people?",
+    "answers": ["Protego", "Expelliarmus", "Stupefy", "Imperio"],
+    "correct": 0,
+    "explanation": "Protego creates a magical shield."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the tree that Harry and Ron crashed into while flying the car?",
+    "answers": ["Whomping Willow", "Oak Tree", "Mandrake", "Elder Tree"],
+    "correct": 0,
+    "explanation": "The Whomping Willow attacked their flying car."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "What magical object did Dumbledore leave Hermione in his will?",
+    "answers": ["The Tales of Beedle the Bard", "The Invisibility Cloak", "The Resurrection Stone", "The Elder Wand"],
+    "correct": 0,
+    "explanation": "Dumbledore left Hermione 'The Tales of Beedle the Bard'."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the spell used to summon the Dark Mark?",
+    "answers": ["Morsmordre", "Avada Kedavra", "Crucio", "Imperio"],
+    "correct": 0,
+    "explanation": "Morsmordre conjures the Dark Mark."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "What is the name of the magical device that allows communication over long distances?",
+    "answers": ["Two-way mirror", "Floo Network", "Howler", "Portkey"],
+    "correct": 0,
+    "explanation": "Two-way mirrors allow communication between holders."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the vault Harry inherited from his parents at Gringotts?",
+    "answers": ["Vault 687", "Vault 713", "Vault 999", "Vault 619"],
+    "correct": 2,
+    "explanation": "Vault 999 contained the treasure Harry inherited."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What does the spell 'Stupefy' do?",
+    "answers": ["Stuns opponent", "Unlocks doors", "Levitates objects", "Disarms opponents"],
+    "correct": 0,
+    "explanation": "'Stupefy' stuns the target temporarily."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Who was the Minister for Magic during Harry’s first year at Hogwarts?",
+    "answers": ["Cornelius Fudge", "Pius Thicknesse", "Kingsley Shacklebolt", "Rufus Scrimgeour"],
+    "correct": 0,
+    "explanation": "Cornelius Fudge was Minister for Magic in Harry’s early years."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "Which magical plant’s scream can knock people unconscious?",
+    "answers": ["Mandrake", "Devil’s Snare", "Gillyweed", "Whomping Willow"],
+    "correct": 0,
+    "explanation": "Mandrake’s scream is dangerous to humans."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 2,
+    "question": "Who was the Quidditch captain of Gryffindor during Harry's third year?",
+    "answers": ["Oliver Wood", "Angelina Johnson", "Fred Weasley", "Cormac McLaggen"],
+    "correct": 0,
+    "explanation": "Oliver Wood was captain and keeper."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the magical object used to store memories?",
+    "answers": ["Pensieve", "Portkey", "Horcrux", "Deluminator"],
+    "correct": 0,
+    "explanation": "Pensieve is used to view and store memories."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 2,
+    "question": "What is the name of the spell that creates a protective shield?",
+    "answers": ["Protego", "Expelliarmus", "Expecto Patronum", "Riddikulus"],
+    "correct": 0,
+    "explanation": "Protego creates a magical shield to block spells."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 2,
+    "question": "What type of wood is Harry's wand made from?",
+    "answers": ["Holly", "Yew", "Elm", "Ash"],
+    "correct": 0,
+    "explanation": "Harry’s wand is made of holly wood."
+  },
+    {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "What is the name of the vault key that Hagrid retrieves from Gringotts for Harry’s first visit?",
+    "answers": ["Vault 687 key", "Vault 713 key", "Vault 619 key", "Vault 999 key"],
+    "correct": 0,
+    "explanation": "Hagrid retrieves the key to Vault 687 for Harry’s inheritance."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "What is the full name of Nearly Headless Nick?",
+    "answers": ["Sir Nicholas de Mimsy-Porpington", "Sir Nicholas de Argyle", "Sir Nicholas Flamel", "Sir Nicholas Black"],
+    "correct": 0,
+    "explanation": "Nearly Headless Nick’s full name is Sir Nicholas de Mimsy-Porpington."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "What is the name of the wizarding bank run by goblins?",
+    "answers": ["Gringotts", "Borgin and Burkes", "Florean Fortescue’s", "Honeydukes"],
+    "correct": 0,
+    "explanation": "Gringotts is the wizarding bank."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "What is the core of Voldemort’s wand?",
+    "answers": ["Phoenix feather", "Dragon heartstring", "Unicorn hair", "Veela hair"],
+    "correct": 0,
+    "explanation": "Voldemort’s wand core is a phoenix feather from the same phoenix as Harry’s."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "What potion does Professor Slughorn use to restore memories?",
+    "answers": ["Felix Felicis", "Veritaserum", "Draught of Living Death", "None (Slughorn uses a Pensieve)"],
+    "correct": 3,
+    "explanation": "Slughorn’s memories are accessed via the Pensieve, not a potion."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Who kills Nagini, Voldemort’s snake Horcrux?",
+    "answers": ["Neville Longbottom", "Harry Potter", "Ron Weasley", "Hermione Granger"],
+    "correct": 0,
+    "explanation": "Neville kills Nagini with the Sword of Gryffindor."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "What does the spell 'Imperio' do?",
+    "answers": ["Controls the victim’s actions", "Causes pain", "Disarms opponent", "Conjures objects"],
+    "correct": 0,
+    "explanation": "'Imperio' places the victim under the caster’s control."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "What magical creature pulls the carriages to Hogwarts that only some can see?",
+    "answers": ["Thestrals", "Hippogriffs", "Dragons", "Unicorns"],
+    "correct": 0,
+    "explanation": "Only those who have seen death can see Thestrals pulling the carriages."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "Which vault number was the high-security vault containing the Sorcerer’s Stone?",
+    "answers": ["713", "619", "687", "999"],
+    "correct": 0,
+    "explanation": "Vault 713 contained the Sorcerer’s Stone."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Who was the original master of the Elder Wand before Dumbledore?",
+    "answers": ["Gellert Grindelwald", "Harry Potter", "Tom Riddle", "Severus Snape"],
+    "correct": 0,
+    "explanation": "Grindelwald was the Elder Wand’s master before Dumbledore."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "What magical creature is Fawkes?",
+    "answers": ["Phoenix", "Griffin", "Hippogriff", "Acromantula"],
+    "correct": 0,
+    "explanation": "Fawkes is Dumbledore’s loyal phoenix."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "Who was the author of 'Magical Theory' and other advanced wizardry books mentioned at Hogwarts?",
+    "answers": ["Adalbert Waffling", "Bathilda Bagshot", "Newt Scamander", "Elphias Doge"],
+    "correct": 0,
+    "explanation": "Adalbert Waffling is known for theoretical magical works."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Which spell did Hermione use to fix Harry’s broken glasses on the Hogwarts Express?",
+    "answers": ["Reparo", "Obliviate", "Alohomora", "Lumos"],
+    "correct": 0,
+    "explanation": "'Reparo' repairs broken objects instantly."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 3,
+    "question": "Who is the half-giant brother of Hagrid?",
+    "answers": ["Grawp", "Aragog", "Fang", "Norbert"],
+    "correct": 0,
+    "explanation": "Grawp is Hagrid’s giant half-brother."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "What is the name of the vault Harry inherits at Gringotts?",
+    "answers": ["Vault 687", "Vault 619", "Vault 713", "Vault 999"],
+    "correct": 3,
+    "explanation": "Vault 999 contains Harry’s inherited treasures."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Which spell produces a Patronus?",
+    "answers": ["Expecto Patronum", "Expelliarmus", "Lumos", "Protego"],
+    "correct": 0,
+    "explanation": "Expecto Patronum summons a protective Patronus."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Which magical plant screams when uprooted?",
+    "answers": ["Mandrake", "Devil’s Snare", "Gillyweed", "Whomping Willow"],
+    "correct": 0,
+    "explanation": "Mandrakes scream loudly when pulled from the soil."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "Which professor was revealed to be the Half-Blood Prince?",
+    "answers": ["Severus Snape", "Tom Riddle", "Albus Dumbledore", "Gilderoy Lockhart"],
+    "correct": 0,
+    "explanation": "Snape is the Half-Blood Prince."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Who teaches Potions during Harry’s sixth year?",
+    "answers": ["Severus Snape", "Horace Slughorn", "Remus Lupin", "Gilderoy Lockhart"],
+    "correct": 1,
+    "explanation": "Horace Slughorn returns to teach Potions in Harry’s sixth year."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "What is the name of the sword that appears to worthy Gryffindors?",
+    "answers": ["Sword of Gryffindor", "Sword of Hufflepuff", "Sword of Ravenclaw", "Sword of Slytherin"],
+    "correct": 0,
+    "explanation": "The Sword of Gryffindor appears to true Gryffindors in need."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "What is the spell used to unlock doors?",
+    "answers": ["Alohomora", "Expelliarmus", "Stupefy", "Lumos"],
+    "correct": 0,
+    "explanation": "Alohomora unlocks doors and objects."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Which object did Dumbledore bequeath to Ron in his will?",
+    "answers": ["Deluminator", "Invisibility Cloak", "The Tales of Beedle the Bard", "The Resurrection Stone"],
+    "correct": 0,
+    "explanation": "Ron receives the Deluminator from Dumbledore."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "What is the name of the spell that repels Dementors?",
+    "answers": ["Expecto Patronum", "Expelliarmus", "Riddikulus", "Protego"],
+    "correct": 0,
+    "explanation": "Expecto Patronum is used to repel Dementors."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "What is the name of Voldemort’s mother?",
+    "answers": ["Merope Gaunt", "Narcissa Malfoy", "Bellatrix Lestrange", "Andromeda Tonks"],
+    "correct": 0,
+    "explanation": "Merope Gaunt was Voldemort’s mother."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "What type of creature is Dobby?",
+    "answers": ["House-elf", "Goblin", "Centaur", "Pixie"],
+    "correct": 0,
+    "explanation": "Dobby is a house-elf."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 3,
+    "question": "Who is the Slytherin Quidditch captain in Harry’s second year?",
+    "answers": ["Marcus Flint", "Draco Malfoy", "Vincent Crabbe", "Gregory Goyle"],
+    "correct": 0,
+    "explanation": "Marcus Flint was Slytherin captain early on."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Which magical item shows the holder's deepest desire?",
+    "answers": ["Mirror of Erised", "The Pensieve", "The Sorting Hat", "The Marauder’s Map"],
+    "correct": 0,
+    "explanation": "The Mirror of Erised reflects deepest desires."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "Which spell is used to conjure fire?",
+    "answers": ["Incendio", "Lumos", "Expecto Patronum", "Aguamenti"],
+    "correct": 0,
+    "explanation": "Incendio conjures flames."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Which creature did Hagrid raise that was illegal to own?",
+    "answers": ["Dragon", "Hippogriff", "Niffler", "Basilisk"],
+    "correct": 0,
+    "explanation": "Hagrid raised a dragon named Norbert."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "Who was the Gryffindor Quidditch captain in Harry’s fifth year?",
+    "answers": ["Oliver Wood", "Angelina Johnson", "Fred Weasley", "Charlie Weasley"],
+    "correct": 1,
+    "explanation": "Angelina Johnson was captain in Harry’s fifth year."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "What does the spell 'Avada Kedavra' do?",
+    "answers": ["Kills instantly", "Disarms opponent", "Stuns opponent", "Creates light"],
+    "correct": 0,
+    "explanation": "Avada Kedavra is the killing curse."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "What is the name of the witch who warns Harry about the Chamber of Secrets?",
+    "answers": ["Moaning Myrtle", "Nearly Headless Nick", "Madam Pomfrey", "Professor Trelawney"],
+    "correct": 0,
+    "explanation": "Moaning Myrtle haunts the bathroom near the Chamber."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 3,
+    "question": "Who created the potion Felix Felicis?",
+    "answers": ["Severus Snape", "Horace Slughorn", "Albus Dumbledore", "Gilderoy Lockhart"],
+    "correct": 1,
+    "explanation": "Horace Slughorn mentions Felix Felicis in class."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 3,
+    "question": "What is the name of the magical book Harry uses to learn about Defense Against the Dark Arts?",
+    "answers": ["The Monster Book of Monsters", "Magical Drafts and Potions", "Hogwarts: A History", "Quidditch Through the Ages"],
+    "correct": 0,
+    "explanation": "The Monster Book of Monsters is used for Defense classes."
+  },
+    {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What is the name of the goblin who manages the vaults at Gringotts?",
+    "answers": ["Griphook", "Ragnok", "Bogrod", "Gornuk"],
+    "correct": 0,
+    "explanation": "Griphook is a goblin who assists Harry and his friends at Gringotts."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What is the incantation for the spell that reveals hidden secrets or makes things visible?",
+    "answers": ["Aparecium", "Revelio", "Lumos", "Nox"],
+    "correct": 0,
+    "explanation": "Aparecium reveals invisible ink or hidden messages."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What is the full name of the founder of Slytherin house?",
+    "answers": ["Salazar Slytherin", "Godric Gryffindor", "Rowena Ravenclaw", "Helga Hufflepuff"],
+    "correct": 0,
+    "explanation": "Salazar Slytherin was one of the four Hogwarts founders."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What is the name of the device used to detect magical beings or objects?",
+    "answers": ["Foe-Glass", "Sneakoscope", "Time-Turner", "Remembrall"],
+    "correct": 1,
+    "explanation": "Sneakoscope spins and glows when near untrustworthy beings."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "Which spell is used to repel Dementors?",
+    "answers": ["Expecto Patronum", "Stupefy", "Protego", "Riddikulus"],
+    "correct": 0,
+    "explanation": "Expecto Patronum summons a Patronus to repel Dementors."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "Who is the ghost of Ravenclaw house?",
+    "answers": ["The Grey Lady", "Nearly Headless Nick", "The Bloody Baron", "The Fat Friar"],
+    "correct": 0,
+    "explanation": "The Grey Lady is Helena Ravenclaw, Ravenclaw’s ghost."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "Which potion grants luck to the drinker for a period of time?",
+    "answers": ["Felix Felicis", "Polyjuice Potion", "Veritaserum", "Draught of Peace"],
+    "correct": 0,
+    "explanation": "Felix Felicis is also known as 'Liquid Luck.'"
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 4,
+    "question": "What form does Harry’s Patronus take?",
+    "answers": ["Stag", "Doe", "Hare", "Phoenix"],
+    "correct": 0,
+    "explanation": "Harry’s Patronus is a stag."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What is the name of the magical creature Aragog is?",
+    "answers": ["Acromantula", "Hippogriff", "Basilisk", "Grindylow"],
+    "correct": 0,
+    "explanation": "Aragog is a giant spider called an Acromantula."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What are the three Deathly Hallows?",
+    "answers": ["Elder Wand, Resurrection Stone, Invisibility Cloak", "Sorcerer’s Stone, Invisibility Cloak, Elder Wand", "Resurrection Stone, Time-Turner, Elder Wand", "Elder Wand, Sorcerer’s Stone, Invisibility Cloak"],
+    "correct": 0,
+    "explanation": "The three Deathly Hallows are the Elder Wand, Resurrection Stone, and Invisibility Cloak."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "Who wrote 'Magical Theory'?",
+    "answers": ["Adalbert Waffling", "Bathilda Bagshot", "Newt Scamander", "Gilderoy Lockhart"],
+    "correct": 0,
+    "explanation": "Adalbert Waffling is the author of 'Magical Theory.'"
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What is the name of the spell used to fix broken objects?",
+    "answers": ["Reparo", "Expelliarmus", "Stupefy", "Lumos"],
+    "correct": 0,
+    "explanation": "'Reparo' repairs broken objects."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What is the name of the group founded by Dumbledore to fight Voldemort?",
+    "answers": ["Order of the Phoenix", "Death Eaters", "Dumbledore’s Army", "The Inquisitorial Squad"],
+    "correct": 0,
+    "explanation": "The Order of the Phoenix was formed to fight Voldemort."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What is the name of the magical prison guarded by Dementors?",
+    "answers": ["Azkaban", "Hogsmeade", "Ministry of Magic", "Hogwarts"],
+    "correct": 0,
+    "explanation": "Azkaban is the wizarding prison."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What magical creature pulls the Hogwarts carriages?",
+    "answers": ["Thestrals", "Hippogriffs", "Unicorns", "Dragons"],
+    "correct": 0,
+    "explanation": "Thestrals pull the Hogwarts carriages but are visible only to those who have seen death."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What does the spell 'Obliviate' do?",
+    "answers": ["Erases memories", "Conjures light", "Disarms opponent", "Unlocks doors"],
+    "correct": 0,
+    "explanation": "'Obliviate' erases or modifies memories."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "Who is the headmaster before Dumbledore at Hogwarts?",
+    "answers": ["Armando Dippet", "Phineas Nigellus Black", "Severus Snape", "Minerva McGonagall"],
+    "correct": 0,
+    "explanation": "Armando Dippet was headmaster before Dumbledore."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What magical creature is the symbol of Hufflepuff house?",
+    "answers": ["Badger", "Lion", "Eagle", "Snake"],
+    "correct": 0,
+    "explanation": "The badger represents Hufflepuff house."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What form does Hermione’s Patronus take?",
+    "answers": ["Otter", "Doe", "Stag", "Hare"],
+    "correct": 0,
+    "explanation": "Hermione’s Patronus is an otter."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Movie",
+    "level": 4,
+    "question": "What spell does Hermione use to keep the book 'Monster Book of Monsters' under control?",
+    "answers": ["Calming Charm", "Silencing Charm", "Levitation Charm", "Stupefy"],
+    "correct": 1,
+    "explanation": "Hermione uses a Silencing Charm to quiet the book."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "Who does Harry appoint as the new Minister of Magic after the Battle of Hogwarts?",
+    "answers": ["Kingsley Shacklebolt", "Arthur Weasley", "Percy Weasley", "Cornelius Fudge"],
+    "correct": 0,
+    "explanation": "Kingsley Shacklebolt becomes Minister after Voldemort’s defeat."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What is the name of the magical creature that can transform into the worst fear of a person?",
+    "answers": ["Boggart", "Dementor", "Pixie", "Acromantula"],
+    "correct": 0,
+    "explanation": "Boggarts take the form of a person’s worst fear."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What type of magical creature is Buckbeak?",
+    "answers": ["Hippogriff", "Thestral", "Dragon", "Unicorn"],
+    "correct": 0,
+    "explanation": "Buckbeak is a proud Hippogriff."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "Which potion allows a person to assume the appearance of someone else?",
+    "answers": ["Polyjuice Potion", "Felix Felicis", "Veritaserum", "Draught of Peace"],
+    "correct": 0,
+    "explanation": "Polyjuice Potion allows the drinker to take someone else’s form."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What is the name of the magical tree that attacks anyone who comes near?",
+    "answers": ["Whomping Willow", "Mandrake", "Devil’s Snare", "Giant Oak"],
+    "correct": 0,
+    "explanation": "The Whomping Willow is a violent magical tree."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "Which potion is used to tell if someone is telling the truth?",
+    "answers": ["Veritaserum", "Polyjuice Potion", "Felix Felicis", "Draught of Peace"],
+    "correct": 0,
+    "explanation": "Veritaserum forces the drinker to tell the truth."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What spell is used to make objects levitate?",
+    "answers": ["Wingardium Leviosa", "Lumos", "Accio", "Expelliarmus"],
+    "correct": 0,
+    "explanation": "Wingardium Leviosa levitates objects."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What type of creature is Firenze?",
+    "answers": ["Centaur", "Werewolf", "Goblin", "Elf"],
+    "correct": 0,
+    "explanation": "Firenze is a centaur."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What is the name of the magical creature guarding the entrance to the Gryffindor common room?",
+    "answers": ["The Fat Lady", "The Grey Lady", "The Bloody Baron", "Nearly Headless Nick"],
+    "correct": 0,
+    "explanation": "The Fat Lady guards Gryffindor’s entrance."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "What magical object shows the holder the location of everyone at Hogwarts?",
+    "answers": ["Marauder’s Map", "Time-Turner", "Portkey", "Mirror of Erised"],
+    "correct": 0,
+    "explanation": "The Marauder’s Map shows everyone’s location in Hogwarts."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "Who was the first to be sorted into Gryffindor house according to legend?",
+    "answers": ["Godric Gryffindor", "Rowena Ravenclaw", "Salazar Slytherin", "Helga Hufflepuff"],
+    "correct": 0,
+    "explanation": "Godric Gryffindor was the founder and first member of Gryffindor."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Both",
+    "level": 4,
+    "question": "Which potion does Harry use to breathe underwater during the Triwizard Tournament?",
+    "answers": ["Gillyweed", "Polyjuice Potion", "Felix Felicis", "Draught of Living Death"],
+    "correct": 0,
+    "explanation": "Gillyweed allows breathing underwater."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 4,
+    "question": "What creature does Hagrid introduce to his Care of Magical Creatures class that later attacks Draco Malfoy?",
+    "answers": ["Hippogriff", "Basilisk", "Acromantula", "Dragon"],
+    "correct": 0,
+    "explanation": "Buckbeak the Hippogriff attacks Draco after being insulted."
+  },
+    {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the full name of the author who wrote 'Fantastic Beasts and Where to Find Them'?",
+    "answers": ["Newt Scamander", "Bathilda Bagshot", "Gilderoy Lockhart", "Albus Dumbledore"],
+    "correct": 0,
+    "explanation": "Newt Scamander is the fictional author of 'Fantastic Beasts and Where to Find Them'."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the name of the spell that Severus Snape invented, also known as the Sectumsempra curse?",
+    "answers": ["Sectumsempra", "Expelliarmus", "Crucio", "Avada Kedavra"],
+    "correct": 0,
+    "explanation": "Snape invented Sectumsempra, which causes deep slashing wounds."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "Which magical creature does Dumbledore leave his Deluminator to?",
+    "answers": ["Ron Weasley", "Harry Potter", "Hermione Granger", "Neville Longbottom"],
+    "correct": 0,
+    "explanation": "Dumbledore bequeaths the Deluminator to Ron Weasley."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the name of the room in Hogwarts that can transform into anything the user wishes?",
+    "answers": ["Room of Requirement", "Chamber of Secrets", "Room of Hidden Things", "Room of Wishes"],
+    "correct": 0,
+    "explanation": "The Room of Requirement changes based on the seeker’s needs."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What form does Luna Lovegood’s Patronus take?",
+    "answers": ["Hare", "Otter", "Stag", "Doe"],
+    "correct": 0,
+    "explanation": "Luna’s Patronus is a hare."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "Who was the first goblin Harry ever met?",
+    "answers": ["Griphook", "Ragnok", "Bogrod", "Gnarlak"],
+    "correct": 0,
+    "explanation": "Griphook is the goblin who assists Harry in Gringotts."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "Which member of the Weasley family was a prefect during Harry's first year at Hogwarts?",
+    "answers": ["Percy Weasley", "Bill Weasley", "Charlie Weasley", "Fred Weasley"],
+    "correct": 0,
+    "explanation": "Percy was a prefect in his earlier Hogwarts years."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the core of Bellatrix Lestrange's wand?",
+    "answers": ["Dragon heartstring", "Phoenix feather", "Unicorn hair", "Veela hair"],
+    "correct": 0,
+    "explanation": "Bellatrix’s wand core is dragon heartstring."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the maximum speed the Firebolt broomstick can reach?",
+    "answers": ["150 miles per hour", "120 miles per hour", "100 miles per hour", "130 miles per hour"],
+    "correct": 0,
+    "explanation": "The Firebolt is said to reach speeds up to 150 mph."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "Who was the first person to be killed by the Killing Curse in the book series?",
+    "answers": ["Frank Bryce", "Bertha Jorkins", "James Potter", "Cedric Diggory"],
+    "correct": 0,
+    "explanation": "Frank Bryce, the Riddle family’s gardener, was killed by Voldemort with Avada Kedavra."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What position does Harry play on his Quidditch team?",
+    "answers": ["Seeker", "Chaser", "Keeper", "Beater"],
+    "correct": 0,
+    "explanation": "Harry is the Seeker, whose job is to catch the Golden Snitch."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the name of the sweet shop in Hogsmeade that sells Chocolate Frogs?",
+    "answers": ["Honeydukes", "Zonko's", "Dervish and Banges", "Scrivenshaft's Quill Shop"],
+    "correct": 0,
+    "explanation": "Honeydukes is the candy shop selling Chocolate Frogs."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the significance of the number 7 in the Harry Potter series?",
+    "answers": ["It is considered the most magical number", "It represents the number of Horcruxes", "The number of Hogwarts houses", "All of the above"],
+    "correct": 3,
+    "explanation": "Seven is the most magical number; there are seven Horcruxes and seven Hogwarts houses."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What was the name of the witch who founded Hufflepuff house?",
+    "answers": ["Helga Hufflepuff", "Rowena Ravenclaw", "Godric Gryffindor", "Salazar Slytherin"],
+    "correct": 0,
+    "explanation": "Helga Hufflepuff founded Hufflepuff house."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the name of the spell used to conjure a Patronus?",
+    "answers": ["Expecto Patronum", "Protego", "Lumos", "Expelliarmus"],
+    "correct": 0,
+    "explanation": "Expecto Patronum conjures a Patronus."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What magical item did Dumbledore leave to Hermione in his will?",
+    "answers": ["The Tales of Beedle the Bard", "The Deluminator", "The Invisibility Cloak", "The Resurrection Stone"],
+    "correct": 0,
+    "explanation": "Dumbledore bequeathed Hermione 'The Tales of Beedle the Bard.'"
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "Which curse causes unbearable pain but does not kill?",
+    "answers": ["Cruciatus Curse", "Imperius Curse", "Avada Kedavra", "Sectumsempra"],
+    "correct": 0,
+    "explanation": "The Cruciatus Curse causes intense pain."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What magical creature is Firenze?",
+    "answers": ["Centaur", "Elf", "Goblin", "Werewolf"],
+    "correct": 0,
+    "explanation": "Firenze is a centaur who teaches Divination."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the name of the spell Hermione uses to fix Harry’s glasses on the Hogwarts Express?",
+    "answers": ["Reparo", "Lumos", "Alohomora", "Expelliarmus"],
+    "correct": 0,
+    "explanation": "'Reparo' is the spell to repair broken objects."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "Who gave Harry his Firebolt broomstick?",
+    "answers": ["Sirius Black", "Albus Dumbledore", "Arthur Weasley", "Ron Weasley"],
+    "correct": 0,
+    "explanation": "Sirius gifted Harry the Firebolt."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the name of the spell used to summon objects toward the caster?",
+    "answers": ["Accio", "Alohomora", "Lumos", "Expelliarmus"],
+    "correct": 0,
+    "explanation": "'Accio' summons objects to the caster."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What magical item is used to store and review memories?",
+    "answers": ["Pensieve", "Time-Turner", "Marauder's Map", "Deluminator"],
+    "correct": 0,
+    "explanation": "A Pensieve stores and allows review of memories."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the name of the spell that conjures light at the tip of the wand?",
+    "answers": ["Lumos", "Nox", "Incendio", "Aguamenti"],
+    "correct": 0,
+    "explanation": "'Lumos' produces light from the wand tip."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "Who was the Slytherin Quidditch captain during Harry’s first year?",
+    "answers": ["Marcus Flint", "Draco Malfoy", "Vincent Crabbe", "Gregory Goyle"],
+    "correct": 0,
+    "explanation": "Marcus Flint was the Slytherin captain early on."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What creature is the Basilisk, and where is it hidden?",
+    "answers": ["Giant serpent, hidden in the Chamber of Secrets", "Dragon, hidden in the Forbidden Forest", "Giant spider, hidden in the cellar", "Phoenix, hidden in the Room of Requirement"],
+    "correct": 0,
+    "explanation": "The Basilisk is a giant serpent hidden in the Chamber of Secrets."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "Who destroys Helga Hufflepuff's cup, a Horcrux?",
+    "answers": ["Hermione Granger", "Ron Weasley", "Harry Potter", "Neville Longbottom"],
+    "correct": 1,
+    "explanation": "Ron destroys the Horcrux cup with the Sword of Gryffindor."
+  },
+  {
+    "category": "Harry Potter",
+    "subcategory": "Book",
+    "level": 5,
+    "question": "What is the name of the wizard prison guarded by Dementors?",
+    "answers": ["Azkaban", "Nurmengard", "Hogsmeade", "Malfoy Manor"],
+    "correct": 0,
+    "explanation": "Azkaban is the wizard prison guarded by Dementors."
+  }
 ]
+
 
