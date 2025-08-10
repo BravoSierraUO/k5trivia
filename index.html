@@ -187,7 +187,7 @@
         .selection-screen button {
             font-size: 20px;
             padding: 15px;
-            margin: 5px 0;
+            margin: 10px 0;
         }
         .selection-screen #start-game {
             width: 220px;
@@ -232,7 +232,7 @@
             display: flex;
             align-items: center;
         }
-        #science-xp-label {
+        #science-xp-label, #harry-potter-xp-label {
             cursor: pointer;
         }
         .subcategory-xp-bar {
@@ -277,7 +277,7 @@
         <h2>User Login</h2>
         <input type="text" id="username" placeholder="Enter your username" />
         <button id="login-button" class="button">Login</button>
-        <p id="version">Version 1.1.008</p>
+        <p id="version">Version 1.1.009</p>
     </div>
     <div class="selection-screen" id="selection-screen" style="display: none;">
         <div class="left-panel">
@@ -316,9 +316,19 @@
                 <div class="category-xp-bar">
                     <div class="category-xp-bar-fill" id="english-xp-bar-fill" style="width: 0%;"></div>
                 </div>
-                <p class="category-xp-label" id="harry-potter-xp-label">Harry Potter XP: 0</p>
+                <p class="category-xp-label" id="harry-potter-xp-label">▶ Harry Potter XP: 0</p>
                 <div class="category-xp-bar">
                     <div class="category-xp-bar-fill" id="harry-potter-xp-bar-fill" style="width: 0%;"></div>
+                </div>
+                <div id="harry-potter-subcategory-xp-bars" style="display: none;">
+                    <p class="subcategory-xp-label" id="hp-book-xp-label">Book XP: 0</p>
+                    <div class="subcategory-xp-bar">
+                        <div class="subcategory-xp-bar-fill" id="hp-book-xp-bar-fill" style="width: 0%;"></div>
+                    </div>
+                    <p class="subcategory-xp-label" id="hp-movie-xp-label">Movie XP: 0</p>
+                    <div class="subcategory-xp-bar">
+                        <div class="subcategory-xp-bar-fill" id="hp-movie-xp-bar-fill" style="width: 0%;"></div>
+                    </div>
                 </div>
             </div>
             <h3>High Scores</h3>
@@ -362,12 +372,23 @@
                 <option value="Physical Science">Physical Science</option>
                 <option value="Earth and Space Science">Earth and Space Science</option>
             </select>
+            <select id="harry-potter-subcategory" style="display: none;">
+                <option value="Both">Both</option>
+                <option value="Book">Book</option>
+                <option value="Movie">Movie</option>
+            </select>
             <select id="level">
                 <option value="1">Level 1 (1st Grade)</option>
                 <option value="2">Level 2 (2nd Grade)</option>
                 <option value="3">Level 3 (3rd Grade)</option>
                 <option value="4">Level 4 (4th Grade)</option>
                 <option value="5">Level 5 (5th Grade)</option>
+            </select>
+            <select id="num-questions">
+                <option value="5">5 Questions</option>
+                <option value="10" selected>10 Questions</option>
+                <option value="15">15 Questions</option>
+                <option value="20">20 Questions</option>
             </select>
             <button id="start-game" class="button">Start Game</button>
         </div>
@@ -386,7 +407,7 @@
     </div>
     <script>
         // Version number
-        const VERSION = "1.1.008";
+        const VERSION = "1.1.009";
         
         // Game state
         var questions = [];
@@ -397,6 +418,7 @@
         var currentCategory = 'Science';
         var currentSubcategory = 'All';
         var currentLevel = '1';
+        var numQuestions = 10;
         var usedQuestions = [];
         var settings = JSON.parse(localStorage.getItem('triviaSettings') || '{}');
 
@@ -408,7 +430,9 @@
         var selectionScreen = document.getElementById('selection-screen');
         var categorySelect = document.getElementById('category');
         var subcategorySelect = document.getElementById('subcategory');
+        var harryPotterSubcategorySelect = document.getElementById('harry-potter-subcategory');
         var levelSelect = document.getElementById('level');
+        var numQuestionsSelect = document.getElementById('num-questions');
         var correctDurationInput = document.getElementById('correct-duration');
         var incorrectDurationInput = document.getElementById('incorrect-duration');
         var startGameButton = document.getElementById('start-game');
@@ -435,6 +459,11 @@
         var lifeScienceXPBarFill = document.getElementById('life-science-xp-bar-fill');
         var physicalScienceXPBarFill = document.getElementById('physical-science-xp-bar-fill');
         var earthSpaceScienceXPBarFill = document.getElementById('earth-space-science-xp-bar-fill');
+        var harryPotterSubcategoryXPBars = document.getElementById('harry-potter-subcategory-xp-bars');
+        var hpBookXPLabel = document.getElementById('hp-book-xp-label');
+        var hpMovieXPLabel = document.getElementById('hp-movie-xp-label');
+        var hpBookXPBarFill = document.getElementById('hp-book-xp-bar-fill');
+        var hpMovieXPBarFill = document.getElementById('hp-movie-xp-bar-fill');
         var highScoresTableBody = document.getElementById('high-scores-body');
         var categoryDisplay = document.getElementById('category-display');
         var questionText = document.getElementById('question');
@@ -446,6 +475,7 @@
         var scoreMessageText = document.getElementById('score-message');
         var playAgainButton = document.getElementById('play-again');
         var scienceToggle = document.getElementById('science-xp-label');
+        var hpToggle = document.getElementById('harry-potter-xp-label');
 
         // Set version number
         versionText.textContent = `Version ${VERSION}`;
@@ -462,6 +492,19 @@
             var currentXP = scienceXPLabel.textContent.match(/Science XP: (\d+)/)?.[1] || '0';
             scienceXPLabel.textContent = `${isHidden ? '▼' : '▶'} Science XP: ${currentXP}`;
         };
+
+        // Toggle Harry Potter subcategories
+        hpToggle.onclick = function () {
+            var isHidden = harryPotterSubcategoryXPBars.style.display === 'none';
+            harryPotterSubcategoryXPBars.style.display = isHidden ? 'block' : 'none';
+            var currentXP = harryPotterXPLabel.textContent.match(/Harry Potter XP: (\d+)/)?.[1] || '0';
+            harryPotterXPLabel.textContent = `${isHidden ? '▼' : '▶'} Harry Potter XP: ${currentXP}`;
+        };
+
+        // Update number of questions
+        numQuestionsSelect.addEventListener('change', function () {
+            numQuestions = parseInt(numQuestionsSelect.value);
+        });
 
         // Load questions from external JSON file
         fetch('./questions.json')
@@ -507,17 +550,25 @@
         // Update subcategory dropdown and progress bars visibility
         function updateSubcategoryDropdown() {
             subcategorySelect.style.display = currentCategory === 'Science' ? 'block' : 'none';
+            harryPotterSubcategorySelect.style.display = currentCategory === 'Harry Potter' ? 'block' : 'none';
             subcategoryXPBars.style.display = currentCategory === 'Science' ? 'block' : 'none';
-            var currentXP = scienceXPLabel.textContent.match(/Science XP: (\d+)/)?.[1] || '0';
-            scienceXPLabel.textContent = `${currentCategory === 'Science' ? '▼' : '▶'} Science XP: ${currentXP}`;
-            if (currentCategory !== 'Science') {
-                currentSubcategory = null;
-                subcategoryXPText.style.display = 'none';
-                categoryXPText.style.display = 'block';
-            } else {
+            harryPotterSubcategoryXPBars.style.display = currentCategory === 'Harry Potter' ? 'block' : 'none';
+            var scienceXP = scienceXPLabel.textContent.match(/Science XP: (\d+)/)?.[1] || '0';
+            var hpXP = harryPotterXPLabel.textContent.match(/Harry Potter XP: (\d+)/)?.[1] || '0';
+            scienceXPLabel.textContent = `${currentCategory === 'Science' ? '▼' : '▶'} Science XP: ${scienceXP}`;
+            harryPotterXPLabel.textContent = `${currentCategory === 'Harry Potter' ? '▼' : '▶'} Harry Potter XP: ${hpXP}`;
+            if (currentCategory === 'Science') {
                 currentSubcategory = subcategorySelect.value;
                 subcategoryXPText.style.display = currentSubcategory !== 'All' ? 'block' : 'none';
                 categoryXPText.style.display = currentSubcategory === 'All' ? 'block' : 'none';
+            } else if (currentCategory === 'Harry Potter') {
+                currentSubcategory = harryPotterSubcategorySelect.value;
+                subcategoryXPText.style.display = currentSubcategory !== 'Both' ? 'block' : 'none';
+                categoryXPText.style.display = currentSubcategory === 'Both' ? 'block' : 'none';
+            } else {
+                currentSubcategory = null;
+                subcategoryXPText.style.display = 'none';
+                categoryXPText.style.display = 'block';
             }
         }
 
@@ -535,7 +586,20 @@
                         }
                     }
                 });
-                // Include XP from 'All' (stored directly under Science for specific levels)
+                for (var lvl in categoryXPAmt) {
+                    if (!isNaN(lvl)) {
+                        totalCategoryXP += categoryXPAmt[lvl] || 0;
+                    }
+                }
+            } else if (currentCategory === 'Harry Potter') {
+                var subcategories = ['Book', 'Movie'];
+                subcategories.forEach(subcat => {
+                    if (categoryXPAmt[subcat]) {
+                        for (var lvl in categoryXPAmt[subcat]) {
+                            totalCategoryXP += categoryXPAmt[subcat][lvl] || 0;
+                        }
+                    }
+                });
                 for (var lvl in categoryXPAmt) {
                     if (!isNaN(lvl)) {
                         totalCategoryXP += categoryXPAmt[lvl] || 0;
@@ -587,7 +651,20 @@
                             }
                         }
                     });
-                    // Include XP from 'All' (stored directly under Science for specific levels)
+                    for (var lvl in categoryXPAmt) {
+                        if (!isNaN(lvl)) {
+                            catXP += categoryXPAmt[lvl] || 0;
+                        }
+                    }
+                } else if (cat === 'Harry Potter') {
+                    var subcategories = ['Book', 'Movie'];
+                    subcategories.forEach(subcat => {
+                        if (categoryXPAmt[subcat]) {
+                            for (var lvl in categoryXPAmt[subcat]) {
+                                catXP += categoryXPAmt[subcat][lvl] || 0;
+                            }
+                        }
+                    });
                     for (var lvl in categoryXPAmt) {
                         if (!isNaN(lvl)) {
                             catXP += categoryXPAmt[lvl] || 0;
@@ -610,16 +687,31 @@
                     englishXPLabel.textContent = `English XP: ${catXP}`;
                     englishXPBarFill.style.width = catProgress + '%';
                 } else if (cat === 'Harry Potter') {
-                    harryPotterXPLabel.textContent = `Harry Potter XP: ${catXP}`;
+                    var isHidden = harryPotterSubcategoryXPBars.style.display === 'none';
+                    harryPotterXPLabel.textContent = `${isHidden && currentCategory !== 'Harry Potter' ? '▶' : '▼'} Harry Potter XP: ${catXP}`;
                     harryPotterXPBarFill.style.width = catProgress + '%';
                 }
             });
 
-            // Update category XP text (only shown when Science is selected with All or non-Science category)
+            // Update category XP text
             var categoryXPAmt = (categoryXP[currentUser] && categoryXP[currentUser][currentCategory]) || {};
             var totalCategoryXP = 0;
             if (currentCategory === 'Science') {
                 var subcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
+                subcategories.forEach(subcat => {
+                    if (categoryXPAmt[subcat]) {
+                        for (var lvl in categoryXPAmt[subcat]) {
+                            totalCategoryXP += categoryXPAmt[subcat][lvl] || 0;
+                        }
+                    }
+                });
+                for (var lvl in categoryXPAmt) {
+                    if (!isNaN(lvl)) {
+                        totalCategoryXP += categoryXPAmt[lvl] || 0;
+                    }
+                }
+            } else if (currentCategory === 'Harry Potter') {
+                var subcategories = ['Book', 'Movie'];
                 subcategories.forEach(subcat => {
                     if (categoryXPAmt[subcat]) {
                         for (var lvl in categoryXPAmt[subcat]) {
@@ -639,9 +731,9 @@
             }
             categoryXPText.textContent = `Category XP (${currentCategory}): ` + totalCategoryXP;
 
-            // Update subcategory XP text and bars for Science
+            // Update subcategory XP text and bars
             var totalSubcategoryXP = 0;
-            if (currentCategory === 'Science' && currentSubcategory !== 'All') {
+            if ((currentCategory === 'Science' && currentSubcategory !== 'All') || (currentCategory === 'Harry Potter' && currentSubcategory !== 'Both')) {
                 var subcategoryXPAmt = (categoryXPAmt[currentSubcategory]) || {};
                 for (var lvl in subcategoryXPAmt) {
                     totalSubcategoryXP += subcategoryXPAmt[lvl] || 0;
@@ -652,7 +744,7 @@
                 subcategoryXPText.style.display = 'none';
             }
 
-            // Update subcategory XP bars for Science
+            // Update Science subcategory XP bars
             if (currentCategory === 'Science') {
                 var subcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
                 subcategories.forEach(subcat => {
@@ -672,6 +764,27 @@
                     } else if (subcat === 'Earth and Space Science') {
                         earthSpaceScienceXPLabel.textContent = `Earth and Space Science XP: ${subcatXP}`;
                         earthSpaceScienceXPBarFill.style.width = subcatProgress + '%';
+                    }
+                });
+            }
+
+            // Update Harry Potter subcategory XP bars
+            if (currentCategory === 'Harry Potter') {
+                var subcategories = ['Book', 'Movie'];
+                subcategories.forEach(subcat => {
+                    var subcatXP = 0;
+                    if (categoryXPAmt[subcat]) {
+                        for (var lvl in categoryXPAmt[subcat]) {
+                            subcatXP += categoryXPAmt[subcat][lvl] || 0;
+                        }
+                    }
+                    var subcatProgress = Math.min((subcatXP / maxXP) * 100, 100);
+                    if (subcat === 'Book') {
+                        hpBookXPLabel.textContent = `Book XP: ${subcatXP}`;
+                        hpBookXPBarFill.style.width = subcatProgress + '%';
+                    } else if (subcat === 'Movie') {
+                        hpMovieXPLabel.textContent = `Movie XP: ${subcatXP}`;
+                        hpMovieXPBarFill.style.width = subcatProgress + '%';
                     }
                 });
             }
@@ -697,12 +810,32 @@
                             }
                         });
                     });
-                    // Include high scores for 'All' (stored directly under Science for specific levels)
                     levels.forEach(level => {
                         var score = (highScores[currentUser][category] && highScores[currentUser][category][level]) || 0;
                         if (score > 0) {
                             var row = document.createElement('tr');
                             row.innerHTML = `<td>${category}</td><td>All</td><td>${level}</td><td>${score}</td>`;
+                            highScoresTableBody.appendChild(row);
+                        }
+                    });
+                } else if (category === 'Harry Potter') {
+                    var subcategories = ['Book', 'Movie'];
+                    subcategories.forEach(subcat => {
+                        var levels = [1, 2, 3, 4, 5];
+                        levels.forEach(level => {
+                            var score = (highScores[currentUser][category] && highScores[currentUser][category][subcat] && highScores[currentUser][category][subcat][level]) || 0;
+                            if (score > 0) {
+                                var row = document.createElement('tr');
+                                row.innerHTML = `<td>${category}</td><td>${subcat}</td><td>${level}</td><td>${score}</td>`;
+                                highScoresTableBody.appendChild(row);
+                            }
+                        });
+                    });
+                    levels.forEach(level => {
+                        var score = (highScores[currentUser][category] && highScores[currentUser][category][level]) || 0;
+                        if (score > 0) {
+                            var row = document.createElement('tr');
+                            row.innerHTML = `<td>${category}</td><td>Both</td><td>${level}</td><td>${score}</td>`;
                             highScoresTableBody.appendChild(row);
                         }
                     });
@@ -782,6 +915,10 @@
             currentSubcategory = subcategorySelect.value;
             updateUserStats();
         });
+        harryPotterSubcategorySelect.addEventListener('change', function () {
+            currentSubcategory = harryPotterSubcategorySelect.value;
+            updateUserStats();
+        });
         levelSelect.addEventListener('change', function () {
             currentLevel = levelSelect.value;
             updateUserStats();
@@ -840,7 +977,11 @@
                 .map((q, index) => ({ question: q, index: index }))
                 .filter(q => 
                     q.question.category === currentCategory &&
-                    (currentCategory !== 'Science' || currentSubcategory === 'All' || q.question.subcategory === currentSubcategory) &&
+                    (
+                        (currentCategory === 'Science' && (currentSubcategory === 'All' || q.question.subcategory === currentSubcategory)) ||
+                        (currentCategory === 'Harry Potter' && (currentSubcategory === 'Both' || q.question.subcategory === currentSubcategory)) ||
+                        (currentCategory !== 'Science' && currentCategory !== 'Harry Potter')
+                    ) &&
                     q.question.level === parseInt(currentLevel) &&
                     !usedQuestions.includes(q.index)
                 );
@@ -862,7 +1003,9 @@
             usedQuestions.push(selected.index);
 
             // Set category display to reflect the question's specific subcategory
-            categoryDisplay.textContent = currentCategory + ': ' + (currentCategory === 'Science' ? currentQuestion.subcategory : '-');
+            categoryDisplay.textContent = currentCategory + ': ' + (
+                (currentCategory === 'Science' || currentCategory === 'Harry Potter') ? currentQuestion.subcategory : '-'
+            );
 
             var answersWithIndices = currentQuestion.answers.map((answer, index) => ({ answer, index }));
             shuffle(answersWithIndices);
@@ -891,8 +1034,8 @@
             // Always update total category XP for the current level
             categoryXP[currentUser][currentCategory][currentLevel] = (categoryXP[currentUser][currentCategory][currentLevel] || 0) + xpEarned;
 
-            // Update subcategory XP for Science, always using the question's subcategory
-            if (currentCategory === 'Science') {
+            // Update subcategory XP for Science or Harry Potter
+            if (currentCategory === 'Science' || currentCategory === 'Harry Potter') {
                 var questionSubcategory = currentQuestion.subcategory;
                 if (!categoryXP[currentUser][currentCategory][questionSubcategory]) {
                     categoryXP[currentUser][currentCategory][questionSubcategory] = {};
@@ -914,7 +1057,7 @@
                 feedbackText.style.color = 'red';
             }
 
-            if (questionCount >= (currentCategory === 'Science' ? 10 : 5)) {
+            if (questionCount >= numQuestions) {
                 showGameOver();
             } else {
                 setTimeout(loadQuestion, duration);
@@ -927,6 +1070,13 @@
             if (!highScores[currentUser][currentCategory]) highScores[currentUser][currentCategory] = {};
             var highScore;
             if (currentCategory === 'Science' && currentSubcategory !== 'All') {
+                if (!highScores[currentUser][currentCategory][currentSubcategory]) highScores[currentUser][currentCategory][currentSubcategory] = {};
+                highScore = highScores[currentUser][currentCategory][currentSubcategory][currentLevel] || 0;
+                if (score > highScore) {
+                    highScores[currentUser][currentCategory][currentSubcategory][currentLevel] = score;
+                    localStorage.setItem('triviaHighScores', JSON.stringify(highScores));
+                }
+            } else if (currentCategory === 'Harry Potter' && currentSubcategory !== 'Both') {
                 if (!highScores[currentUser][currentCategory][currentSubcategory]) highScores[currentUser][currentCategory][currentSubcategory] = {};
                 highScore = highScores[currentUser][currentCategory][currentSubcategory][currentLevel] || 0;
                 if (score > highScore) {
