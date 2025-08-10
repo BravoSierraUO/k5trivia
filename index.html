@@ -48,6 +48,8 @@
             cursor: pointer;
             font-size: 20px;
             border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
         }
         .button:hover {
             background: #45a049;
@@ -168,23 +170,24 @@
         .selection-screen input[type="number"] {
             font-size: 20px;
             padding: 10px;
-            margin: 5px 10px;
+            margin: 5px 0;
             border-radius: 5px;
             border: none;
-            width: 200px;
+            width: 100%;
             background: #333;
             color: white;
+            box-sizing: border-box;
         }
         .selection-screen label {
             font-size: 18px;
-            margin: 5px 10px;
+            margin: 5px 0;
             text-align: left;
-            width: 200px;
+            width: 100%;
         }
         .selection-screen button {
             font-size: 20px;
             padding: 15px 30px;
-            margin: 5px 10px;
+            margin: 5px 0;
         }
         .selection-screen h3 {
             font-size: 24px;
@@ -223,6 +226,8 @@
         .category-xp-label {
             font-size: 18px;
             margin: 5px 0;
+            display: flex;
+            align-items: center;
         }
         .subcategory-xp-bar {
             width: 80%;
@@ -240,6 +245,19 @@
         .subcategory-xp-label {
             font-size: 18px;
             margin: 5px 0;
+        }
+        .toggle-arrow {
+            font-size: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+            color: white;
+        }
+        .setting-row {
+            width: 80%;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
         .stats-table {
             width: 100%;
@@ -259,7 +277,7 @@
         <h2>User Login</h2>
         <input type="text" id="username" placeholder="Enter your username" />
         <button id="login-button" class="button">Login</button>
-        <p id="version">Version 1.1.006</p>
+        <p id="version">Version 1.1.007</p>
     </div>
     <div class="selection-screen" id="selection-screen" style="display: none;">
         <div class="left-panel">
@@ -272,9 +290,23 @@
                 <div class="xp-bar-fill" id="xp-bar-fill" style="width: 0%;"></div>
             </div>
             <div id="category-xp-bars">
-                <p class="category-xp-label" id="science-xp-label">Science XP: 0</p>
+                <p class="category-xp-label" id="science-xp-label"><span id="science-toggle" class="toggle-arrow">▶</span>Science XP: 0</p>
                 <div class="category-xp-bar">
                     <div class="category-xp-bar-fill" id="science-xp-bar-fill" style="width: 0%;"></div>
+                </div>
+                <div id="subcategory-xp-bars" style="display: none;">
+                    <p class="subcategory-xp-label" id="life-science-xp-label">Life Science XP: 0</p>
+                    <div class="subcategory-xp-bar">
+                        <div class="subcategory-xp-bar-fill" id="life-science-xp-bar-fill" style="width: 0%;"></div>
+                    </div>
+                    <p class="subcategory-xp-label" id="physical-science-xp-label">Physical Science XP: 0</p>
+                    <div class="subcategory-xp-bar">
+                        <div class="subcategory-xp-bar-fill" id="physical-science-xp-bar-fill" style="width: 0%;"></div>
+                    </div>
+                    <p class="subcategory-xp-label" id="earth-space-science-xp-label">Earth and Space Science XP: 0</p>
+                    <div class="subcategory-xp-bar">
+                        <div class="subcategory-xp-bar-fill" id="earth-space-science-xp-bar-fill" style="width: 0%;"></div>
+                    </div>
                 </div>
                 <p class="category-xp-label" id="social-studies-xp-label">Social Studies XP: 0</p>
                 <div class="category-xp-bar">
@@ -289,20 +321,6 @@
                     <div class="category-xp-bar-fill" id="harry-potter-xp-bar-fill" style="width: 0%;"></div>
                 </div>
             </div>
-            <div id="subcategory-xp-bars" style="display: none;">
-                <p class="subcategory-xp-label" id="life-science-xp-label">Life Science XP: 0</p>
-                <div class="subcategory-xp-bar">
-                    <div class="subcategory-xp-bar-fill" id="life-science-xp-bar-fill" style="width: 0%;"></div>
-                </div>
-                <p class="subcategory-xp-label" id="physical-science-xp-label">Physical Science XP: 0</p>
-                <div class="subcategory-xp-bar">
-                    <div class="subcategory-xp-bar-fill" id="physical-science-xp-bar-fill" style="width: 0%;"></div>
-                </div>
-                <p class="subcategory-xp-label" id="earth-space-science-xp-label">Earth and Space Science XP: 0</p>
-                <div class="subcategory-xp-bar">
-                    <div class="subcategory-xp-bar-fill" id="earth-space-science-xp-bar-fill" style="width: 0%;"></div>
-                </div>
-            </div>
             <h3>High Scores</h3>
             <table class="stats-table" id="high-scores-table">
                 <thead>
@@ -315,12 +333,20 @@
                 </thead>
                 <tbody id="high-scores-body"></tbody>
             </table>
-            <label for="correct-duration">Correct Answer Delay (seconds):</label>
-            <input type="number" id="correct-duration" min="0.5" max="10" step="0.5" value="1" />
-            <label for="incorrect-duration">Incorrect Answer Delay (seconds):</label>
-            <input type="number" id="incorrect-duration" min="0.5" max="10" step="0.5" value="1" />
-            <button id="logout-button" class="button">Logout</button>
-            <button id="reset-stats-button" class="button">Reset Stats</button>
+            <div class="setting-row">
+                <label for="correct-duration">Correct Answer Delay (seconds):</label>
+                <input type="number" id="correct-duration" min="0.5" max="10" step="0.5" value="1" />
+            </div>
+            <div class="setting-row">
+                <label for="incorrect-duration">Incorrect Answer Delay (seconds):</label>
+                <input type="number" id="incorrect-duration" min="0.5" max="10" step="0.5" value="1" />
+            </div>
+            <div class="setting-row">
+                <button id="logout-button" class="button">Logout</button>
+            </div>
+            <div class="setting-row">
+                <button id="reset-stats-button" class="button">Reset Stats</button>
+            </div>
         </div>
         <div class="right-panel">
             <h2>Select Category and Level</h2>
@@ -360,7 +386,7 @@
     </div>
     <script>
         // Version number
-        const VERSION = "1.1.006";
+        const VERSION = "1.1.007";
         
         // Game state
         var questions = [];
@@ -419,6 +445,7 @@
         var highScoreDisplay = document.getElementById('high-score-display');
         var scoreMessageText = document.getElementById('score-message');
         var playAgainButton = document.getElementById('play-again');
+        var scienceToggle = document.getElementById('science-toggle');
 
         // Set version number
         versionText.textContent = `Version ${VERSION}`;
@@ -427,6 +454,13 @@
         var highScores = JSON.parse(localStorage.getItem('triviaHighScores') || '{}');
         var userXP = JSON.parse(localStorage.getItem('triviaUserXP') || '{}');
         var categoryXP = JSON.parse(localStorage.getItem('triviaCategoryXP') || '{}');
+
+        // Toggle Science subcategories
+        scienceToggle.onclick = function () {
+            var isHidden = subcategoryXPBars.style.display === 'none';
+            subcategoryXPBars.style.display = isHidden ? 'block' : 'none';
+            scienceToggle.textContent = isHidden ? '▼' : '▶';
+        };
 
         // Load questions from external JSON file
         fetch('./questions.json')
@@ -473,6 +507,7 @@
         function updateSubcategoryDropdown() {
             subcategorySelect.style.display = currentCategory === 'Science' ? 'block' : 'none';
             subcategoryXPBars.style.display = currentCategory === 'Science' ? 'block' : 'none';
+            scienceToggle.textContent = currentCategory === 'Science' ? '▼' : '▶';
             if (currentCategory !== 'Science') {
                 currentSubcategory = null;
                 subcategoryXPText.style.display = 'none';
@@ -563,7 +598,7 @@
                 }
                 var catProgress = Math.min((catXP / maxXP) * 100, 100);
                 if (cat === 'Science') {
-                    scienceXPLabel.textContent = `Science XP: ${catXP}`;
+                    scienceXPLabel.textContent = `${scienceToggle.textContent} Science XP: ${catXP}`;
                     scienceXPBarFill.style.width = catProgress + '%';
                 } else if (cat === 'Social Studies') {
                     socialStudiesXPLabel.textContent = `Social Studies XP: ${catXP}`;
@@ -644,10 +679,12 @@
                 highScoresTableBody.innerHTML = '<tr><td colspan="4">No scores yet!</td></tr>';
                 return;
             }
+            var categories = ['Science', 'Social Studies', 'English', 'Harry Potter'];
             categories.forEach(category => {
                 if (category === 'Science') {
                     var subcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
                     subcategories.forEach(subcat => {
+                        var levels = [1, 2, 3, 4, 5];
                         levels.forEach(level => {
                             var score = (highScores[currentUser][category] && highScores[currentUser][category][subcat] && highScores[currentUser][category][subcat][level]) || 0;
                             if (score > 0) {
@@ -667,6 +704,7 @@
                         }
                     });
                 } else {
+                    var levels = [1, 2, 3, 4, 5];
                     levels.forEach(level => {
                         var score = (highScores[currentUser][category] && highScores[currentUser][category][level]) || 0;
                         if (score > 0) {
