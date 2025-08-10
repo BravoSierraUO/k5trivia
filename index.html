@@ -48,8 +48,6 @@
             cursor: pointer;
             font-size: 20px;
             border-radius: 5px;
-            width: 100%;
-            box-sizing: border-box;
         }
         .button:hover {
             background: #45a049;
@@ -107,14 +105,16 @@
         .login-screen input {
             font-size: 20px;
             padding: 10px;
-            margin: 10px;
+            margin: 10px 0;
             border-radius: 5px;
             border: none;
             width: 200px;
         }
         .login-screen button {
             font-size: 20px;
-            padding: 15px 30px;
+            padding: 15px;
+            margin: 10px 0;
+            width: 220px;
         }
         .login-screen #version {
             font-size: 16px;
@@ -186,8 +186,11 @@
         }
         .selection-screen button {
             font-size: 20px;
-            padding: 15px 30px;
+            padding: 15px;
             margin: 5px 0;
+        }
+        .selection-screen #start-game {
+            width: 220px;
         }
         .selection-screen h3 {
             font-size: 24px;
@@ -229,6 +232,9 @@
             display: flex;
             align-items: center;
         }
+        #science-xp-label {
+            cursor: pointer;
+        }
         .subcategory-xp-bar {
             width: 80%;
             height: 20px;
@@ -245,12 +251,6 @@
         .subcategory-xp-label {
             font-size: 18px;
             margin: 5px 0;
-        }
-        .toggle-arrow {
-            font-size: 18px;
-            margin-right: 10px;
-            cursor: pointer;
-            color: white;
         }
         .setting-row {
             width: 80%;
@@ -277,7 +277,7 @@
         <h2>User Login</h2>
         <input type="text" id="username" placeholder="Enter your username" />
         <button id="login-button" class="button">Login</button>
-        <p id="version">Version 1.1.007</p>
+        <p id="version">Version 1.1.008</p>
     </div>
     <div class="selection-screen" id="selection-screen" style="display: none;">
         <div class="left-panel">
@@ -290,7 +290,7 @@
                 <div class="xp-bar-fill" id="xp-bar-fill" style="width: 0%;"></div>
             </div>
             <div id="category-xp-bars">
-                <p class="category-xp-label" id="science-xp-label"><span id="science-toggle" class="toggle-arrow">▶</span>Science XP: 0</p>
+                <p class="category-xp-label" id="science-xp-label">▶ Science XP: 0</p>
                 <div class="category-xp-bar">
                     <div class="category-xp-bar-fill" id="science-xp-bar-fill" style="width: 0%;"></div>
                 </div>
@@ -369,7 +369,7 @@
                 <option value="4">Level 4 (4th Grade)</option>
                 <option value="5">Level 5 (5th Grade)</option>
             </select>
-            <button id="start-game" class="button" disabled>Loading Questions...</button>
+            <button id="start-game" class="button">Start Game</button>
         </div>
     </div>
     <div class="ui-overlay" id="ui" style="display: none;">
@@ -386,7 +386,7 @@
     </div>
     <script>
         // Version number
-        const VERSION = "1.1.007";
+        const VERSION = "1.1.008";
         
         // Game state
         var questions = [];
@@ -445,7 +445,7 @@
         var highScoreDisplay = document.getElementById('high-score-display');
         var scoreMessageText = document.getElementById('score-message');
         var playAgainButton = document.getElementById('play-again');
-        var scienceToggle = document.getElementById('science-toggle');
+        var scienceToggle = document.getElementById('science-xp-label');
 
         // Set version number
         versionText.textContent = `Version ${VERSION}`;
@@ -459,7 +459,8 @@
         scienceToggle.onclick = function () {
             var isHidden = subcategoryXPBars.style.display === 'none';
             subcategoryXPBars.style.display = isHidden ? 'block' : 'none';
-            scienceToggle.textContent = isHidden ? '▼' : '▶';
+            var currentXP = scienceXPLabel.textContent.match(/Science XP: (\d+)/)?.[1] || '0';
+            scienceXPLabel.textContent = `${isHidden ? '▼' : '▶'} Science XP: ${currentXP}`;
         };
 
         // Load questions from external JSON file
@@ -507,7 +508,8 @@
         function updateSubcategoryDropdown() {
             subcategorySelect.style.display = currentCategory === 'Science' ? 'block' : 'none';
             subcategoryXPBars.style.display = currentCategory === 'Science' ? 'block' : 'none';
-            scienceToggle.textContent = currentCategory === 'Science' ? '▼' : '▶';
+            var currentXP = scienceXPLabel.textContent.match(/Science XP: (\d+)/)?.[1] || '0';
+            scienceXPLabel.textContent = `${currentCategory === 'Science' ? '▼' : '▶'} Science XP: ${currentXP}`;
             if (currentCategory !== 'Science') {
                 currentSubcategory = null;
                 subcategoryXPText.style.display = 'none';
@@ -598,7 +600,8 @@
                 }
                 var catProgress = Math.min((catXP / maxXP) * 100, 100);
                 if (cat === 'Science') {
-                    scienceXPLabel.textContent = `${scienceToggle.textContent} Science XP: ${catXP}`;
+                    var isHidden = subcategoryXPBars.style.display === 'none';
+                    scienceXPLabel.textContent = `${isHidden && currentCategory !== 'Science' ? '▶' : '▼'} Science XP: ${catXP}`;
                     scienceXPBarFill.style.width = catProgress + '%';
                 } else if (cat === 'Social Studies') {
                     socialStudiesXPLabel.textContent = `Social Studies XP: ${catXP}`;
