@@ -277,7 +277,7 @@
         <h2>User Login</h2>
         <input type="text" id="username" placeholder="Enter your username" />
         <button id="login-button" class="button">Login</button>
-        <p id="version">Version 1.1.009</p>
+        <p id="version">Version 1.1.010</p>
     </div>
     <div class="selection-screen" id="selection-screen" style="display: none;">
         <div class="left-panel">
@@ -407,7 +407,7 @@
     </div>
     <script>
         // Version number
-        const VERSION = "1.1.009";
+        const VERSION = "1.1.010";
         
         // Game state
         var questions = [];
@@ -421,6 +421,7 @@
         var numQuestions = 10;
         var usedQuestions = [];
         var settings = JSON.parse(localStorage.getItem('triviaSettings') || '{}');
+        var categoryXP = JSON.parse(localStorage.getItem('triviaCategoryXP') || '{}');
 
         // UI elements
         var loginScreen = document.getElementById('login-screen');
@@ -483,7 +484,6 @@
         // Initialize data
         var highScores = JSON.parse(localStorage.getItem('triviaHighScores') || '{}');
         var userXP = JSON.parse(localStorage.getItem('triviaUserXP') || '{}');
-        var categoryXP = JSON.parse(localStorage.getItem('triviaCategoryXP') || '{}');
 
         // Toggle Science subcategories
         scienceToggle.onclick = function () {
@@ -516,13 +516,19 @@
             })
             .then(data => {
                 questions = data;
+                // Validate questions
+                questions.forEach(q => {
+                    if (!q.category || (q.category === 'Science' && !q.subcategory) || (q.category === 'Harry Potter' && !q.subcategory)) {
+                        throw new Error('Invalid question format: missing category or subcategory');
+                    }
+                });
                 startGameButton.disabled = false;
                 startGameButton.textContent = 'Start Game';
                 console.log('Questions loaded:', questions.length);
             })
             .catch(error => {
                 console.error('Error loading questions:', error);
-                alert('Failed to load questions. Please check if questions.json exists.');
+                alert('Failed to load questions. Please check if questions.json exists and is valid.');
                 startGameButton.textContent = 'Failed to Load Questions';
             });
 
@@ -656,6 +662,9 @@
                             catXP += categoryXPAmt[lvl] || 0;
                         }
                     }
+                    var isHidden = subcategoryXPBars.style.display === 'none';
+                    scienceXPLabel.textContent = `${isHidden && currentCategory !== 'Science' ? '▶' : '▼'} Science XP: ${catXP}`;
+                    scienceXPBarFill.style.width = Math.min((catXP / maxXP) * 100, 100) + '%';
                 } else if (cat === 'Harry Potter') {
                     var subcategories = ['Book', 'Movie'];
                     subcategories.forEach(subcat => {
@@ -670,26 +679,20 @@
                             catXP += categoryXPAmt[lvl] || 0;
                         }
                     }
+                    var isHidden = harryPotterSubcategoryXPBars.style.display === 'none';
+                    harryPotterXPLabel.textContent = `${isHidden && currentCategory !== 'Harry Potter' ? '▶' : '▼'} Harry Potter XP: ${catXP}`;
+                    harryPotterXPBarFill.style.width = Math.min((catXP / maxXP) * 100, 100) + '%';
                 } else {
                     for (var lvl in categoryXPAmt) {
                         catXP += categoryXPAmt[lvl] || 0;
                     }
-                }
-                var catProgress = Math.min((catXP / maxXP) * 100, 100);
-                if (cat === 'Science') {
-                    var isHidden = subcategoryXPBars.style.display === 'none';
-                    scienceXPLabel.textContent = `${isHidden && currentCategory !== 'Science' ? '▶' : '▼'} Science XP: ${catXP}`;
-                    scienceXPBarFill.style.width = catProgress + '%';
-                } else if (cat === 'Social Studies') {
-                    socialStudiesXPLabel.textContent = `Social Studies XP: ${catXP}`;
-                    socialStudiesXPBarFill.style.width = catProgress + '%';
-                } else if (cat === 'English') {
-                    englishXPLabel.textContent = `English XP: ${catXP}`;
-                    englishXPBarFill.style.width = catProgress + '%';
-                } else if (cat === 'Harry Potter') {
-                    var isHidden = harryPotterSubcategoryXPBars.style.display === 'none';
-                    harryPotterXPLabel.textContent = `${isHidden && currentCategory !== 'Harry Potter' ? '▶' : '▼'} Harry Potter XP: ${catXP}`;
-                    harryPotterXPBarFill.style.width = catProgress + '%';
+                    if (cat === 'Social Studies') {
+                        socialStudiesXPLabel.textContent = `Social Studies XP: ${catXP}`;
+                        socialStudiesXPBarFill.style.width = Math.min((catXP / maxXP) * 100, 100) + '%';
+                    } else if (cat === 'English') {
+                        englishXPLabel.textContent = `English XP: ${catXP}`;
+                        englishXPBarFill.style.width = Math.min((catXP / maxXP) * 100, 100) + '%';
+                    }
                 }
             });
 
@@ -745,7 +748,7 @@
             }
 
             // Update Science subcategory XP bars
-            if (currentCategory === 'Science') {
+            if (currentCategory === 'Science' && categoryXPAmt) {
                 var subcategories = ['Life Science', 'Physical Science', 'Earth and Space Science'];
                 subcategories.forEach(subcat => {
                     var subcatXP = 0;
@@ -769,7 +772,7 @@
             }
 
             // Update Harry Potter subcategory XP bars
-            if (currentCategory === 'Harry Potter') {
+            if (currentCategory === 'Harry Potter' && categoryXPAmt) {
                 var subcategories = ['Book', 'Movie'];
                 subcategories.forEach(subcat => {
                     var subcatXP = 0;
@@ -865,12 +868,21 @@
             }
             currentUser = username;
             if (!categoryXP[currentUser]) categoryXP[currentUser] = {};
+            if (!categoryXP[currentUser]['Science']) categoryXP[currentUser]['Science'] = {
+                'Life Science': {}, 'Physical Science': {}, 'Earth and Space Science': {}
+            };
+            if (!categoryXP[currentUser]['Harry Potter']) categoryXP[currentUser]['Harry Potter'] = {
+                'Book': {}, 'Movie': {}
+            };
+            if (!categoryXP[currentUser]['Social Studies']) categoryXP[currentUser]['Social Studies'] = {};
+            if (!categoryXP[currentUser]['English']) categoryXP[currentUser]['English'] = {};
             if (!settings[currentUser]) {
                 settings[currentUser] = { correctDuration: 1, incorrectDuration: 1 };
                 localStorage.setItem('triviaSettings', JSON.stringify(settings));
             }
             correctDurationInput.value = settings[currentUser].correctDuration;
             incorrectDurationInput.value = settings[currentUser].incorrectDuration;
+            localStorage.setItem('triviaCategoryXP', JSON.stringify(categoryXP));
             loginScreen.style.display = 'none';
             selectionScreen.style.display = 'flex';
             updateSubcategoryDropdown();
