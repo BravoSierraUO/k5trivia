@@ -1398,10 +1398,10 @@
     "category": "Harry Potter",
     "subcategory": "Both",
     "level": 2,
-    "question": "What creature does Ron face during the Triwizard Tournament's second task?",
+    "question": "What creature does Harry face during the Triwizard Tournament's second task?",
     "answers": ["Giant squid", "Dragon", "Merpeople", "Acromantula"],
-    "correct": 0,
-    "explanation": "Ron was in the lake surrounded by Merpeople and faced the challenge there."
+    "correct": 2,
+    "explanation": "Harry was in the lake surrounded by Merpeople and faced the challenge there."
   },
   {
     "category": "Harry Potter",
@@ -2520,5 +2520,6 @@
     "explanation": "Azkaban is the wizard prison guarded by Dementors."
   }
 ]
+
 
 
