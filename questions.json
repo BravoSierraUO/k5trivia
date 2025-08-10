@@ -253,7 +253,7 @@
   },
   {
     "category": "Harry Potter",
-    "subcategory": "Book",
+    "subcategory": "Both",
     "level": 1,
     "question": "Who teaches Herbology at Hogwarts?",
     "answers": ["Professor Sprout", "Professor McGonagall", "Professor Flitwick", "Professor Snape"],
@@ -280,7 +280,7 @@
   },
   {
     "category": "Harry Potter",
-    "subcategory": "Movie",
+    "subcategory": "Both",
     "level": 1,
     "question": "What kind of magical creature is Hagrid?",
     "answers": ["Goblin", "House-elf", "Giant", "Troll"],
@@ -334,7 +334,7 @@
   },
   {
     "category": "Harry Potter",
-    "subcategory": "Book",
+    "subcategory": "Both",
     "level": 1,
     "question": "What is the name of Ron Weasley’s pet rat?",
     "answers": ["Scabbers", "Crookshanks", "Hedwig", "Trevor"],
@@ -398,7 +398,7 @@
   {
     "category": "Harry Potter",
     "subcategory": "Both",
-    "level": 1,
+    "level": 5,
     "question": "Who is the librarian at Hogwarts?",
     "answers": ["Madam Pince", "Madam Pomfrey", "Madam Rosmerta", "Madam Hooch"],
     "correct": 0,
@@ -595,7 +595,7 @@
   },
   {
     "category": "Harry Potter",
-    "subcategory": "Book",
+    "subcategory": "Both",
     "level": 1,
     "question": "What does the spell 'Wingardium Leviosa' do?",
     "answers": ["Levitate objects", "Create light", "Unlock doors", "Freeze opponents"],
@@ -650,7 +650,7 @@
   {
     "category": "Harry Potter",
     "subcategory": "Book",
-    "level": 1,
+    "level": 3,
     "question": "What house was Moaning Myrtle in?",
     "answers": ["Ravenclaw", "Gryffindor", "Hufflepuff", "Slytherin"],
     "correct": 0,
@@ -732,7 +732,7 @@
     "category": "Harry Potter",
     "subcategory": "Both",
     "level": 1,
-    "question": "What is the name of the pub in Hogsmeade?",
+    "question": "What is the name of the pub in Hogsmeade that most students visit?",
     "answers": ["The Three Broomsticks", "The Leaky Cauldron", "The Hog’s Head", "The Prancing Pony"],
     "correct": 0,
     "explanation": "The correct answer is The Three Broomsticks. It is a popular wizarding pub."
@@ -748,8 +748,8 @@
   },
   {
     "category": "Harry Potter",
-    "subcategory": "Both",
-    "level": 1,
+    "subcategory": "Book",
+    "level": 5,
     "question": "What is the name of the book Hermione uses to learn about Horcruxes?",
     "answers": ["Secrets of the Darkest Art", "Magical Drafts and Potions", "The Standard Book of Spells", "Fantastic Beasts"],
     "correct": 0,
@@ -1065,7 +1065,7 @@
     "category": "Harry Potter",
     "subcategory": "Both",
     "level": 1,
-    "question": "What is the name of the owl that delivers mail at Hogwarts?",
+    "question": "What is the name of the Weasleys' owl that delivers mail at Hogwarts?",
     "answers": ["Errol", "Hedwig", "Pigwidgeon", "Hermes"],
     "correct": 0,
     "explanation": "The correct answer is Errol. He is the Weasleys’ owl."
@@ -1128,10 +1128,10 @@
     "category": "Harry Potter",
     "subcategory": "Movie",
     "level": 2,
-    "question": "What is the name of the wizarding sweet that causes uncontrollable laughter?",
+    "question": "What is the name of the wizarding sweet that causes uncontrollable vomiting?",
     "answers": ["Fizzing Whizzbees", "Chocoballs", "Puking Pastilles", "Skiving Snackboxes"],
     "correct": 2,
-    "explanation": "Puking Pastilles cause nausea and vomiting, not laughter. The question is about laughter-inducing sweets which are actually 'Fanged Flyers' or similar, but Puking Pastilles are best known for causing sickness, so this is a tricky question from the movie. Please note the confusion: Fizzing Whizzbees cause a fizzy sensation, so the correct fun laughing candy is not explicitly named, but Puking Pastilles are the best match for a magical candy causing strong effects."
+    "explanation": "Puking Pastilles cause nausea and vomiting"
   },
   {
     "category": "Harry Potter",
@@ -1185,7 +1185,7 @@
     "question": "Who gave Harry the Firebolt broomstick?",
     "answers": ["Sirius Black", "Albus Dumbledore", "Minerva McGonagall", "Hagrid"],
     "correct": 0,
-    "explanation": "Sirius Black gave Harry the Firebolt as a Christmas gift."
+    "explanation": "Sirius Black gave Harry the Firebolt."
   },
   {
     "category": "Harry Potter",
@@ -1372,7 +1372,7 @@
     "subcategory": "Book",
     "level": 2,
     "question": "What is the name of the street where Diagon Alley is accessed from?",
-    "answers": ["Charing Cross Road", "Knockturn Alley", "Charing Cross", "Borgin and Burkes"],
+    "answers": ["Charing Cross Road", "Knockturn Alley", "Charing Crosses", "Borgin and Burkes"],
     "correct": 0,
     "explanation": "Diagon Alley is accessed through a hidden entrance from Charing Cross Road."
   },
@@ -1387,7 +1387,7 @@
   },
   {
     "category": "Harry Potter",
-    "subcategory": "Book",
+    "subcategory": "Both",
     "level": 2,
     "question": "What is the name of the magical map that shows everyone's location at Hogwarts?",
     "answers": ["Marauder’s Map", "Portkey", "Invisibility Cloak", "Pensieve"],
@@ -1441,7 +1441,7 @@
   },
   {
     "category": "Harry Potter",
-    "subcategory": "Book",
+    "subcategory": "Both",
     "level": 2,
     "question": "Who is the half-giant gamekeeper at Hogwarts?",
     "answers": ["Rubeus Hagrid", "Giant Squid", "Fang", "Grawp"],
@@ -1497,10 +1497,10 @@
     "category": "Harry Potter",
     "subcategory": "Book",
     "level": 2,
-    "question": "What magical plants are used to make the Wolfsbane Potion?",
-    "answers": ["Wolfsbane", "Mandrake", "Gillyweed", "Devil’s Snare"],
-    "correct": 0,
-    "explanation": "Wolfsbane is used in the potion to help werewolves."
+    "question": "Who gave Hagrid the Motorbike?",
+    "answers": ["Dumbledore", "McGonagall", "James Potter", "Sirius Black"],
+    "correct": 3,
+    "explanation": "Sirius Black gave Hagrid the Bike in order to transport baby Harry to the Dursleys"
   },
   {
     "category": "Harry Potter",
@@ -2520,6 +2520,7 @@
     "explanation": "Azkaban is the wizard prison guarded by Dementors."
   }
 ]
+
 
 
 
