@@ -1054,15 +1054,6 @@
   },
   {
     "category": "Harry Potter",
-    "subcategory": "Movie",
-    "level": 1,
-    "question": "Which character is known for his love of sweets and explosions?",
-    "answers": ["Fred Weasley", "George Weasley", "Ron Weasley", "Harry Potter"],
-    "correct": 1,
-    "explanation": "The correct answer is George Weasley. He is one of the Weasley twins."
-  },
-  {
-    "category": "Harry Potter",
     "subcategory": "Both",
     "level": 1,
     "question": "What is the name of the Weasleys' owl that delivers mail at Hogwarts?",
@@ -1607,7 +1598,7 @@
     "level": 2,
     "question": "What is the name of the vault Harry inherited from his parents at Gringotts?",
     "answers": ["Vault 687", "Vault 713", "Vault 999", "Vault 619"],
-    "correct": 2,
+    "correct": 0,
     "explanation": "Vault 999 contained the treasure Harry inherited."
   },
   {
@@ -2520,7 +2511,6 @@
     "explanation": "Azkaban is the wizard prison guarded by Dementors."
   }
 ]
-
 
 
 
