@@ -196,7 +196,7 @@
             <button id="play-again-btn" style="display: none;">Back to Main</button>
         </div>
     </div>
-    <div id="version-display">Version 1.1.036</div>
+    <div id="version-display">Version 1.1.037</div>
 
     <script>
         // Check for logged-in user
@@ -340,7 +340,7 @@
             selectedSubcategory = null;
             if (selectedCategory === 'Science') {
                 subcategoryGroup.style.display = 'block';
-                ['Life Science', 'Physical Science', 'Earth and Space Science'].forEach(sub => {
+                ['Life Science', 'Physical Science', 'Earth and Space Science', 'All'].forEach(sub => {
                     const button = document.createElement('button');
                     button.className = 'selection-button';
                     button.setAttribute('data-subcategory', sub);
@@ -416,10 +416,11 @@
         function getMaxUnlockedLevel(category, subcategory) {
             if (!categoryXPAmt[category]) return 1;
             let xp = 0;
-            if (category === 'Harry Potter') {
-                const bookXP = categoryXPAmt[category]['Book'] || 0;
-                const movieXP = categoryXPAmt[category]['Movie'] || 0;
-                xp = bookXP + movieXP; // Sum for Harry Potter main category
+            if (category === 'Harry Potter' || category === 'Science') {
+                const subcategories = category === 'Harry Potter' 
+                    ? ['Book', 'Movie']
+                    : ['Life Science', 'Physical Science', 'Earth and Space Science'];
+                xp = subcategories.reduce((sum, sub) => sum + (categoryXPAmt[category][sub] || 0), 0);
                 if (xp >= 1000) return 5;
                 if (xp >= 600) return 4;
                 if (xp >= 300) return 3;
@@ -473,7 +474,11 @@
                 !usedQuestionIds.has(q.id)
             );
             if (category === 'Science') {
-                filteredQuestions = filteredQuestions.filter(q => q.subcategory === subcategory);
+                if (subcategory === 'All') {
+                    filteredQuestions = filteredQuestions.filter(q => ['Life Science', 'Physical Science', 'Earth and Space Science'].includes(q.subcategory));
+                } else {
+                    filteredQuestions = filteredQuestions.filter(q => q.subcategory === subcategory);
+                }
             } else if (category === 'Harry Potter') {
                 if (subcategory === 'Both') {
                     filteredQuestions = filteredQuestions.filter(q => ['Book', 'Movie', 'Both'].includes(q.subcategory));
@@ -514,8 +519,9 @@
         }
 
         function displayQuestion() {
-            // Update subcategory header based on question's actual subcategory for Harry Potter "Both"
-            if (selectedCategory === 'Harry Potter' && selectedSubcategory === 'Both') {
+            // Update subcategory header based on question's actual subcategory for Harry Potter "Both" or Science "All"
+            if ((selectedCategory === 'Harry Potter' && selectedSubcategory === 'Both') || 
+                (selectedCategory === 'Science' && selectedSubcategory === 'All')) {
                 subcategoryHeader.textContent = currentQuestion.subcategory;
             } else {
                 subcategoryHeader.textContent = selectedSubcategory === 'null' ? 'General' : selectedSubcategory;
@@ -588,6 +594,14 @@
                 if (!categoryXPAmt[category]['Movie']) categoryXPAmt[category]['Movie'] = 0;
                 categoryXPAmt[category]['Book'] += xp;
                 categoryXPAmt[category]['Movie'] += xp;
+            } else if (category === 'Science' && subcategory === 'All') {
+                userXP += xp * 3; // Triple XP for "All" to account for all Science subcategories
+                if (!categoryXPAmt[category]['Life Science']) categoryXPAmt[category]['Life Science'] = 0;
+                if (!categoryXPAmt[category]['Physical Science']) categoryXPAmt[category]['Physical Science'] = 0;
+                if (!categoryXPAmt[category]['Earth and Space Science']) categoryXPAmt[category]['Earth and Space Science'] = 0;
+                categoryXPAmt[category]['Life Science'] += xp;
+                categoryXPAmt[category]['Physical Science'] += xp;
+                categoryXPAmt[category]['Earth and Space Science'] += xp;
             } else {
                 userXP += xp;
                 const subKey = subcategory || 'null';
