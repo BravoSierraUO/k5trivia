@@ -442,15 +442,6 @@
   },
   {
     "category": "Harry Potter",
-    "subcategory": "Book",
-    "level": 1,
-    "question": "What potion allows the drinker to breathe underwater?",
-    "answers": ["Gillyweed", "Felix Felicis", "Polyjuice Potion", "Amortentia"],
-    "correct": 0,
-    "explanation": "The correct answer is Gillyweed. Harry uses it in the Triwizard Tournament."
-  },
-  {
-    "category": "Harry Potter",
     "subcategory": "Both",
     "level": 1,
     "question": "What house is Draco Malfoy sorted into?",
@@ -2509,6 +2500,375 @@
     "answers": ["Azkaban", "Nurmengard", "Hogsmeade", "Malfoy Manor"],
     "correct": 0,
     "explanation": "Azkaban is the wizard prison guarded by Dementors."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2025", "politics"],
+    "level": 1,
+    "question": "Who became the President in 2025",
+    "answers": ["Trump", "Obama", "Biden", "Malfoy"],
+    "correct": 0,
+    "explanation": "Trump began his second term in office on January 20th 2025"
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which city hosted the 2024 Summer Olympics?",
+    "answers": ["Tokyo", "Paris", "London", "Beijing"],
+    "correct": 1,
+    "explanation": "Paris, France, hosted the 2024 Summer Olympics, marking its return since 1924."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Who was the President of the United States in 2024?",
+    "answers": ["Donald Trump", "Barack Obama", "Joe Biden", "Kamala Harris"],
+    "correct": 2,
+    "explanation": "Joe Biden was the President of the United States throughout 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which natural phenomenon was observed across North America on April 8, 2024?",
+    "answers": ["Tornado", "Total solar eclipse", "Earthquake", "Aurora borealis"],
+    "correct": 1,
+    "explanation": "A total solar eclipse occurred on April 8, 2024, visible across Mexico, the United States, and Canada."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which country elected its first female president in 2024?",
+    "answers": ["Brazil", "Mexico", "Nigeria", "Pakistan"],
+    "correct": 1,
+    "explanation": "Claudia Sheinbaum was elected as Mexico’s first female president in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which NFL team won the Super Bowl in 2024?",
+    "answers": ["Philadelphia Eagles", "Kansas City Chiefs", "San Francisco 49ers", "Cincinnati Bengals"],
+    "correct": 1,
+    "explanation": "The Kansas City Chiefs won the Super Bowl in 2024, defeating the San Francisco 49ers."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which major bridge collapsed in Baltimore in March 2024?",
+    "answers": ["Golden Gate Bridge", "Francis Scott Key Bridge", "Brooklyn Bridge", "London Bridge"],
+    "correct": 1,
+    "explanation": "The Francis Scott Key Bridge in Baltimore collapsed after a container ship collision in March 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "movies"],
+    "level": 1,
+    "question": "Which film won Best Picture at the 2024 Academy Awards?",
+    "answers": ["Barbie", "Oppenheimer", "Killers of the Flower Moon", "Maestro"],
+    "correct": 1,
+    "explanation": "Oppenheimer won Best Picture at the 96th Academy Awards in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which country hosted the G20 summit in 2024?",
+    "answers": ["Brazil", "Japan", "Italy", "India"],
+    "correct": 0,
+    "explanation": "Brazil hosted the G20 summit in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which political party won the UK general election in July 2024?",
+    "answers": ["Conservative", "Labour", "Liberal Democrats", "SNP"],
+    "correct": 1,
+    "explanation": "The Labour Party, led by Keir Starmer, won a landslide victory in the UK general election on July 4, 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which hurricanes struck Florida in 2024?",
+    "answers": ["Irene and Walter", "Helene and Milton", "Dorothy and Maxwell", "Ophelia and Felix"],
+    "correct": 1,
+    "explanation": "Hurricanes Helene and Milton hit Florida in September and October 2024, causing significant damage."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which country granted asylum to Syrian President Bashar al-Assad in 2024?",
+    "answers": ["Iran", "Russia", "Canada", "Mexico"],
+    "correct": 1,
+    "explanation": "Russia granted asylum to Bashar al-Assad after he was ousted in December 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which cybersecurity company caused a global outage with a faulty update in July 2024?",
+    "answers": ["Symantec", "CrowdStrike", "Kaspersky", "McAfee"],
+    "correct": 1,
+    "explanation": "CrowdStrike’s faulty software update in July 2024 caused widespread computer crashes, affecting airports, hospitals, and more."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which country celebrated the 80th anniversary of the United Nations in 2024?",
+    "answers": ["United States", "France", "Global (UN)", "United Kingdom"],
+    "correct": 2,
+    "explanation": "The United Nations, a global organization, celebrated its 80th anniversary in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which major cultural festival took place in Brazil in 2024?",
+    "answers": ["Oktoberfest", "Carnival", "Festa Junina", "Diwali"],
+    "correct": 1,
+    "explanation": "Carnival, a major cultural festival featuring music and celebrations, was held in Brazil in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which country became the first Orthodox Christian nation to legalize same-sex marriage in 2024?",
+    "answers": ["Russia", "Greece", "Serbia", "Bulgaria"],
+    "correct": 1,
+    "explanation": "Greece legalized same-sex marriage and adoption in February 2024, a first for an Orthodox Christian country."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which tennis legend retired in 2024 after winning 14 French Open titles?",
+    "answers": ["Roger Federer", "Novak Djokovic", "Rafael Nadal", "Andy Murray"],
+    "correct": 2,
+    "explanation": "Rafael Nadal, known as the 'King of Clay,' retired in 2024 after a career with 22 grand slam titles."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist’s Eras Tour became the highest-grossing concert tour in history in 2024?",
+    "answers": ["Beyoncé", "Taylor Swift", "Ed Sheeran", "Pink"],
+    "correct": 1,
+    "explanation": "Taylor Swift’s Eras Tour broke records as the highest-grossing concert tour in history in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which country hosted the World Economic Forum in 2024?",
+    "answers": ["Switzerland", "China", "USA", "Singapore"],
+    "correct": 0,
+    "explanation": "Switzerland hosted the World Economic Forum’s annual meeting in Davos in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "movies"],
+    "level": 1,
+    "question": "Which major international film festival took place in France in 2024?",
+    "answers": ["Venice Film Festival", "Cannes Film Festival", "Berlin Film Festival", "Toronto Film Festival"],
+    "correct": 1,
+    "explanation": "The Cannes Film Festival, a major cultural event, took place in France in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "politics"],
+    "level": 1,
+    "question": "Which city’s mayor, Eric Adams, was indicted on public corruption charges in 2024?",
+    "answers": ["Chicago", "New York", "Los Angeles", "Detroit"],
+    "correct": 1,
+    "explanation": "Eric Adams, mayor of New York City, faced federal charges including bribery and wire fraud in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist released the album 'Cowboy Carter' in 2024, marking their first venture into country music?",
+    "answers": ["Taylor Swift", "Beyoncé", "Post Malone", "Shaboozey"],
+    "correct": 1,
+    "explanation": "Beyoncé released 'Cowboy Carter' in March 2024, her first country music album, which topped the Billboard 200 and highlighted Black contributions to the genre."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which band reunited for a performance at Coachella in April 2024 after teasing a reunion show?",
+    "answers": ["The Cure", "No Doubt", "Oasis", "Jane’s Addiction"],
+    "correct": 1,
+    "explanation": "No Doubt reunited and performed at Coachella in April 2024, their first major show together in years, announced after teasing a reunion."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which rapper’s diss track 'Not Like Us' became a major hit in 2024 during a feud with Drake?",
+    "answers": ["J. Cole", "Kendrick Lamar", "Future", "Metro Boomin"],
+    "correct": 1,
+    "explanation": "Kendrick Lamar’s 'Not Like Us' topped the Billboard Hot 100 in 2024, becoming a defining moment in his high-profile rap feud with Drake."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist won a record six Brit Awards in 2024, including Album and Song of the Year?",
+    "answers": ["Dua Lipa", "Raye", "Adele", "Ed Sheeran"],
+    "correct": 1,
+    "explanation": "Raye won six Brit Awards in March 2024, a record haul, including Album of the Year for 'My 21st Century Blues' and Song of the Year for 'Escapism.'"
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which band’s 'Hackney Diamonds' tour in 2024 set a record for their highest-grossing tour?",
+    "answers": ["The Rolling Stones", "Coldplay", "Foo Fighters", "U2"],
+    "correct": 0,
+    "explanation": "The Rolling Stones’ 'Hackney Diamonds' tour grossed $235 million in 2024, a record for the band, running from April to July across North America."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist’s album 'The Tortured Poets Department' set a Spotify record for over 300 million streams in one day in 2024?",
+    "answers": ["Billie Eilish", "Taylor Swift", "Ariana Grande", "Sabrina Carpenter"],
+    "correct": 1,
+    "explanation": "Taylor Swift’s 'The Tortured Poets Department,' released in April 2024, broke Spotify’s record with over 300 million streams in a single day."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which music festival in 2024 featured headliners Lana Del Rey, Tyler The Creator, and Doja Cat?",
+    "answers": ["Glastonbury", "Coachella", "Lollapalooza", "Bonnaroo"],
+    "correct": 1,
+    "explanation": "Coachella 2024, held in April, was headlined by Lana Del Rey, Tyler The Creator, Doja Cat, and included a No Doubt reunion performance."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist performed at the Paris Olympics opening ceremony in 2024, marking their first public performance since 2020?",
+    "answers": ["Lady Gaga", "Celine Dion", "Zaho de Sagazan", "Aya Nakamura"],
+    "correct": 1,
+    "explanation": "Celine Dion performed at the Paris Olympics opening ceremony in July 2024, her first public performance since 2020, despite her stiff-person syndrome diagnosis."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which band announced a reunion tour for 2025 in August 2024, 16 years after their split?",
+    "answers": ["Spice Girls", "Oasis", "Destiny’s Child", "Backstreet Boys"],
+    "correct": 1,
+    "explanation": "Oasis announced a reunion tour for 2025 in August 2024, with Noel and Liam Gallagher reconciling 16 years after their 2009 split."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist’s 'Brat' album sparked a viral cultural movement in 2024, influencing even political campaigns?",
+    "answers": ["Chappell Roan", "Charli XCX", "Sabrina Carpenter", "Olivia Rodrigo"],
+    "correct": 1,
+    "explanation": "Charli XCX’s 'Brat' album, released in June 2024, created the 'Brat Summer' movement, impacting pop culture and political campaigns, like Kamala Harris’s."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which rapper’s song 'HISS' sparked a feud with Nicki Minaj in 2024?",
+    "answers": ["Cardi B", "Megan Thee Stallion", "Doja Cat", "Ice Spice"],
+    "correct": 1,
+    "explanation": "Megan Thee Stallion’s 'HISS,' released in 2024, topped the charts and ignited a feud with Nicki Minaj, prompting social media backlash."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which band canceled their 2024 tour after an onstage brawl between Perry Farrell and Dave Navarro?",
+    "answers": ["Linkin Park", "Jane’s Addiction", "The Black Keys", "Tenacious D"],
+    "correct": 1,
+    "explanation": "Jane’s Addiction canceled their 2024 tour after Perry Farrell physically confronted Dave Navarro onstage in Boston in September."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which country artist’s song 'A Bar Song (Tipsy)' became the longest-reigning No. 1 single in Canadian chart history in 2024?",
+    "answers": ["Morgan Wallen", "Shaboozey", "Post Malone", "Zach Bryan"],
+    "correct": 1,
+    "explanation": "Shaboozey’s 'A Bar Song (Tipsy)' set a record as the longest-reigning No. 1 single in Canadian chart history in 2024."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist released their first studio album in 16 years, 'Songs of a Lost World,' in 2024?",
+    "answers": ["The Cure", "Radiohead", "Depeche Mode", "R.E.M."],
+    "correct": 0,
+    "explanation": "The Cure released 'Songs of a Lost World' in November 2024, their first studio album in 16 years, topping UK charts."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which music festival in England was headlined by Dua Lipa, Coldplay, and SZA in 2024?",
+    "answers": ["Reading & Leeds", "Glastonbury", "Isle of Wight", "Download"],
+    "correct": 1,
+    "explanation": "Glastonbury Festival 2024, held in June, featured headliners Dua Lipa, Coldplay, and SZA, with other acts like Burna Boy and Shania Twain."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist performed the halftime show at Super Bowl LVIII in 2024 with guests like Alicia Keys and Ludacris?",
+    "answers": ["Usher", "Justin Timberlake", "Jay-Z", "Snoop Dogg"],
+    "correct": 0,
+    "explanation": "Usher headlined the Super Bowl LVIII halftime show in February 2024, joined by guests Alicia Keys, will.i.am, Lil Jon, H.E.R., and Ludacris."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist became the most nominated in Grammy history in 2024 with 99 nominations?",
+    "answers": ["Jay-Z", "Beyoncé", "Taylor Swift", "Kanye West"],
+    "correct": 1,
+    "explanation": "Beyoncé became the most nominated artist in Grammy history in November 2024, earning 99 nominations, including 11 for 2025."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which band’s drummer, Nicko McBrain, retired from touring in 2024 after 42 years?",
+    "answers": ["Metallica", "Iron Maiden", "Slayer", "Judas Priest"],
+    "correct": 1,
+    "explanation": "Iron Maiden’s drummer Nicko McBrain retired from touring in December 2024 after 42 years, though he will contribute to future projects."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which artist’s 'The Miseducation of Lauryn Hill' was named the best album ever by Apple Music in 2024?",
+    "answers": ["Lauryn Hill", "Alicia Keys", "Mary J. Blige", "Erykah Badu"],
+    "correct": 0,
+    "explanation": "Apple Music named Lauryn Hill’s 'The Miseducation of Lauryn Hill' the best album ever in May 2024, recognizing its cultural impact."
+  },
+  {
+    "category": "Events",
+    "subcategory": ["2024", "music"],
+    "level": 1,
+    "question": "Which rapper was arrested in 2024 on charges of conspiracy to commit murder-for-hire?",
+    "answers": ["Young Thug", "Lil Durk", "Diddy", "21 Savage"],
+    "correct": 1,
+    "explanation": "Lil Durk was arrested in October 2024 on federal charges of conspiracy to commit murder-for-hire as he attempted to leave the US."
   }
 ]
 
