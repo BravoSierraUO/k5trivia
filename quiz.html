@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Quiz</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #000000; 
+            color: #ffffff; 
+            margin: 20px; 
+            display: flex; 
+            font-size: 22px; 
+            height: calc(100vh - 40px); 
+            box-sizing: border-box; 
+        }
+        #game-container { 
+            flex: 1; 
+            padding: 25px; 
+            transition: all 0.3s; 
+            box-sizing: border-box; 
+        }
+        #question-container { 
+            background: #1a1a1a; 
+            padding: 25px; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+            height: 100%; 
+            box-sizing: border-box; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: space-between; /* Ensure space for top and bottom content */
+        }
+        #subcategory-header { 
+            font-size: 24px; 
+            margin-bottom: 20px; 
+            text-align: center; 
+        }
+        #question-text { 
+            font-size: 24px; 
+            margin-bottom: 20px; 
+            text-align: center; 
+        }
+        #answers-container { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px; 
+            margin-bottom: 20px; 
+        }
+        #result-text { 
+            font-size: 28px; 
+            text-align: center; 
+            margin-top: 20px; 
+        }
+        #play-again-btn { 
+            padding: 20px 30px; 
+            background: #28a745; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 18px; 
+            margin: 20px auto 0; 
+            text-align: center; 
+            display: none; 
+        }
+        #play-again-btn:hover { 
+            background: #218838; 
+        }
+        .answer-btn { 
+            padding: 20px; 
+            background: #007BFF; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 22px; 
+        }
+        .answer-btn:hover { background: #0056b3; }
+        .answer-btn:disabled { background: #6c757d; cursor: not-allowed; }
+        #version-display { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            color: #ffffff; 
+            font-size: 20px; 
+        }
+        #progress-bar { 
+            width: 100%; 
+            margin-top: 20px; /* Space above the progress bar at the bottom */
+        }
+        #progress-bar progress { 
+            width: 100%; 
+            height: 30px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="question-container">
+            <h2 id="subcategory-header"></h2>
+            <h2 id="question-text"></h2>
+            <div id="answers-container"></div>
+            <p id="result-text"></p>
+            <div id="progress-bar">
+                <label>Questions Completed: <span id="questions-completed">0</span>/<span id="total-questions"></span></label>
+                <progress id="progress" max="100" value="0"></progress>
+            </div>
+            <button id="play-again-btn" style="display: none;">Back to Main</button>
+        </div>
+    </div>
+    <div id="version-display">Version 1.2.029</div>
+
+    <script>
+        // Get parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get('file');
+        const subcategories = urlParams.get('subcategories').split(',');
+        const level = parseInt(urlParams.get('level'));
+        const numQuestions = parseInt(urlParams.get('numQuestions'));
+        const settings = JSON.parse(localStorage.getItem('triviaSettings')) || { correctDelay: 500, explanationDelay: 1000, showQuestionId: false };
+        const loggedInSettings = JSON.parse(localStorage.getItem('triviaSettings')) || {};
+        const loggedInUser = String(loggedInSettings.username || '').trim(); // Use 'username' instead of 'loggedIn'
+        console.log('Logged in user from settings:', loggedInUser); // Enhanced debug log
+        let questions = [];
+        let questionsAnswered = 0;
+        let userXP = parseInt(localStorage.getItem('triviaUserXP')) || 0;
+        let categoryXPAmt = JSON.parse(localStorage.getItem('triviaCategoryXP')) || {};
+        let usedQuestionIds = new Set();
+        const subcategoryHeader = document.getElementById('subcategory-header');
+        const questionText = document.getElementById('question-text');
+        const answersContainer = document.getElementById('answers-container');
+        const resultText = document.getElementById('result-text');
+        const playAgainButton = document.getElementById('play-again-btn');
+        const progressBar = document.getElementById('progress');
+        const questionsCompleted = document.getElementById('questions-completed');
+        const totalQuestions = document.getElementById('total-questions');
+
+        // Initialize UI
+        totalQuestions.textContent = numQuestions;
+        progressBar.max = numQuestions;
+
+        // Load questions from file using the 'file' parameter
+        function loadQuestions() {
+            fetch(`./${file}.json?_=${Date.now()}`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    questions = data.filter(q => 
+                        q.level === level && 
+                        (subcategories.includes(q.subcategory) || subcategories[0] === 'All')
+                    );
+                    if (questions.length === 0) {
+                        alert(`No questions found for ${file} at level ${level}.`);
+                        endQuiz();
+                    } else if (questions.length < numQuestions) {
+                        alert(`Only ${questions.length} questions available for ${file} at level ${level}. Using all available questions.`);
+                        startQuiz();
+                    } else {
+                        startQuiz();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading questions:', error);
+                    alert(`Failed to load questions for ${file}. Check console for details.`);
+                    endQuiz();
+                });
+        }
+
+        // Start quiz
+        function startQuiz() {
+            if (questions.length === 0) {
+                endQuiz();
+                return;
+            }
+            selectQuestion();
+        }
+
+        // Select and display a question
+        function selectQuestion() {
+            if (questionsAnswered >= numQuestions || questions.length === 0) {
+                endQuiz();
+                return;
+            }
+            const availableQuestions = questions.filter(q => !usedQuestionIds.has(q.id));
+            if (availableQuestions.length === 0) {
+                questions = questions.filter(q => !usedQuestionIds.has(q.id)); // Reset if all used
+                usedQuestionIds.clear();
+                availableQuestions = questions;
+            }
+            const currentQuestion = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+            usedQuestionIds.add(currentQuestion.id);
+            displayQuestion(currentQuestion);
+        }
+
+        // Shuffle answers
+        function shuffleAnswers(answers, correctIndex) {
+            const shuffled = [...answers];
+            const indexMap = Array.from({ length: answers.length }, (_, i) => i);
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                [indexMap[i], indexMap[j]] = [indexMap[j], indexMap[i]];
+            }
+            const newCorrectIndex = indexMap.indexOf(correctIndex);
+            return { shuffledAnswers: shuffled, newCorrectIndex };
+        }
+
+        // Display question
+        function displayQuestion(question) {
+            subcategoryHeader.textContent = `${question.subcategory === 'null' ? 'General' : question.subcategory}${settings.showQuestionId ? ` #${question.id}` : ''}`;
+            questionText.textContent = question.question;
+            answersContainer.innerHTML = '';
+            resultText.textContent = '';
+            resultText.style.color = '';
+            playAgainButton.style.display = 'none';
+
+            const { shuffledAnswers, newCorrectIndex } = shuffleAnswers(question.answers, question.correct);
+            question.correct = newCorrectIndex;
+            question.shuffledAnswers = shuffledAnswers;
+            question.correctAnswer = shuffledAnswers[newCorrectIndex];
+
+            console.log('Displaying question:', {
+                id: question.id,
+                question: question.question,
+                subcategory: question.subcategory,
+                level: question.level,
+                answers: shuffledAnswers,
+                correct: newCorrectIndex,
+                correctAnswer: question.correctAnswer
+            });
+
+            shuffledAnswers.forEach((answer, index) => {
+                const button = document.createElement('button');
+                button.className = 'answer-btn';
+                button.textContent = answer;
+                button.setAttribute('data-index', index);
+                button.addEventListener('click', (e) => {
+                    const clickedIndex = parseInt(e.target.getAttribute('data-index'));
+                    checkAnswer(question, clickedIndex);
+                });
+                answersContainer.appendChild(button);
+            });
+            updateProgress();
+        }
+
+        // Check answer
+        function checkAnswer(question, selectedIndex) {
+            console.log('Settings for delay:', settings); // Debug log for delay settings
+            console.log('Checking answer for user:', loggedInUser, 'selectedIndex:', selectedIndex, 'correctIndex:', question.correct);
+            const isCorrect = loggedInUser.toLowerCase() === 'dylan' ? false : selectedIndex === question.correct;
+            const xpEarned = isCorrect ? question.level * 5 : question.level * 1;
+            answersContainer.querySelectorAll('.answer-btn').forEach(btn => btn.disabled = true);
+            if (isCorrect) {
+                resultText.textContent = 'Correct!';
+                resultText.style.color = '';
+                setTimeout(() => {
+                    updateUserStats(question.category, [question.subcategory], xpEarned);
+                    questionsAnswered++;
+                    updateProgress();
+                    if (questionsAnswered >= numQuestions) {
+                        playAgainButton.style.display = 'block';
+                    } else {
+                        selectQuestion();
+                    }
+                }, settings.correctDelay || 500);
+            } else {
+                resultText.textContent = loggedInUser.toLowerCase() === 'dylan' 
+                    ? `Nice try, Dylan! The correct answer is ${question.correctAnswer}.` 
+                    : (question.explanation || `The correct answer is ${question.correctAnswer}.`);
+                resultText.style.color = '#ff0000';
+                setTimeout(() => {
+                    updateUserStats(question.category, [question.subcategory], xpEarned);
+                    questionsAnswered++;
+                    updateProgress();
+                    if (questionsAnswered >= numQuestions) {
+                        playAgainButton.style.display = 'block';
+                    } else {
+                        selectQuestion();
+                    }
+                }, settings.explanationDelay || 1000);
+            }
+        }
+
+        // Update user stats
+        function updateUserStats(category, subcategories, xp) {
+            userXP += xp;
+            if (!categoryXPAmt[category]) categoryXPAmt[category] = {};
+            subcategories.forEach(sub => {
+                const subKey = sub || 'null';
+                if (!categoryXPAmt[category][subKey]) categoryXPAmt[category][subKey] = 0;
+                categoryXPAmt[category][subKey] += xp;
+            });
+            localStorage.setItem('triviaUserXP', userXP);
+            localStorage.setItem('triviaCategoryXP', JSON.stringify(categoryXPAmt));
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            questionsCompleted.textContent = questionsAnswered;
+            progressBar.value = questionsAnswered;
+        }
+
+        // End quiz and return to main
+        function endQuiz() {
+            updateProgress();
+            playAgainButton.style.display = 'block';
+        }
+
+        playAgainButton.addEventListener('click', () => {
+            window.location.href = './trivia_game.html';
+        });
+
+        // Start the quiz
+        loadQuestions();
+    </script>
+</body>
+</html>

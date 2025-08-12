@@ -1,0 +1,1202 @@
+[
+    {
+		"id" : 1,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do we call a baby dog?",
+        "answers": ["Kitten", "Puppy", "Calf", "Foal"],
+        "correct": 1,
+        "explanation": "The correct answer is Puppy. A baby dog is called a puppy."
+    },
+    {
+		"id" : 2,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do plants need to grow?",
+        "answers": ["Darkness", "Water", "Rocks", "Sand"],
+        "correct": 1,
+        "explanation": "The correct answer is Water. Plants need water, sunlight, and air to grow."
+    },
+    {
+		"id" : 3,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What is the name of a baby cat?",
+        "answers": ["Kitten", "Chick", "Lamb", "Piglet"],
+        "correct": 0,
+        "explanation": "The correct answer is Kitten. A baby cat is called a kitten."
+    },
+    {
+		"id" : 4,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "Which animal lives in water and swims?",
+        "answers": ["Dog", "Fish", "Bird", "Snake"],
+        "correct": 1,
+        "explanation": "The correct answer is Fish. Fish live in water and swim."
+    },
+    {
+		"id" : 5,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do we call a young frog?",
+        "answers": ["Tadpole", "Puppy", "Calf", "Cub"],
+        "correct": 0,
+        "explanation": "The correct answer is Tadpole. A young frog is called a tadpole."
+    },
+    {
+		"id" : 6,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What part of a plant is usually green and flat?",
+        "answers": ["Root", "Stem", "Leaf", "Flower"],
+        "correct": 2,
+        "explanation": "The correct answer is Leaf. Leaves are usually green and flat."
+    },
+    {
+		"id" : 7,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "Which animal has wings and can fly?",
+        "answers": ["Fish", "Bird", "Snake", "Frog"],
+        "correct": 1,
+        "explanation": "The correct answer is Bird. Birds have wings and can fly."
+    },
+    {
+		"id" : 8,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do bees make that we can eat?",
+        "answers": ["Milk", "Honey", "Eggs", "Cheese"],
+        "correct": 1,
+        "explanation": "The correct answer is Honey. Bees make honey that we can eat."
+    },
+    {
+		"id" : 9,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do we call a baby cow?",
+        "answers": ["Puppy", "Calf", "Kitten", "Foal"],
+        "correct": 1,
+        "explanation": "The correct answer is Calf. A baby cow is called a calf."
+    },
+    {
+		"id" : 10,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "Which part of a plant grows under the ground?",
+        "answers": ["Leaf", "Flower", "Root", "Stem"],
+        "correct": 2,
+        "explanation": "The correct answer is Root. Roots grow under the ground."
+    },
+    {
+		"id" : 11,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do caterpillars turn into?",
+        "answers": ["Frogs", "Butterflies", "Birds", "Fish"],
+        "correct": 1,
+        "explanation": "The correct answer is Butterflies. Caterpillars turn into butterflies."
+    },
+    {
+		"id" : 12,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "Which animal has a long neck and eats leaves from trees?",
+        "answers": ["Dog", "Giraffe", "Fish", "Snake"],
+        "correct": 1,
+        "explanation": "The correct answer is Giraffe. Giraffes have long necks and eat leaves from trees."
+    },
+    {
+		"id" : 13,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do we call a baby horse?",
+        "answers": ["Foal", "Chick", "Puppy", "Cub"],
+        "correct": 0,
+        "explanation": "The correct answer is Foal. A baby horse is called a foal."
+    },
+    {
+		"id" : 14,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "Which animal lays eggs?",
+        "answers": ["Dog", "Cat", "Chicken", "Horse"],
+        "correct": 2,
+        "explanation": "The correct answer is Chicken. Chickens lay eggs."
+    },
+    {
+		"id" : 15,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do plants use to make their food?",
+        "answers": ["Rain", "Sunlight", "Snow", "Clouds"],
+        "correct": 1,
+        "explanation": "The correct answer is Sunlight. Plants use sunlight to make their food."
+    },
+    {
+		"id" : 16,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do we call a baby sheep?",
+        "answers": ["Lamb", "Kitten", "Calf", "Foal"],
+        "correct": 0,
+        "explanation": "The correct answer is Lamb. A baby sheep is called a lamb."
+    },
+    {
+		"id" : 17,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "Which animal has a shell and moves slowly?",
+        "answers": ["Bird", "Turtle", "Dog", "Fish"],
+        "correct": 1,
+        "explanation": "The correct answer is Turtle. Turtles have shells and move slowly."
+    },
+    {
+		"id" : 18,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What part of a plant makes seeds?",
+        "answers": ["Leaf", "Stem", "Root", "Flower"],
+        "correct": 3,
+        "explanation": "The correct answer is Flower. Flowers make seeds for new plants."
+    },
+    {
+		"id" : 19,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "Which animal is known for hopping?",
+        "answers": ["Snake", "Kangaroo", "Fish", "Bird"],
+        "correct": 1,
+        "explanation": "The correct answer is Kangaroo. Kangaroos are known for hopping."
+    },
+    {
+		"id" : 20,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 1,
+        "question": "What do we call a baby pig?",
+        "answers": ["Puppy", "Piglet", "Calf", "Kitten"],
+        "correct": 1,
+        "explanation": "The correct answer is Piglet. A baby pig is called a piglet."
+    },
+    {
+        "id": 21,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What is the big bright thing in the sky during the day?",
+        "answers": ["Moon", "Sun", "Star", "Cloud"],
+        "correct": 1,
+        "explanation": "The correct answer is Sun. The Sun is the big bright thing in the sky during the day."
+    },
+    {
+        "id": 22,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What do we call the planet we live on?",
+        "answers": ["Mars", "Earth", "Jupiter", "Venus"],
+        "correct": 1,
+        "explanation": "The correct answer is Earth. We live on the planet Earth."
+    },
+    {
+        "id": 23,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What is the name of the object in the sky at night that glows?",
+        "answers": ["Sun", "Moon", "Cloud", "Wind"],
+        "correct": 1,
+        "explanation": "The correct answer is Moon. The Moon glows in the sky at night."
+    },
+    {
+        "id": 24,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What falls from the sky when it rains?",
+        "answers": ["Snow", "Rain", "Hail", "Dust"],
+        "correct": 1,
+        "explanation": "The correct answer is Rain. Rain is water that falls from the sky."
+    },
+    {
+        "id": 25,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What do we call the twinkling lights in the night sky?",
+        "answers": ["Clouds", "Stars", "Moons", "Rocks"],
+        "correct": 1,
+        "explanation": "The correct answer is Stars. Stars are the twinkling lights in the night sky."
+    },
+    {
+        "id": 26,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What is the name of the season when it gets very warm?",
+        "answers": ["Winter", "Spring", "Summer", "Fall"],
+        "correct": 2,
+        "explanation": "The correct answer is Summer. Summer is the season when it gets very warm."
+    },
+    {
+        "id": 27,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What do we call the white fluffy things in the sky?",
+        "answers": ["Stars", "Clouds", "Moons", "Sun"],
+        "correct": 1,
+        "explanation": "The correct answer is Clouds. Clouds are white and fluffy and float in the sky."
+    },
+    {
+        "id": 28,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What is the name of the season when leaves fall from trees?",
+        "answers": ["Summer", "Winter", "Spring", "Fall"],
+        "correct": 3,
+        "explanation": "The correct answer is Fall. In Fall, leaves fall from trees."
+    },
+    {
+        "id": 29,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What is the ground made of that plants grow in?",
+        "answers": ["Water", "Soil", "Air", "Rocks"],
+        "correct": 1,
+        "explanation": "The correct answer is Soil. Plants grow in soil."
+    },
+    {
+        "id": 30,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What do we call the cold, white stuff that falls in winter?",
+        "answers": ["Rain", "Snow", "Hail", "Dust"],
+        "correct": 1,
+        "explanation": "The correct answer is Snow. Snow is cold and white and falls in winter."
+    },
+    {
+        "id": 31,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What is the name of the big body of water that covers much of Earth?",
+        "answers": ["Lake", "River", "Ocean", "Pond"],
+        "correct": 2,
+        "explanation": "The correct answer is Ocean. Oceans are large bodies of water on Earth."
+    },
+    {
+        "id": 32,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What makes the sky look blue?",
+        "answers": ["Clouds", "Sunlight", "Moon", "Stars"],
+        "correct": 1,
+        "explanation": "The correct answer is Sunlight. Sunlight makes the sky look blue."
+    },
+    {
+        "id": 33,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What do we call a big hill?",
+        "answers": ["River", "Mountain", "Lake", "Forest"],
+        "correct": 1,
+        "explanation": "The correct answer is Mountain. A mountain is a big hill."
+    },
+    {
+        "id": 34,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What is the season when it gets cold and snowy?",
+        "answers": ["Summer", "Winter", "Spring", "Fall"],
+        "correct": 1,
+        "explanation": "The correct answer is Winter. Winter is cold and often snowy."
+    },
+    {
+        "id": 35,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What do we call the moving air around us?",
+        "answers": ["Rain", "Wind", "Snow", "Cloud"],
+        "correct": 1,
+        "explanation": "The correct answer is Wind. Wind is moving air."
+    },
+    {
+        "id": 36,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What is a small body of water surrounded by land?",
+        "answers": ["Ocean", "River", "Lake", "Cloud"],
+        "correct": 2,
+        "explanation": "The correct answer is Lake. A lake is a small body of water surrounded by land."
+    },
+    {
+        "id": 37,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What do we call a place with lots of trees?",
+        "answers": ["Desert", "Forest", "Ocean", "Mountain"],
+        "correct": 1,
+        "explanation": "The correct answer is Forest. A forest is a place with lots of trees."
+    },
+    {
+        "id": 38,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What is the name of the season when flowers bloom?",
+        "answers": ["Winter", "Summer", "Spring", "Fall"],
+        "correct": 2,
+        "explanation": "The correct answer is Spring. Spring is when flowers bloom."
+    },
+    {
+        "id": 39,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What do we call a flowing body of water?",
+        "answers": ["Lake", "River", "Ocean", "Pond"],
+        "correct": 1,
+        "explanation": "The correct answer is River. A river is a flowing body of water."
+    },
+    {
+        "id": 40,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 1,
+        "question": "What do we call a place with very little rain and lots of sand?",
+        "answers": ["Forest", "Desert", "Ocean", "Mountain"],
+        "correct": 1,
+        "explanation": "The correct answer is Desert. A desert has very little rain and lots of sand."
+    },
+    {
+        "id": 41,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we call the light we see from a lamp?",
+        "answers": ["Wind", "Light", "Sound", "Heat"],
+        "correct": 1,
+        "explanation": "The correct answer is Light. A lamp gives off light."
+    },
+    {
+        "id": 42,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we use to hear music or voices?",
+        "answers": ["Light", "Heat", "Sound", "Water"],
+        "correct": 2,
+        "explanation": "The correct answer is Sound. We hear music or voices with sound."
+    },
+    {
+        "id": 43,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What makes things feel hot?",
+        "answers": ["Cold", "Heat", "Sound", "Light"],
+        "correct": 1,
+        "explanation": "The correct answer is Heat. Heat makes things feel hot."
+    },
+    {
+        "id": 44,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we call something we can touch, like a toy?",
+        "answers": ["Air", "Sound", "Matter", "Light"],
+        "correct": 2,
+        "explanation": "The correct answer is Matter. A toy is made of matter because we can touch it."
+    },
+    {
+        "id": 45,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What is water when it is a liquid?",
+        "answers": ["Ice", "Steam", "Water", "Snow"],
+        "correct": 2,
+        "explanation": "The correct answer is Water. Water is a liquid we can drink or pour."
+    },
+    {
+        "id": 46,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we call water when it freezes?",
+        "answers": ["Steam", "Ice", "Rain", "Fog"],
+        "correct": 1,
+        "explanation": "The correct answer is Ice. Water turns into ice when it freezes."
+    },
+    {
+        "id": 47,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What happens when we push a toy car?",
+        "answers": ["It stops", "It moves", "It floats", "It melts"],
+        "correct": 1,
+        "explanation": "The correct answer is It moves. Pushing a toy car makes it move."
+    },
+    {
+        "id": 48,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we call water when it turns into a gas?",
+        "answers": ["Ice", "Snow", "Steam", "Rain"],
+        "correct": 2,
+        "explanation": "The correct answer is Steam. Water turns into steam when it becomes a gas."
+    },
+    {
+        "id": 49,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What makes a balloon float in the air?",
+        "answers": ["Water", "Helium", "Sand", "Sugar"],
+        "correct": 1,
+        "explanation": "The correct answer is Helium. Helium is a gas that makes balloons float."
+    },
+    {
+        "id": 50,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we use to see our reflection?",
+        "answers": ["Paper", "Mirror", "Wood", "Cloth"],
+        "correct": 1,
+        "explanation": "The correct answer is Mirror. A mirror shows our reflection."
+    },
+    {
+        "id": 51,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we call something that feels very cold?",
+        "answers": ["Heat", "Ice", "Light", "Sound"],
+        "correct": 1,
+        "explanation": "The correct answer is Ice. Ice feels very cold to the touch."
+    },
+    {
+        "id": 52,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we use to turn on a flashlight?",
+        "answers": ["Water", "Battery", "Sand", "Paper"],
+        "correct": 1,
+        "explanation": "The correct answer is Battery. A battery powers a flashlight."
+    },
+    {
+        "id": 53,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What happens when we pull a wagon?",
+        "answers": ["It stops", "It moves", "It floats", "It breaks"],
+        "correct": 1,
+        "explanation": "The correct answer is It moves. Pulling a wagon makes it move."
+    },
+    {
+        "id": 54,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we call something that is hard, like a rock?",
+        "answers": ["Liquid", "Gas", "Solid", "Air"],
+        "correct": 2,
+        "explanation": "The correct answer is Solid. A rock is a solid because it is hard."
+    },
+    {
+        "id": 55,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What makes a shadow when light is blocked?",
+        "answers": ["Water", "Object", "Air", "Sound"],
+        "correct": 1,
+        "explanation": "The correct answer is Object. An object blocks light to make a shadow."
+    },
+    {
+        "id": 56,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we call something that flows, like water?",
+        "answers": ["Solid", "Liquid", "Gas", "Rock"],
+        "correct": 1,
+        "explanation": "The correct answer is Liquid. Water is a liquid because it flows."
+    },
+    {
+        "id": 57,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we feel when we rub our hands together?",
+        "answers": ["Cold", "Heat", "Sound", "Light"],
+        "correct": 1,
+        "explanation": "The correct answer is Heat. Rubbing hands together makes heat."
+    },
+    {
+        "id": 58,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we call something we cannot see, like air?",
+        "answers": ["Solid", "Liquid", "Gas", "Rock"],
+        "correct": 2,
+        "explanation": "The correct answer is Gas. Air is a gas we cannot see."
+    },
+    {
+        "id": 59,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What happens to ice when it gets warm?",
+        "answers": ["It melts", "It freezes", "It floats", "It grows"],
+        "correct": 0,
+        "explanation": "The correct answer is It melts. Ice melts into water when it gets warm."
+    },
+    {
+        "id": 60,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 1,
+        "question": "What do we use to see faraway things, like stars?",
+        "answers": ["Mirror", "Telescope", "Flashlight", "Book"],
+        "correct": 1,
+        "explanation": "The correct answer is Telescope. A telescope helps us see faraway things like stars."
+    },
+    {
+        "id": 61,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What part of a plant takes in water from the soil?",
+        "answers": ["Leaf", "Flower", "Root", "Stem"],
+        "correct": 2,
+        "explanation": "The correct answer is Root. Roots take in water and nutrients from the soil to help the plant grow."
+    },
+    {
+        "id": 62,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do animals need to survive?",
+        "answers": ["Toys", "Food", "Books", "Clothes"],
+        "correct": 1,
+        "explanation": "The correct answer is Food. Animals need food, water, air, and shelter to survive."
+    },
+    {
+        "id": 63,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What is the name of the process where plants make their own food?",
+        "answers": ["Breathing", "Photosynthesis", "Sleeping", "Drinking"],
+        "correct": 1,
+        "explanation": "The correct answer is Photosynthesis. Plants use sunlight, water, and air to make their own food through photosynthesis."
+    },
+    {
+        "id": 64,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "Which animal is a mammal that lives in the ocean?",
+        "answers": ["Shark", "Dolphin", "Jellyfish", "Turtle"],
+        "correct": 1,
+        "explanation": "The correct answer is Dolphin. Dolphins are mammals that live in the ocean and breathe air."
+    },
+    {
+        "id": 65,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do we call animals that eat only plants?",
+        "answers": ["Carnivores", "Herbivores", "Omnivores", "Predators"],
+        "correct": 1,
+        "explanation": "The correct answer is Herbivores. Herbivores are animals that eat only plants."
+    },
+    {
+        "id": 66,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What is the hard outer covering of an insect called?",
+        "answers": ["Skin", "Shell", "Exoskeleton", "Fur"],
+        "correct": 2,
+        "explanation": "The correct answer is Exoskeleton. An exoskeleton is the hard outer covering that protects an insect."
+    },
+    {
+        "id": 67,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "Which part of a plant holds it up and carries water?",
+        "answers": ["Root", "Leaf", "Stem", "Flower"],
+        "correct": 2,
+        "explanation": "The correct answer is Stem. The stem holds up the plant and carries water from the roots to the leaves."
+    },
+    {
+        "id": 68,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do we call animals that eat both plants and animals?",
+        "answers": ["Herbivores", "Carnivores", "Omnivores", "Insects"],
+        "correct": 2,
+        "explanation": "The correct answer is Omnivores. Omnivores eat both plants and animals."
+    },
+    {
+        "id": 69,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do frogs start their life as?",
+        "answers": ["Eggs", "Puppies", "Chicks", "Cubs"],
+        "correct": 0,
+        "explanation": "The correct answer is Eggs. Frogs start their life as eggs, which hatch into tadpoles."
+    },
+    {
+        "id": 70,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do we call animals that eat only meat?",
+        "answers": ["Herbivores", "Carnivores", "Omnivores", "Producers"],
+        "correct": 1,
+        "explanation": "The correct answer is Carnivores. Carnivores are animals that eat only meat."
+    },
+    {
+        "id": 71,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What is the name of the stage when a caterpillar is in a cocoon?",
+        "answers": ["Larva", "Pupa", "Adult", "Egg"],
+        "correct": 1,
+        "explanation": "The correct answer is Pupa. A caterpillar is in the pupa stage when it is inside a cocoon."
+    },
+    {
+        "id": 72,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "Which animal has feathers and lays eggs?",
+        "answers": ["Snake", "Frog", "Bird", "Fish"],
+        "correct": 2,
+        "explanation": "The correct answer is Bird. Birds have feathers and lay eggs."
+    },
+    {
+        "id": 73,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do plants give off that animals need to breathe?",
+        "answers": ["Water", "Oxygen", "Soil", "Sugar"],
+        "correct": 1,
+        "explanation": "The correct answer is Oxygen. Plants give off oxygen, which animals need to breathe."
+    },
+    {
+        "id": 74,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What is the name of a young butterfly before it becomes an adult?",
+        "answers": ["Tadpole", "Caterpillar", "Chick", "Cub"],
+        "correct": 1,
+        "explanation": "The correct answer is Caterpillar. A caterpillar is the young form of a butterfly."
+    },
+    {
+        "id": 75,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "Which animal has scales and lives in water?",
+        "answers": ["Bird", "Fish", "Mammal", "Frog"],
+        "correct": 1,
+        "explanation": "The correct answer is Fish. Fish have scales and live in water."
+    },
+    {
+        "id": 76,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do we call the place where an animal lives?",
+        "answers": ["Habitat", "Kitchen", "School", "Store"],
+        "correct": 0,
+        "explanation": "The correct answer is Habitat. A habitat is the place where an animal lives."
+    },
+    {
+        "id": 77,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do seeds need to start growing?",
+        "answers": ["Darkness", "Water", "Rocks", "Ice"],
+        "correct": 1,
+        "explanation": "The correct answer is Water. Seeds need water, air, and warmth to start growing."
+    },
+    {
+        "id": 78,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "Which animal can live both on land and in water?",
+        "answers": ["Bird", "Fish", "Frog", "Lion"],
+        "correct": 2,
+        "explanation": "The correct answer is Frog. Frogs can live both on land and in water."
+    },
+    {
+        "id": 79,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do we call the tiny holes in leaves that let air in?",
+        "answers": ["Roots", "Stomata", "Petals", "Stems"],
+        "correct": 1,
+        "explanation": "The correct answer is Stomata. Stomata are tiny holes in leaves that let air in for plants to breathe."
+    },
+    {
+        "id": 80,
+        "category": "Science",
+        "subcategory": "Life Science",
+        "level": 2,
+        "question": "What do we call the process when a seed starts to grow?",
+        "answers": ["Germination", "Photosynthesis", "Hibernation", "Migration"],
+        "correct": 0,
+        "explanation": "The correct answer is Germination. Germination is when a seed starts to grow into a plant."
+    },
+    {
+        "id": 81,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What causes day and night on Earth?",
+        "answers": ["The Moon", "The Sun", "Earth's rotation", "Clouds"],
+        "correct": 2,
+        "explanation": "The correct answer is Earth's rotation. Earth rotates on its axis, causing day when facing the Sun and night when facing away."
+    },
+    {
+        "id": 82,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What is the name of the closest star to Earth?",
+        "answers": ["Moon", "Sun", "Mars", "Jupiter"],
+        "correct": 1,
+        "explanation": "The correct answer is Sun. The Sun is the closest star to Earth."
+    },
+    {
+        "id": 83,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call the path Earth takes around the Sun?",
+        "answers": ["Orbit", "Spin", "Axis", "Cycle"],
+        "correct": 0,
+        "explanation": "The correct answer is Orbit. Earth’s path around the Sun is called its orbit."
+    },
+    {
+        "id": 84,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What is the main source of heat for Earth?",
+        "answers": ["Moon", "Sun", "Stars", "Clouds"],
+        "correct": 1,
+        "explanation": "The correct answer is Sun. The Sun provides most of Earth’s heat."
+    },
+    {
+        "id": 85,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call the different shapes of the Moon we see?",
+        "answers": ["Phases", "Shadows", "Clouds", "Tides"],
+        "correct": 0,
+        "explanation": "The correct answer is Phases. The different shapes of the Moon we see are called phases."
+    },
+    {
+        "id": 86,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What is the name of the layer of air around Earth?",
+        "answers": ["Ocean", "Atmosphere", "Soil", "Crust"],
+        "correct": 1,
+        "explanation": "The correct answer is Atmosphere. The atmosphere is the layer of air around Earth."
+    },
+    {
+        "id": 87,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What causes the seasons on Earth?",
+        "answers": ["Earth’s tilt", "The Moon", "Clouds", "Wind"],
+        "correct": 0,
+        "explanation": "The correct answer is Earth’s tilt. The tilt of Earth’s axis as it orbits the Sun causes the seasons."
+    },
+    {
+        "id": 88,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call water that falls from clouds as rain, snow, or hail?",
+        "answers": ["Evaporation", "Precipitation", "Condensation", "Erosion"],
+        "correct": 1,
+        "explanation": "The correct answer is Precipitation. Precipitation is water that falls from clouds as rain, snow, or hail."
+    },
+    {
+        "id": 89,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What is the name of the rocky outer layer of Earth?",
+        "answers": ["Core", "Mantle", "Crust", "Atmosphere"],
+        "correct": 2,
+        "explanation": "The correct answer is Crust. The crust is Earth’s rocky outer layer."
+    },
+    {
+        "id": 90,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call a large body of water smaller than an ocean?",
+        "answers": ["River", "Lake", "Sea", "Pond"],
+        "correct": 2,
+        "explanation": "The correct answer is Sea. A sea is a large body of water smaller than an ocean."
+    },
+    {
+        "id": 91,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call the process when water turns into vapor?",
+        "answers": ["Freezing", "Evaporation", "Precipitation", "Melting"],
+        "correct": 1,
+        "explanation": "The correct answer is Evaporation. Evaporation is when water turns into vapor."
+    },
+    {
+        "id": 92,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What is the name of a scientist who studies rocks?",
+        "answers": ["Biologist", "Geologist", "Astronomer", "Chemist"],
+        "correct": 1,
+        "explanation": "The correct answer is Geologist. A geologist studies rocks and Earth’s structure."
+    },
+    {
+        "id": 93,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call a sudden shaking of the ground?",
+        "answers": ["Tornado", "Earthquake", "Hurricane", "Flood"],
+        "correct": 1,
+        "explanation": "The correct answer is Earthquake. An earthquake is a sudden shaking of the ground."
+    },
+    {
+        "id": 94,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What is the name of the planet closest to the Sun?",
+        "answers": ["Mars", "Venus", "Mercury", "Earth"],
+        "correct": 2,
+        "explanation": "The correct answer is Mercury. Mercury is the planet closest to the Sun."
+    },
+    {
+        "id": 95,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call the process when water vapor turns back into liquid?",
+        "answers": ["Evaporation", "Condensation", "Precipitation", "Freezing"],
+        "correct": 1,
+        "explanation": "The correct answer is Condensation. Condensation is when water vapor turns back into liquid water."
+    },
+    {
+        "id": 96,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call a scientist who studies the stars and planets?",
+        "answers": ["Geologist", "Biologist", "Astronomer", "Chemist"],
+        "correct": 2,
+        "explanation": "The correct answer is Astronomer. An astronomer studies stars and planets."
+    },
+    {
+        "id": 97,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What is the name of the largest planet in our solar system?",
+        "answers": ["Earth", "Jupiter", "Mars", "Venus"],
+        "correct": 1,
+        "explanation": "The correct answer is Jupiter. Jupiter is the largest planet in our solar system."
+    },
+    {
+        "id": 98,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call the wearing away of rocks by wind or water?",
+        "answers": ["Evaporation", "Erosion", "Condensation", "Precipitation"],
+        "correct": 1,
+        "explanation": "The correct answer is Erosion. Erosion is the wearing away of rocks by wind or water."
+    },
+    {
+        "id": 99,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call a storm with strong winds and heavy rain?",
+        "answers": ["Earthquake", "Tornado", "Hurricane", "Blizzard"],
+        "correct": 2,
+        "explanation": "The correct answer is Hurricane. A hurricane is a storm with strong winds and heavy rain."
+    },
+    {
+        "id": 100,
+        "category": "Science",
+        "subcategory": "Earth and Space Science",
+        "level": 2,
+        "question": "What do we call the cycle of water moving between Earth and the atmosphere?",
+        "answers": ["Rock cycle", "Water cycle", "Carbon cycle", "Nitrogen cycle"],
+        "correct": 1,
+        "explanation": "The correct answer is Water cycle. The water cycle is the movement of water between Earth and the atmosphere."
+    },
+    {
+        "id": 101,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the force that pulls objects toward the ground?",
+        "answers": ["Magnetism", "Gravity", "Friction", "Electricity"],
+        "correct": 1,
+        "explanation": "The correct answer is Gravity. Gravity is the force that pulls objects toward the ground."
+    },
+    {
+        "id": 102,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the three states of matter?",
+        "answers": ["Big, medium, small", "Solid, liquid, gas", "Hot, cold, warm", "Light, sound, heat"],
+        "correct": 1,
+        "explanation": "The correct answer is Solid, liquid, gas. The three states of matter are solid, liquid, and gas."
+    },
+    {
+        "id": 103,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What happens to water when it is heated a lot?",
+        "answers": ["It freezes", "It boils", "It stays the same", "It shrinks"],
+        "correct": 1,
+        "explanation": "The correct answer is It boils. When water is heated a lot, it boils and turns into steam."
+    },
+    {
+        "id": 104,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the force that slows down moving objects?",
+        "answers": ["Gravity", "Magnetism", "Friction", "Energy"],
+        "correct": 2,
+        "explanation": "The correct answer is Friction. Friction is the force that slows down moving objects when they rub against something."
+    },
+    {
+        "id": 105,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do magnets attract?",
+        "answers": ["Wood", "Plastic", "Metal", "Paper"],
+        "correct": 2,
+        "explanation": "The correct answer is Metal. Magnets attract certain metals, like iron or steel."
+    },
+    {
+        "id": 106,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the ability to do work or cause change?",
+        "answers": ["Force", "Energy", "Motion", "Matter"],
+        "correct": 1,
+        "explanation": "The correct answer is Energy. Energy is the ability to do work or cause change."
+    },
+    {
+        "id": 107,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the path electricity flows through?",
+        "answers": ["Circuit", "Battery", "Wire", "Switch"],
+        "correct": 0,
+        "explanation": "The correct answer is Circuit. A circuit is the path electricity flows through."
+    },
+    {
+        "id": 108,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What happens to an object when you push or pull it?",
+        "answers": ["It stays still", "It moves", "It disappears", "It grows"],
+        "correct": 1,
+        "explanation": "The correct answer is It moves. Pushing or pulling an object causes it to move."
+    },
+    {
+        "id": 109,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call light that bends when it passes through water?",
+        "answers": ["Reflection", "Refraction", "Absorption", "Shadow"],
+        "correct": 1,
+        "explanation": "The correct answer is Refraction. Refraction is when light bends as it passes through water."
+    },
+    {
+        "id": 110,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the bouncing back of light from a surface?",
+        "answers": ["Refraction", "Reflection", "Absorption", "Transmission"],
+        "correct": 1,
+        "explanation": "The correct answer is Reflection. Reflection is when light bounces back from a surface, like a mirror."
+    },
+    {
+        "id": 111,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we use to measure how hot or cold something is?",
+        "answers": ["Ruler", "Thermometer", "Scale", "Clock"],
+        "correct": 1,
+        "explanation": "The correct answer is Thermometer. A thermometer measures how hot or cold something is."
+    },
+    {
+        "id": 112,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call a material that lets electricity flow easily?",
+        "answers": ["Insulator", "Conductor", "Magnet", "Battery"],
+        "correct": 1,
+        "explanation": "The correct answer is Conductor. A conductor is a material that lets electricity flow easily, like metal."
+    },
+    {
+        "id": 113,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call a material that does not let electricity flow easily?",
+        "answers": ["Conductor", "Insulator", "Magnet", "Wire"],
+        "correct": 1,
+        "explanation": "The correct answer is Insulator. An insulator, like rubber, does not let electricity flow easily."
+    },
+    {
+        "id": 114,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the movement of an object from one place to another?",
+        "answers": ["Energy", "Motion", "Force", "Heat"],
+        "correct": 1,
+        "explanation": "The correct answer is Motion. Motion is the movement of an object from one place to another."
+    },
+    {
+        "id": 115,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the sound made when an object shakes quickly?",
+        "answers": ["Vibration", "Reflection", "Friction", "Gravity"],
+        "correct": 0,
+        "explanation": "The correct answer is Vibration. Vibration is when an object shakes quickly, creating sound."
+    },
+    {
+        "id": 116,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call a tool that makes work easier, like a lever or pulley?",
+        "answers": ["Circuit", "Machine", "Magnet", "Battery"],
+        "correct": 1,
+        "explanation": "The correct answer is Machine. A simple machine, like a lever or pulley, makes work easier."
+    },
+    {
+        "id": 117,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What happens to water when it is cooled a lot?",
+        "answers": ["It boils", "It freezes", "It evaporates", "It stays the same"],
+        "correct": 1,
+        "explanation": "The correct answer is It freezes. When water is cooled a lot, it freezes into ice."
+    },
+    {
+        "id": 118,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the amount of matter in an object?",
+        "answers": ["Weight", "Mass", "Volume", "Density"],
+        "correct": 1,
+        "explanation": "The correct answer is Mass. Mass is the amount of matter in an object."
+    },
+    {
+        "id": 119,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the amount of space an object takes up?",
+        "answers": ["Mass", "Weight", "Volume", "Force"],
+        "correct": 2,
+        "explanation": "The correct answer is Volume. Volume is the amount of space an object takes up."
+    },
+    {
+        "id": 120,
+        "category": "Science",
+        "subcategory": "Physical Science",
+        "level": 2,
+        "question": "What do we call the force that makes a ball roll faster down a hill?",
+        "answers": ["Friction", "Magnetism", "Gravity", "Electricity"],
+        "correct": 2,
+        "explanation": "The correct answer is Gravity. Gravity pulls a ball down a hill, making it roll faster."
+    }
+]

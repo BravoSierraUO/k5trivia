@@ -85,7 +85,7 @@
             font-size: 22px; 
         }
         .answer-btn:hover { background: #0056b3; }
-        #start-game-btn, #play-again-btn, #reset-btn, #logout-btn { 
+        #start-game-btn, #play-again-btn, #reset-btn, #logout-btn, #settings-btn, #save-changes-btn { 
             padding: 20px 30px; 
             background: #28a745; 
             color: white; 
@@ -102,6 +102,10 @@
         #reset-btn:hover { background: #c82333; }
         #logout-btn { background: #6c757d; }
         #logout-btn:hover { background: #5a6268; }
+        #settings-btn { background: #007BFF; }
+        #settings-btn:hover { background: #0056b3; }
+        #save-changes-btn { background: #28a745; }
+        #save-changes-btn:hover { background: #218838; }
         .selection-group { margin: 20px 0; }
         .selection-group label { display: block; margin-bottom: 15px; font-size: 24px; }
         .selection-button { 
@@ -126,25 +130,25 @@
         .xp-bar { margin: 20px 0; }
         .xp-bar label { display: block; font-size: 16px; }
         .xp-bar progress { width: 100%; height: 30px; }
-        .category-header, #settings-header { 
+        .category-header { 
             cursor: pointer; 
             font-weight: bold; 
             font-size: 20px; 
             display: flex; 
             align-items: center; 
         }
-        .category-header::before, #settings-header::before { 
+        .category-header::before { 
             content: '▶'; 
             margin-right: 10px; 
         }
-        .category-header.collapsed::before, #settings-header.collapsed::before { 
+        .category-header.collapsed::before { 
             content: '▼'; 
         }
-        .subcategory-list, #settings-content { 
+        .subcategory-list { 
             display: none; 
             margin-left: 20px; 
         }
-        .subcategory-list.visible, #settings-content.visible { 
+        .subcategory-list.visible { 
             display: block; 
         }
         #delay-setting { margin: 25px 0; }
@@ -170,13 +174,20 @@
             overflow-y: auto;
             margin-bottom: 20px;
         }
-        #settings-header {
-            margin-top: auto; 
-            position: sticky;
-            bottom: 0;
-            background: #1a1a1a; 
-            padding: 10px 0;
+        #settings-content {
+            display: none;
+            padding: 25px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+        .checkbox-setting { margin: 20px 0; }
+        .checkbox-setting label { font-size: 18px; margin-left: 10px; }
     </style>
 </head>
 <body>
@@ -189,19 +200,8 @@
         <div id="xp-bars-container">
             <div id="category-xp-bars"></div>
         </div>
-        <div id="settings-header">
-            <span>Settings</span>
-            <button id="logout-btn">Logout</button>
-        </div>
-        <div id="settings-content">
-            <div id="delay-setting">
-                <label for="correct-delay">Time to Display "Correct" (ms):</label>
-                <input type="number" id="correct-delay" min="0" max="5000" step="100" value="500">
-                <label for="explanation-delay">Time to Display Explanation (ms):</label>
-                <input type="number" id="explanation-delay" min="0" max="5000" step="100" value="1000">
-            </div>
-            <button id="reset-btn">Reset Data</button>
-        </div>
+        <button id="settings-btn">Settings</button>
+        <button id="logout-btn">Logout</button>
     </div>
     <div id="game-container">
         <div id="selection-container">
@@ -235,19 +235,33 @@
             <p id="result-text"></p>
             <button id="play-again-btn" style="display: none;">Back to Main</button>
         </div>
+        <div id="settings-content" style="display: none;">
+            <div id="delay-setting">
+                <label for="correct-delay">Time to Display "Correct" (ms):</label>
+                <input type="number" id="correct-delay" min="0" max="5000" step="100" value="500">
+                <label for="explanation-delay">Time to Display Explanation (ms):</label>
+                <input type="number" id="explanation-delay" min="0" max="5000" step="100" value="1000">
+            </div>
+            <div class="checkbox-setting">
+                <input type="checkbox" id="show-question-id" name="show-question-id">
+                <label for="show-question-id">Show Question ID</label>
+            </div>
+            <button id="reset-btn">Reset Data</button>
+            <button id="save-changes-btn">Save Changes</button>
+        </div>
     </div>
-    <div id="version-display">Version 1.2.003</div>
+    <div id="version-display">Version 1.2.027</div>
 
     <script>
         // Check for logged-in user
-        const settings = JSON.parse(localStorage.getItem('triviaSettings')) || { correctDelay: 500, explanationDelay: 1000 };
+        const settings = JSON.parse(localStorage.getItem('triviaSettings')) || { correctDelay: 500, explanationDelay: 1000, showQuestionId: false, loggedIn: '' };
         if (!settings || !settings.loggedIn) {
             window.location.href = './login.html';
         }
 
-        let questions = [];
         let categories = [];
         let subcategories = {};
+        let categoryFiles = {}; // To store file mappings
         let currentQuestion = null;
         let userXP = parseInt(localStorage.getItem('triviaUserXP')) || 0;
         let categoryXPAmt = JSON.parse(localStorage.getItem('triviaCategoryXP')) || {};
@@ -276,74 +290,53 @@
         const categoryXPBars = document.getElementById('category-xp-bars');
         const resetButton = document.getElementById('reset-btn');
         const logoutButton = document.getElementById('logout-btn');
+        const settingsButton = document.getElementById('settings-btn');
+        const saveChangesButton = document.getElementById('save-changes-btn');
         const correctDelayInput = document.getElementById('correct-delay');
         const explanationDelayInput = document.getElementById('explanation-delay');
+        const showQuestionIdCheckbox = document.getElementById('show-question-id');
         const sidebar = document.getElementById('sidebar');
         const gameContainer = document.getElementById('game-container');
         const subcategoryHeader = document.getElementById('subcategory-header');
-        const settingsHeader = document.getElementById('settings-header');
         const settingsContent = document.getElementById('settings-content');
 
-        // Initialize delay settings
+        // Initialize settings with defaults
         correctDelayInput.value = settings.correctDelay || 500;
         explanationDelayInput.value = settings.explanationDelay || 1000;
-        correctDelayInput.addEventListener('change', () => {
+        showQuestionIdCheckbox.checked = settings.showQuestionId || false;
+
+        // Settings button toggle
+        settingsButton.addEventListener('click', () => {
+            selectionContainer.style.display = 'none';
+            settingsContent.style.display = 'block';
+        });
+
+        // Save changes and return to category view
+        saveChangesButton.addEventListener('click', () => {
             settings.correctDelay = parseInt(correctDelayInput.value) || 500;
-            localStorage.setItem('triviaSettings', JSON.stringify(settings));
-        });
-        explanationDelayInput.addEventListener('change', () => {
             settings.explanationDelay = parseInt(explanationDelayInput.value) || 1000;
+            settings.showQuestionId = showQuestionIdCheckbox.checked;
             localStorage.setItem('triviaSettings', JSON.stringify(settings));
+            settingsContent.style.display = 'none';
+            selectionContainer.style.display = 'block';
         });
 
-        // Settings header toggle
-        settingsHeader.addEventListener('click', (e) => {
-            if (e.target.id === 'logout-btn') return; // Prevent toggle on logout button click
-            const isCollapsed = settingsContent.classList.contains('visible');
-            settingsContent.classList.toggle('visible', !isCollapsed);
-            settingsHeader.classList.toggle('collapsed', !isCollapsed);
-        });
-
-        // Load questions and extract categories/subcategories
-        fetch('./questions.json?_=' + Date.now())
+        // Load categories
+        fetch('./category.json?_=' + Date.now())
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
             })
-            .then(data => {
-                questions = data;
-                questions.forEach((q, index) => {
-                    q.id = index;
-                    if (!q.category || typeof q.category !== 'string' || q.category.trim() === '') {
-                        throw new Error(`Invalid question format: missing or invalid category at index ${index}`);
-                    }
-                    // Handle subcategory as array, string, or null
-                    if (q.subcategory === null || q.subcategory === undefined) {
-                        q.subcategory = ['null'];
-                    } else if (typeof q.subcategory === 'string') {
-                        q.subcategory = [q.subcategory];
-                    } else if (!Array.isArray(q.subcategory) || q.subcategory.length === 0 || !q.subcategory.every(s => typeof s === 'string' && s.trim() !== '')) {
-                        throw new Error(`Invalid subcategory format at index ${index}: must be a string, null, or array of non-empty strings`);
-                    }
-                    q.level = parseInt(q.level);
-                    if (isNaN(q.level)) {
-                        throw new Error(`Invalid level format for question at index ${index}: ${q.level}`);
-                    }
-                    if (!Array.isArray(q.answers) || q.answers.length < 2) {
-                        throw new Error(`Invalid answers format at index ${index}: must be an array with at least 2 answers`);
-                    }
-                    if (typeof q.correct !== 'number' || q.correct < 0 || q.correct >= q.answers.length) {
-                        throw new Error(`Invalid correct index at index ${index}: ${q.correct}`);
-                    }
-                });
-
-                // Extract unique categories and subcategories
-                categories = [...new Set(questions.map(q => q.category))].sort();
-                subcategories = {};
-                categories.forEach(cat => {
-                    const subs = [...new Set(questions.filter(q => q.category === cat).flatMap(q => q.subcategory))].sort();
-                    subcategories[cat] = subs.filter(s => s !== 'null').concat(subs.includes('null') ? ['null'] : []);
-                });
+            .then(categoryData => {
+                categories = categoryData.map(cat => cat.category);
+                subcategories = categoryData.reduce((acc, cat) => {
+                    acc[cat.category] = cat.subcategory;
+                    return acc;
+                }, {});
+                categoryFiles = categoryData.reduce((acc, cat) => {
+                    acc[cat.category] = cat.file;
+                    return acc;
+                }, {});
 
                 // Initialize categoryXPAmt for new categories/subcategories
                 categories.forEach(cat => {
@@ -376,16 +369,15 @@
                 });
 
                 startGameButton.disabled = false;
-                console.log('Questions loaded:', questions.length);
-                console.log('Categories:', categories);
+                console.log('Categories loaded:', categories);
                 console.log('Subcategories:', subcategories);
-                console.log('First 5 questions:', questions.slice(0, 5).map(q => ({ id: q.id, category: q.category, subcategory: q.subcategory, level: q.level })));
+                console.log('Category files:', categoryFiles);
                 updateXPBars();
             })
             .catch(error => {
-                console.error('Error loading questions:', error);
+                console.error('Error loading categories:', error);
                 startGameButton.disabled = true;
-                startGameButton.textContent = 'Error Loading Questions';
+                startGameButton.textContent = 'Error Loading Categories';
             });
 
         // Validate and clean categoryXPAmt, and sync userXP
@@ -397,7 +389,7 @@
                     continue;
                 }
                 for (const sub in categoryXPAmt[category]) {
-                    if (!subcategories[category].includes(sub)) {
+                    if (!subcategories[category] || !subcategories[category].includes(sub)) {
                         delete categoryXPAmt[category][sub];
                     } else {
                         totalXP += categoryXPAmt[category][sub];
@@ -496,7 +488,7 @@
 
         function getMaxUnlockedLevel(category) {
             if (!categoryXPAmt[category]) return 1;
-            const xp = Object.values(categoryXPAmt[category]).reduce((sum, xp) => sum + xp, 0);
+            const xp = Object.values(categoryXPAmt[category] || {}).reduce((sum, xp) => sum + xp, 0);
             if (xp >= 1400) return 5;
             if (xp >= 900) return 4;
             if (xp >= 500) return 3;
@@ -515,9 +507,14 @@
                 alert('Please select a category, at least one subcategory (if required), number of questions, and level');
                 return;
             }
-            questionsAnswered = 0;
-            usedQuestionIds.clear();
-            startGame(selectedCategory, selectedSubcategories, selectedLevel);
+            const file = categoryFiles[selectedCategory]; // Use file from category.json
+            const params = new URLSearchParams({
+                file: file,
+                subcategories: selectedSubcategories.join(','),
+                level: selectedLevel,
+                numQuestions: selectedNumQuestions
+            }).toString();
+            window.location.href = `./quiz.html?${params}`;
         });
 
         function startGame(category, subcategories, level) {
@@ -534,43 +531,24 @@
 
         function selectQuestion(category, subcategories, level) {
             console.log('Selecting question with:', { category, subcategories, level, selectedLevel, questionsAnswered, selectedNumQuestions, usedQuestions: Array.from(usedQuestionIds) });
-            let filteredQuestions = questions.filter(q => 
-                q.category === category && 
-                q.level === parseInt(level) && 
-                !usedQuestionIds.has(q.id)
-            );
-            if (subcategories[0] === 'All') {
-                filteredQuestions = filteredQuestions.filter(q => q.subcategory.some(s => subcategories[category].includes(s)));
-            } else {
-                filteredQuestions = filteredQuestions.filter(q => subcategories.every(sub => q.subcategory.includes(sub)));
-            }
-
-            console.log('Filtered questions:', filteredQuestions.length, filteredQuestions.map(q => ({ id: q.id, question: q.question, subcategory: q.subcategory, level: q.level })));
-
-            if (filteredQuestions.length === 0) {
-                if (questionsAnswered === 0) {
-                    alert(`No questions available for ${category} (${subcategories.join(', ')}) at level ${level}`);
-                    endGame();
-                    return;
-                }
-                playAgainButton.style.display = 'block';
-                return;
-            }
-
-            currentQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
-            usedQuestionIds.add(currentQuestion.id);
-            displayQuestion();
+            alert(`No questions loaded yet for ${category} at level ${level}. Please add question loading logic.`);
+            endGame();
         }
 
         function shuffleAnswers(answers, correctIndex) {
             const shuffled = [...answers];
-            let newCorrectIndex = correctIndex;
+            const indexMap = Array.from({ length: answers.length }, (_, i) => i); // Track original indices
+            console.log('Before shuffle:', { originalAnswers: [...answers], correctIndex, correctAnswer: answers[correctIndex] });
             for (let i = shuffled.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-                if (newCorrectIndex === i) newCorrectIndex = j;
-                else if (newCorrectIndex === j) newCorrectIndex = i;
+                console.log(`Swap: i=${i}, j=${j}, before=[${shuffled}], indexMap=[${indexMap}]`);
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // Swap values
+                [indexMap[i], indexMap[j]] = [indexMap[j], indexMap[i]]; // Swap corresponding indices
+                console.log(`After swap: shuffled=[${shuffled}], indexMap=[${indexMap}]`);
             }
+            // Find the new index of the original correct answer
+            const newCorrectIndex = indexMap.indexOf(correctIndex);
+            console.log('After shuffle:', { shuffledAnswers: [...shuffled], newCorrectIndex, correctAnswer: shuffled[newCorrectIndex] });
             return { shuffledAnswers: shuffled, newCorrectIndex };
         }
 
@@ -587,7 +565,9 @@
             playAgainButton.style.display = 'none';
 
             const { shuffledAnswers, newCorrectIndex } = shuffleAnswers(currentQuestion.answers, currentQuestion.correct);
-            currentQuestion.correct = newCorrectIndex;
+            currentQuestion.correct = newCorrectIndex; // Update correct index
+            currentQuestion.shuffledAnswers = shuffledAnswers; // Store shuffled answers
+            currentQuestion.correctAnswer = shuffledAnswers[newCorrectIndex]; // Explicitly set correct answer from shuffled array
 
             console.log('Displaying question:', {
                 id: currentQuestion.id,
@@ -595,19 +575,32 @@
                 subcategory: currentQuestion.subcategory,
                 level: currentQuestion.level,
                 answers: shuffledAnswers,
-                correct: newCorrectIndex
+                correct: newCorrectIndex,
+                correctAnswer: currentQuestion.correctAnswer
             });
 
             shuffledAnswers.forEach((answer, index) => {
                 const button = document.createElement('button');
                 button.className = 'answer-btn';
                 button.textContent = answer;
-                button.addEventListener('click', () => checkAnswer(index));
+                button.setAttribute('data-index', index); // Store shuffled index
+                button.addEventListener('click', (e) => {
+                    const clickedIndex = parseInt(e.target.getAttribute('data-index'));
+                    console.log('Button clicked:', { text: answer, clickedIndex, expectedCorrect: newCorrectIndex });
+                    checkAnswer(clickedIndex);
+                });
                 answersContainer.appendChild(button);
             });
         }
 
         function checkAnswer(selectedIndex) {
+            console.log('Checking answer:', {
+                selectedIndex,
+                selectedAnswer: currentQuestion.answers[selectedIndex], // Original answer at selected index
+                shuffledSelectedAnswer: currentQuestion.shuffledAnswers[selectedIndex], // Shuffled answer
+                correctIndex: currentQuestion.correct,
+                correctAnswer: currentQuestion.correctAnswer // Use the stored correct answer
+            });
             const isCorrect = selectedIndex === currentQuestion.correct;
             const xpEarned = isCorrect ? currentQuestion.level * 5 : currentQuestion.level * 1;
             answersContainer.querySelectorAll('.answer-btn').forEach(btn => btn.disabled = true);
@@ -624,7 +617,7 @@
                     }
                 }, settings.correctDelay || 500);
             } else {
-                resultText.textContent = currentQuestion.explanation;
+                resultText.textContent = currentQuestion.explanation || `The correct answer is ${currentQuestion.correctAnswer}.`;
                 resultText.style.color = '#ff0000'; // Red for explanation
                 questionsAnswered++;
                 updateUserStats(currentQuestion.category, currentQuestion.subcategory, xpEarned);
@@ -695,12 +688,6 @@
             document.querySelectorAll('.category-header').forEach(header => {
                 header.classList.remove('collapsed');
             });
-
-            // Initially collapse settings
-            settingsContent.classList.remove('visible');
-            settingsHeader.classList.remove('collapsed');
-
-            updateLevelButtons();
         }
 
         playAgainButton.addEventListener('click', () => {
@@ -724,6 +711,12 @@
         // Reset data and redirect to login
         resetButton.addEventListener('click', () => {
             if (confirm('Are you sure you want to reset all progress?')) {
+                // Clear UI state before redirecting
+                resultText.textContent = '';
+                answersContainer.innerHTML = '';
+                questionText.textContent = '';
+                subcategoryHeader.textContent = '';
+                playAgainButton.style.display = 'none';
                 localStorage.removeItem('triviaUserXP');
                 localStorage.removeItem('triviaCategoryXP');
                 localStorage.removeItem('triviaHighScores');
