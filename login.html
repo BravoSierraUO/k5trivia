@@ -5,42 +5,184 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K5 Trivia</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
-        #login-container { max-width: 400px; margin: 50px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        input { margin: 10px; padding: 10px; width: 80%; }
-        button { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        button:hover { background: #218838; }
-        button:disabled { background: #6c757d; cursor: not-allowed; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(to bottom, #d4a8e1, #a8d4e1); /* Soft purple to soft blue gradient */
+            color: #ffffff; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            box-sizing: border-box; 
+        }
+        #login-container { 
+            background: rgba(26, 26, 26, 0.8); /* Slightly opaque black background */
+            padding: 40px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); 
+            width: 350px; 
+            text-align: center; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        #login-container h2 { 
+            font-size: 28px; 
+            margin-bottom: 30px; 
+            color: #ffffff; /* Changed to white */
+        }
+        #login-container input { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 20px; 
+            background: #2d2d2d; 
+            color: #ffffff; 
+            border: 2px solid #444444; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            box-sizing: border-box; 
+        }
+        .social-btn { 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: default; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #000000; 
+        }
+        .social-btn.g { 
+            background: transparent; 
+            background-image: url('ui_img/light/gweb_light_round.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            text-indent: -9999px; /* Hide text to show only image */
+            overflow: hidden; 
+            width: 100px; 
+            height: 40px; 
+        }
+        .social-btn.s { 
+            background: transparent; 
+            background-image: url('ui_img/light/sweb_light_round.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            text-indent: -9999px; /* Hide text to show only image */
+            overflow: hidden; 
+            width: 100px; 
+            height: 40px; 
+        }
+        .social-btn.p { 
+            background: transparent; 
+            background-image: url('ui_img/light/pweb_light_round.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            text-indent: -9999px; /* Hide text to show only image */
+            overflow: hidden; 
+            width: 100px; 
+            height: 40px; 
+        }
+        .social-btn.f { 
+            background: transparent; 
+            background-image: url('ui_img/light/fweb_light_round.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            text-indent: -9999px; /* Hide text to show only image */
+            overflow: hidden; 
+            width: 100px; 
+            height: 40px; 
+        }
+        .social-btn.b { 
+            background: transparent; 
+            background-image: url('ui_img/light/bweb_light_round.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            text-indent: -9999px; /* Hide text to show only image */
+            overflow: hidden; 
+            width: 100px; 
+            height: 40px; 
+        }
+        .social-btn span { 
+            margin-left: 10px; 
+        }
+        #login-btn { 
+            padding: 12px 30px; 
+            background: #a8d4e1; /* Soft blue when enabled */
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 18px; 
+            width: 100%; 
+        }
+        #login-btn:hover { 
+            background: #8fc4d1; /* Slightly darker soft blue for hover */
+        }
+        #login-btn:disabled { 
+            background: #6c757d; /* Gray when disabled */
+            cursor: not-allowed; 
+        }
+        .button-row { 
+            display: flex; 
+            justify-content: space-between; 
+            width: 100%; 
+            margin-top: 15px; 
+        }
+        .divider { 
+            width: 100%; 
+            height: 2px; 
+            background-color: #666666; 
+            margin: 20px 0; 
+        }
+        #version-display { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            color: #ffffff; 
+            font-size: 20px; 
+        }
     </style>
 </head>
 <body>
     <div id="login-container">
-        <h1>K5 Login</h1>
-        <input type="text" id="username" placeholder="Enter your username" required>
-        <br>
+        <h2>K5 Trivia</h2>
+        <input type="text" id="username" placeholder="Enter username" required>
         <button id="login-btn" disabled>Login</button>
-        <p id="error-text" style="color: red; display: none;"></p>
+        <hr class="divider">
+        <div class="button-row">
+            <button class="social-btn g" disabled><span>G</span></button>
+            <button class="social-btn s" disabled><span>S</span></button>
+            <button class="social-btn p" disabled><span>P</span></button>
+            <button class="social-btn f" disabled><span>F</span></button>
+            <button class="social-btn b" disabled><span>B</span></button>
+        </div>
     </div>
+    <div id="version-display">Version 1.2.029</div>
 
     <script>
         const usernameInput = document.getElementById('username');
         const loginButton = document.getElementById('login-btn');
-        const errorText = document.getElementById('error-text');
 
-        // Enable login button when username is entered
         usernameInput.addEventListener('input', () => {
-            loginButton.disabled = usernameInput.value.trim() === '';
+            loginButton.disabled = !usernameInput.value.trim();
         });
 
-        // Handle login
         loginButton.addEventListener('click', () => {
             const username = usernameInput.value.trim();
             if (username) {
-                localStorage.setItem('triviaSettings', JSON.stringify({ username, loggedIn: true }));
+                const settings = JSON.parse(localStorage.getItem('triviaSettings')) || {};
+                settings.username = username;
+                settings.loggedIn = true;
+                localStorage.setItem('triviaSettings', JSON.stringify(settings));
                 window.location.href = './trivia_game.html';
-            } else {
-                errorText.textContent = 'Please enter a username';
-                errorText.style.display = 'block';
             }
         });
     </script>

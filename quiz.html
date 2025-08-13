@@ -7,7 +7,7 @@
     <style>
         body { 
             font-family: Arial, sans-serif; 
-            background-color: #000000; 
+            background: linear-gradient(to bottom, #d4a8e1, #a8d4e1); /* Soft purple to soft blue gradient */
             color: #ffffff; 
             margin: 20px; 
             display: flex; 
@@ -22,7 +22,7 @@
             box-sizing: border-box; 
         }
         #question-container { 
-            background: #1a1a1a; 
+            background: rgba(26, 26, 26, 0.8); /* Slightly opaque black background */
             padding: 25px; 
             border-radius: 8px; 
             box-shadow: 0 0 10px rgba(0,0,0,0.5); 
@@ -105,13 +105,12 @@
             <div id="answers-container"></div>
             <p id="result-text"></p>
             <div id="progress-bar">
-                <label>Questions Completed: <span id="questions-completed">0</span>/<span id="total-questions"></span></label>
                 <progress id="progress" max="100" value="0"></progress>
             </div>
             <button id="play-again-btn" style="display: none;">Back to Main</button>
         </div>
     </div>
-    <div id="version-display">Version 1.2.029</div>
+    <div id="version-display">Version 1.2.030</div>
 
     <script>
         // Get parameters from URL
@@ -126,6 +125,7 @@
         console.log('Logged in user from settings:', loggedInUser); // Enhanced debug log
         let questions = [];
         let questionsAnswered = 0;
+        let correctAnswers = 0; // Track correct answers
         let userXP = parseInt(localStorage.getItem('triviaUserXP')) || 0;
         let categoryXPAmt = JSON.parse(localStorage.getItem('triviaCategoryXP')) || {};
         let usedQuestionIds = new Set();
@@ -135,11 +135,8 @@
         const resultText = document.getElementById('result-text');
         const playAgainButton = document.getElementById('play-again-btn');
         const progressBar = document.getElementById('progress');
-        const questionsCompleted = document.getElementById('questions-completed');
-        const totalQuestions = document.getElementById('total-questions');
 
         // Initialize UI
-        totalQuestions.textContent = numQuestions;
         progressBar.max = numQuestions;
 
         // Load questions from file using the 'file' parameter
@@ -258,12 +255,13 @@
             if (isCorrect) {
                 resultText.textContent = 'Correct!';
                 resultText.style.color = '';
+                correctAnswers++; // Increment correct answers
                 setTimeout(() => {
                     updateUserStats(question.category, [question.subcategory], xpEarned);
                     questionsAnswered++;
                     updateProgress();
                     if (questionsAnswered >= numQuestions) {
-                        playAgainButton.style.display = 'block';
+                        endQuiz();
                     } else {
                         selectQuestion();
                     }
@@ -278,7 +276,7 @@
                     questionsAnswered++;
                     updateProgress();
                     if (questionsAnswered >= numQuestions) {
-                        playAgainButton.style.display = 'block';
+                        endQuiz();
                     } else {
                         selectQuestion();
                     }
@@ -301,13 +299,15 @@
 
         // Update progress bar
         function updateProgress() {
-            questionsCompleted.textContent = questionsAnswered;
             progressBar.value = questionsAnswered;
         }
 
-        // End quiz and return to main
+        // End quiz and show score
         function endQuiz() {
             updateProgress();
+            const scorePercentage = questionsAnswered > 0 ? Math.round((correctAnswers / questionsAnswered) * 100) : 0;
+            resultText.textContent = `Score: ${scorePercentage}%`;
+            resultText.style.color = '';
             playAgainButton.style.display = 'block';
         }
 

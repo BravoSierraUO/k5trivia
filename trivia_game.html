@@ -7,7 +7,7 @@
     <style>
         body { 
             font-family: Arial, sans-serif; 
-            background-color: #000000; 
+            background: linear-gradient(to bottom, #d4a8e1, #a8d4e1); /* Soft purple to soft blue gradient */
             color: #ffffff; 
             margin: 20px; 
             display: flex; 
@@ -17,13 +17,14 @@
         }
         #sidebar { 
             width: 300px; 
-            background: #1a1a1a; 
+            background: rgba(26, 26, 26, 0.8); /* Slightly opaque black background */
             padding: 25px; 
             box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
             box-sizing: border-box; 
             font-size: 18px; 
             display: flex;
             flex-direction: column;
+            border-radius: 10px;
         }
         #game-container { 
             flex: 1; 
@@ -37,11 +38,26 @@
             width: calc(100vw - 40px); 
             height: calc(100vh - 40px); 
         }
-        #selection-container { margin-bottom: 25px; }
-        #question-container { 
-            background: #1a1a1a; 
+        #selection-container { 
+            flex: 1;
+            display: flex;
+        }
+        #selection-content { 
+            background: rgba(26, 26, 26, 0.8); /* Slightly opaque black background */
             padding: 25px; 
-            border-radius: 8px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+            height: 100%; 
+            box-sizing: border-box; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            width: 100%;
+        }
+        #question-container { 
+            background: rgba(26, 26, 26, 0.8); /* Slightly opaque black background */
+            padding: 25px; 
+            border-radius: 10px; 
             box-shadow: 0 0 10px rgba(0,0,0,0.5); 
             height: 100%; 
             box-sizing: border-box; 
@@ -177,8 +193,8 @@
         #settings-content {
             display: none;
             padding: 25px;
-            background: #1a1a1a;
-            border-radius: 8px;
+            background: rgba(26, 26, 26, 0.8); /* Slightly opaque black background */
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
             height: 100%;
             box-sizing: border-box;
@@ -205,28 +221,30 @@
     </div>
     <div id="game-container">
         <div id="selection-container">
-            <div class="selection-group">
-                <label>Select Category:</label>
-                <div id="category-buttons"></div>
-            </div>
-            <div class="selection-group" id="subcategory-group" style="display: none;">
-                <label>Select Subcategory:</label>
-                <div id="subcategory-buttons"></div>
-            </div>
-            <div class="selection-group" id="level-group" style="display: none;">
-                <label>Select Level:</label>
-                <div id="level-buttons"></div>
-            </div>
-            <div class="selection-group">
-                <label>Select Number of Questions:</label>
-                <div id="num-questions-buttons">
-                    <button class="selection-button" data-num-questions="5">5</button>
-                    <button class="selection-button" data-num-questions="10">10</button>
-                    <button class="selection-button" data-num-questions="15">15</button>
-                    <button class="selection-button" data-num-questions="20">20</button>
+            <div id="selection-content">
+                <div class="selection-group">
+                    <label>Select Category:</label>
+                    <div id="category-buttons"></div>
                 </div>
+                <div class="selection-group" id="subcategory-group" style="display: none;">
+                    <label>Select Subcategory:</label>
+                    <div id="subcategory-buttons"></div>
+                </div>
+                <div class="selection-group" id="level-group" style="display: none;">
+                    <label>Select Level:</label>
+                    <div id="level-buttons"></div>
+                </div>
+                <div class="selection-group">
+                    <label>Select Number of Questions:</label>
+                    <div id="num-questions-buttons">
+                        <button class="selection-button" data-num-questions="5">5</button>
+                        <button class="selection-button" data-num-questions="10">10</button>
+                        <button class="selection-button" data-num-questions="15">15</button>
+                        <button class="selection-button" data-num-questions="20">20</button>
+                    </div>
+                </div>
+                <button id="start-game-btn" disabled>Start Game</button>
             </div>
-            <button id="start-game-btn" disabled>Start Game</button>
         </div>
         <div id="question-container" style="display: none;">
             <h2 id="subcategory-header"></h2>
@@ -250,13 +268,13 @@
             <button id="save-changes-btn">Save Changes</button>
         </div>
     </div>
-    <div id="version-display">Version 1.2.027</div>
+    <div id="version-display">Version 1.2.030</div>
 
     <script>
         // Check for logged-in user
         const settings = JSON.parse(localStorage.getItem('triviaSettings')) || { correctDelay: 500, explanationDelay: 1000, showQuestionId: false, loggedIn: '' };
         if (!settings || !settings.loggedIn) {
-            window.location.href = './login.html';
+            window.location.href = './index.html';
         }
 
         let categories = [];
@@ -350,35 +368,54 @@
                 cleanCategoryXPAmt();
 
                 // Populate category buttons
-                categoryButtons.innerHTML = '';
-                categories.forEach(cat => {
-                    const button = document.createElement('button');
-                    button.className = 'selection-button';
-                    button.setAttribute('data-category', cat);
-                    button.textContent = cat;
-                    button.addEventListener('click', () => {
-                        selectedCategory = cat;
-                        selectedSubcategories = [];
-                        categoryButtons.querySelectorAll('.selection-button').forEach(btn => btn.classList.remove('selected'));
-                        button.classList.add('selected');
-                        updateSubcategoryButtons();
-                        updateLevelButtons();
-                        updateStartButtonState();
-                    });
-                    categoryButtons.appendChild(button);
-                });
-
-                startGameButton.disabled = false;
-                console.log('Categories loaded:', categories);
-                console.log('Subcategories:', subcategories);
-                console.log('Category files:', categoryFiles);
-                updateXPBars();
+                populateCategoryButtons();
             })
             .catch(error => {
                 console.error('Error loading categories:', error);
-                startGameButton.disabled = true;
-                startGameButton.textContent = 'Error Loading Categories';
+                // Set default category and subcategory
+                categories = ['unknown'];
+                subcategories = { 'unknown': ['subunknown'] };
+                categoryFiles = { 'unknown': 'unknown.json' };
+                
+                // Initialize categoryXPAmt for default category/subcategory
+                if (!categoryXPAmt['unknown']) categoryXPAmt['unknown'] = {};
+                if (!categoryXPAmt['unknown']['subunknown']) categoryXPAmt['unknown']['subunknown'] = 0;
+                
+                // Clean categoryXPAmt
+                cleanCategoryXPAmt();
+
+                // Populate category buttons
+                populateCategoryButtons();
+
+                startGameButton.disabled = false;
+                console.log('Default categories loaded:', categories);
+                console.log('Default subcategories:', subcategories);
+                console.log('Default category files:', categoryFiles);
+                updateXPBars();
             });
+
+        // Function to populate category buttons
+        function populateCategoryButtons() {
+            categoryButtons.innerHTML = '';
+            categories.forEach(cat => {
+                const button = document.createElement('button');
+                button.className = 'selection-button';
+                button.setAttribute('data-category', cat);
+                button.textContent = cat;
+                button.addEventListener('click', () => {
+                    selectedCategory = cat;
+                    selectedSubcategories = [];
+                    categoryButtons.querySelectorAll('.selection-button').forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    updateSubcategoryButtons();
+                    updateLevelButtons();
+                    updateStartButtonState();
+                });
+                categoryButtons.appendChild(button);
+            });
+            startGameButton.disabled = false;
+            updateXPBars();
+        }
 
         // Validate and clean categoryXPAmt, and sync userXP
         function cleanCategoryXPAmt() {
@@ -492,7 +529,7 @@
             if (xp >= 1400) return 5;
             if (xp >= 900) return 4;
             if (xp >= 500) return 3;
-            if (xp >= 200) return 2;
+            if (xp >= 100) return 2;
             return 1;
         }
 
@@ -721,14 +758,14 @@
                 localStorage.removeItem('triviaCategoryXP');
                 localStorage.removeItem('triviaHighScores');
                 localStorage.removeItem('triviaSettings');
-                window.location.href = './login.html';
+                window.location.href = './index.html';
             }
         });
 
         // Logout
         logoutButton.addEventListener('click', () => {
             localStorage.removeItem('triviaSettings');
-            window.location.href = './login.html';
+            window.location.href = './index.html';
         });
     </script>
 </body>
